@@ -23,6 +23,16 @@ namespace BaccaratEngine
             _cards = new List<Card>( _decksCount * 52 ); 
         }
 
+        public List<Card> Cards
+        {
+            get { return _cards; }
+
+            set 
+            { 
+                _cards = value; 
+            }
+        }
+
         public bool cutCardReached
         {
             get
@@ -93,6 +103,17 @@ namespace BaccaratEngine
             _cards.RemoveAt( _cards.Count - 1 );
 
             return card;
+        }
+
+        public void RemoveCards( int count )
+        {
+            if ( count < this._cards.Count )
+            {
+                for( var i = 0; i < count; i++ )
+                {
+                    draw();
+                }
+            }
         }
     }
 }

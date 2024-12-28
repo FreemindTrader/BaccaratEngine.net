@@ -14,6 +14,22 @@ namespace BaccaratEngine
         private CardSuit _suit;
         private CardValue _value;
 
+        public Card()
+        {
+            _suit = CardSuit.Club;
+            _value = CardValue.CA;
+        }
+
+        public CardSuit Suit
+        {
+            get { return _suit; }
+        }
+
+        public CardValue Value
+        {
+            get { return _value; }
+        }
+
         public Card( CardSuit suit, CardValue value ) 
         {
             _suit = suit;

@@ -39,18 +39,12 @@ namespace BaccaratEngine
         }        
 
         public bool PlayerHasPairs()
-        {
-            if (Playercards.Count != 2 )
-                return false;
-
+        {            
             return Playercards[0].valueForCard() == Playercards[1].valueForCard();
         }
 
         public bool BankerHasPairs()
-        {
-            if (Bankercards.Count != 2)
-                return false;
-
+        {         
             return Bankercards[0].valueForCard() == Bankercards[1].valueForCard();
         }
     }

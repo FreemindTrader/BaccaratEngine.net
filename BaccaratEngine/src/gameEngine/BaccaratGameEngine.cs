@@ -8,8 +8,8 @@ namespace BaccaratEngine
 {
     public class BaccaratGameEngine
     {
-        BaccaratResultsEngine _resultEngine = null;
-        Shoe _shoe = null;
+        BaccaratResultsEngine _resultEngine;
+        Shoe _shoe;
         public BaccaratGameEngine()
         {
             _resultEngine = new BaccaratResultsEngine();
