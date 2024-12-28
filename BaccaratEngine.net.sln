@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaccaratEngine.net", "BaccaratEngine.net.csproj", "{15D6A0D8-BD0E-438E-A4BD-822733347176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaccaratEngine.Tests", "..\BaccaratEngine.Tests\BaccaratEngine.Tests.csproj", "{DBB92E2A-0F12-42DE-B3F6-DDC47432D25F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15D6A0D8-BD0E-438E-A4BD-822733347176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15D6A0D8-BD0E-438E-A4BD-822733347176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15D6A0D8-BD0E-438E-A4BD-822733347176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15D6A0D8-BD0E-438E-A4BD-822733347176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB92E2A-0F12-42DE-B3F6-DDC47432D25F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB92E2A-0F12-42DE-B3F6-DDC47432D25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB92E2A-0F12-42DE-B3F6-DDC47432D25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB92E2A-0F12-42DE-B3F6-DDC47432D25F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
