@@ -7,8 +7,8 @@ namespace BaccaratEngine.Tests;
 public class RoadMapGenerator_Test
 {
     private RoadmapGenerator _generator = new RoadmapGenerator();
-    
-    
+
+
     [TestMethod]
     public void beadPlate_Test()
     {
@@ -36,7 +36,7 @@ public class RoadMapGenerator_Test
 
         Assert.AreEqual( result[1].Result.Outcome, Baccarat.P );
         Assert.AreEqual( result[1].Column, 0 );
-        Assert.AreEqual( result[1].Row, 1);
+        Assert.AreEqual( result[1].Row, 1 );
 
         Assert.AreEqual( result[2].Result.Outcome, Baccarat.B );
         Assert.AreEqual( result[2].Column, 0 );
@@ -135,11 +135,11 @@ public class RoadMapGenerator_Test
         // Should return an empty big road        
 
         List<GameResult> input_result = new List<GameResult>();
-        
+
         var result = _generator.bigRoad( input_result, 10, 6 );
 
         Assert.IsNotNull( result );
-        Assert.AreEqual( result.Count, 0 );        
+        Assert.AreEqual( result.Count, 0 );
     }
 
     [TestMethod]
@@ -225,118 +225,118 @@ public class RoadMapGenerator_Test
         Assert.AreEqual( result.Count, 19 );
 
         Assert.AreEqual( result[0].Result.Outcome, Baccarat.B );
-        Assert.AreEqual( result[0].Column,          0 );
-        Assert.AreEqual( result[0].Row,             0 );
-        Assert.AreEqual( result[0].LogicalColumn,   0 );
-        Assert.AreEqual( result[0].Ties.Count,      0 );
+        Assert.AreEqual( result[0].Column, 0 );
+        Assert.AreEqual( result[0].Row, 0 );
+        Assert.AreEqual( result[0].LogicalColumn, 0 );
+        Assert.AreEqual( result[0].Ties.Count, 0 );
 
         Assert.AreEqual( result[1].Result.Outcome, Baccarat.B );
-        Assert.AreEqual( result[1].Column,          0 );
-        Assert.AreEqual( result[1].Row,             1 );
-        Assert.AreEqual( result[1].LogicalColumn,   0 );
-        Assert.AreEqual( result[1].Ties.Count,      0 );
+        Assert.AreEqual( result[1].Column, 0 );
+        Assert.AreEqual( result[1].Row, 1 );
+        Assert.AreEqual( result[1].LogicalColumn, 0 );
+        Assert.AreEqual( result[1].Ties.Count, 0 );
 
         Assert.AreEqual( result[2].Result.Outcome, Baccarat.B );
-        Assert.AreEqual( result[2].Column,          0 );
-        Assert.AreEqual( result[2].Row,             2 );
-        Assert.AreEqual( result[2].LogicalColumn,   0 );
-        Assert.AreEqual( result[2].Ties.Count,      0 );
+        Assert.AreEqual( result[2].Column, 0 );
+        Assert.AreEqual( result[2].Row, 2 );
+        Assert.AreEqual( result[2].LogicalColumn, 0 );
+        Assert.AreEqual( result[2].Ties.Count, 0 );
 
         Assert.AreEqual( result[3].Result.Outcome, Baccarat.B );
-        Assert.AreEqual( result[3].Column,          0 );
-        Assert.AreEqual( result[3].Row,             3 );
-        Assert.AreEqual( result[3].LogicalColumn,   0 );
-        Assert.AreEqual( result[3].Ties.Count,      0 );
+        Assert.AreEqual( result[3].Column, 0 );
+        Assert.AreEqual( result[3].Row, 3 );
+        Assert.AreEqual( result[3].LogicalColumn, 0 );
+        Assert.AreEqual( result[3].Ties.Count, 0 );
 
         Assert.AreEqual( result[4].Result.Outcome, Baccarat.B );
-        Assert.AreEqual( result[4].Column,          0 );
-        Assert.AreEqual( result[4].Row,             4 );
-        Assert.AreEqual( result[4].LogicalColumn,   0 );
-        Assert.AreEqual( result[4].Ties.Count,      0 );
+        Assert.AreEqual( result[4].Column, 0 );
+        Assert.AreEqual( result[4].Row, 4 );
+        Assert.AreEqual( result[4].LogicalColumn, 0 );
+        Assert.AreEqual( result[4].Ties.Count, 0 );
 
         Assert.AreEqual( result[5].Result.Outcome, Baccarat.B );
-        Assert.AreEqual( result[5].Column,          0 );
-        Assert.AreEqual( result[5].Row,             5 );
-        Assert.AreEqual( result[5].LogicalColumn,   0 );
-        Assert.AreEqual( result[5].Ties.Count,      0 );
+        Assert.AreEqual( result[5].Column, 0 );
+        Assert.AreEqual( result[5].Row, 5 );
+        Assert.AreEqual( result[5].LogicalColumn, 0 );
+        Assert.AreEqual( result[5].Ties.Count, 0 );
 
         Assert.AreEqual( result[6].Result.Outcome, Baccarat.B );
-        Assert.AreEqual( result[6].Column,          1 );
-        Assert.AreEqual( result[6].Row,             5 );
-        Assert.AreEqual( result[6].LogicalColumn,   0 );
-        Assert.AreEqual( result[6].Ties.Count,      0 );
+        Assert.AreEqual( result[6].Column, 1 );
+        Assert.AreEqual( result[6].Row, 5 );
+        Assert.AreEqual( result[6].LogicalColumn, 0 );
+        Assert.AreEqual( result[6].Ties.Count, 0 );
 
         Assert.AreEqual( result[7].Result.Outcome, Baccarat.B );
-        Assert.AreEqual( result[7].Column,          2 );
-        Assert.AreEqual( result[7].Row,             5 );
-        Assert.AreEqual( result[7].LogicalColumn,   0 );
-        Assert.AreEqual( result[7].Ties.Count,      0 );
+        Assert.AreEqual( result[7].Column, 2 );
+        Assert.AreEqual( result[7].Row, 5 );
+        Assert.AreEqual( result[7].LogicalColumn, 0 );
+        Assert.AreEqual( result[7].Ties.Count, 0 );
 
         Assert.AreEqual( result[8].Result.Outcome, Baccarat.B );
-        Assert.AreEqual( result[8].Column,          3 );
-        Assert.AreEqual( result[8].Row,             5 );
-        Assert.AreEqual( result[8].LogicalColumn,   0 );
-        Assert.AreEqual( result[8].Ties.Count,      0 );
+        Assert.AreEqual( result[8].Column, 3 );
+        Assert.AreEqual( result[8].Row, 5 );
+        Assert.AreEqual( result[8].LogicalColumn, 0 );
+        Assert.AreEqual( result[8].Ties.Count, 0 );
 
         Assert.AreEqual( result[9].Result.Outcome, Baccarat.P );
-        Assert.AreEqual( result[9].Column,          1 );
-        Assert.AreEqual( result[9].Row,             0 );
-        Assert.AreEqual( result[9].LogicalColumn,   1 );
-        Assert.AreEqual( result[9].Ties.Count,      0 );
+        Assert.AreEqual( result[9].Column, 1 );
+        Assert.AreEqual( result[9].Row, 0 );
+        Assert.AreEqual( result[9].LogicalColumn, 1 );
+        Assert.AreEqual( result[9].Ties.Count, 0 );
 
         Assert.AreEqual( result[10].Result.Outcome, Baccarat.P );
-        Assert.AreEqual( result[10].Column,          1 );
-        Assert.AreEqual( result[10].Row,             1 );
-        Assert.AreEqual( result[10].LogicalColumn,   1 );
-        Assert.AreEqual( result[10].Ties.Count,      0 );
+        Assert.AreEqual( result[10].Column, 1 );
+        Assert.AreEqual( result[10].Row, 1 );
+        Assert.AreEqual( result[10].LogicalColumn, 1 );
+        Assert.AreEqual( result[10].Ties.Count, 0 );
 
         Assert.AreEqual( result[11].Result.Outcome, Baccarat.P );
-        Assert.AreEqual( result[11].Column,          1 );
-        Assert.AreEqual( result[11].Row,             2 );
-        Assert.AreEqual( result[11].LogicalColumn,   1 );
-        Assert.AreEqual( result[11].Ties.Count,      0 );
+        Assert.AreEqual( result[11].Column, 1 );
+        Assert.AreEqual( result[11].Row, 2 );
+        Assert.AreEqual( result[11].LogicalColumn, 1 );
+        Assert.AreEqual( result[11].Ties.Count, 0 );
 
         Assert.AreEqual( result[12].Result.Outcome, Baccarat.P );
-        Assert.AreEqual( result[12].Column,          1 );
-        Assert.AreEqual( result[12].Row,             3 );
-        Assert.AreEqual( result[12].LogicalColumn,   1 );
-        Assert.AreEqual( result[12].Ties.Count,      0 );
+        Assert.AreEqual( result[12].Column, 1 );
+        Assert.AreEqual( result[12].Row, 3 );
+        Assert.AreEqual( result[12].LogicalColumn, 1 );
+        Assert.AreEqual( result[12].Ties.Count, 0 );
 
         Assert.AreEqual( result[13].Result.Outcome, Baccarat.P );
-        Assert.AreEqual( result[13].Column,          1 );
-        Assert.AreEqual( result[13].Row,             4 );
-        Assert.AreEqual( result[13].LogicalColumn,   1 );
-        Assert.AreEqual( result[13].Ties.Count,      0 );
+        Assert.AreEqual( result[13].Column, 1 );
+        Assert.AreEqual( result[13].Row, 4 );
+        Assert.AreEqual( result[13].LogicalColumn, 1 );
+        Assert.AreEqual( result[13].Ties.Count, 0 );
 
         Assert.AreEqual( result[14].Result.Outcome, Baccarat.P );
-        Assert.AreEqual( result[14].Column,          2 );
-        Assert.AreEqual( result[14].Row,             4 );
-        Assert.AreEqual( result[14].LogicalColumn,   1 );
-        Assert.AreEqual( result[14].Ties.Count,      0 );
+        Assert.AreEqual( result[14].Column, 2 );
+        Assert.AreEqual( result[14].Row, 4 );
+        Assert.AreEqual( result[14].LogicalColumn, 1 );
+        Assert.AreEqual( result[14].Ties.Count, 0 );
 
         Assert.AreEqual( result[15].Result.Outcome, Baccarat.P );
-        Assert.AreEqual( result[15].Column,          3 );
-        Assert.AreEqual( result[15].Row,             4 );
-        Assert.AreEqual( result[15].LogicalColumn,   1 );
-        Assert.AreEqual( result[15].Ties.Count,      0 );
+        Assert.AreEqual( result[15].Column, 3 );
+        Assert.AreEqual( result[15].Row, 4 );
+        Assert.AreEqual( result[15].LogicalColumn, 1 );
+        Assert.AreEqual( result[15].Ties.Count, 0 );
 
         Assert.AreEqual( result[16].Result.Outcome, Baccarat.P );
-        Assert.AreEqual( result[16].Column,          4 );
-        Assert.AreEqual( result[16].Row,             4 );
-        Assert.AreEqual( result[16].LogicalColumn,   1 );
-        Assert.AreEqual( result[16].Ties.Count,      0 );
+        Assert.AreEqual( result[16].Column, 4 );
+        Assert.AreEqual( result[16].Row, 4 );
+        Assert.AreEqual( result[16].LogicalColumn, 1 );
+        Assert.AreEqual( result[16].Ties.Count, 0 );
 
         Assert.AreEqual( result[17].Result.Outcome, Baccarat.P );
-        Assert.AreEqual( result[17].Column,          4 );
-        Assert.AreEqual( result[17].Row,             5 );
-        Assert.AreEqual( result[17].LogicalColumn,   1 );
-        Assert.AreEqual( result[17].Ties.Count,      0 );
+        Assert.AreEqual( result[17].Column, 4 );
+        Assert.AreEqual( result[17].Row, 5 );
+        Assert.AreEqual( result[17].LogicalColumn, 1 );
+        Assert.AreEqual( result[17].Ties.Count, 0 );
 
         Assert.AreEqual( result[18].Result.Outcome, Baccarat.P );
-        Assert.AreEqual( result[18].Column,          5 );
-        Assert.AreEqual( result[18].Row,             5 );
-        Assert.AreEqual( result[18].LogicalColumn,   1 );
-        Assert.AreEqual( result[18].Ties.Count,      0 );
+        Assert.AreEqual( result[18].Column, 5 );
+        Assert.AreEqual( result[18].Row, 5 );
+        Assert.AreEqual( result[18].LogicalColumn, 1 );
+        Assert.AreEqual( result[18].Ties.Count, 0 );
     }
 
     [TestMethod]
@@ -359,23 +359,23 @@ public class RoadMapGenerator_Test
         Assert.AreEqual( result.Count, 3 );
 
         Assert.AreEqual( result[0].Result.Outcome, Baccarat.P );
-        Assert.AreEqual( result[0].Column,          0 );
-        Assert.AreEqual( result[0].Row,             0 );
-        Assert.AreEqual( result[0].LogicalColumn,   1 );
-        Assert.AreEqual( result[0].Ties.Count,      1 );
+        Assert.AreEqual( result[0].Column, 0 );
+        Assert.AreEqual( result[0].Row, 0 );
+        Assert.AreEqual( result[0].LogicalColumn, 1 );
+        Assert.AreEqual( result[0].Ties.Count, 1 );
         Assert.AreEqual( result[0].Ties[0].Outcome, Baccarat.T );
 
         Assert.AreEqual( result[1].Result.Outcome, Baccarat.P );
-        Assert.AreEqual( result[1].Column,          0 );
-        Assert.AreEqual( result[1].Row,             1 );
-        Assert.AreEqual( result[1].LogicalColumn,   1 );
-        Assert.AreEqual( result[1].Ties.Count,      0 );
-        
+        Assert.AreEqual( result[1].Column, 0 );
+        Assert.AreEqual( result[1].Row, 1 );
+        Assert.AreEqual( result[1].LogicalColumn, 1 );
+        Assert.AreEqual( result[1].Ties.Count, 0 );
+
         Assert.AreEqual( result[2].Result.Outcome, Baccarat.B );
-        Assert.AreEqual( result[2].Column,          1 );
-        Assert.AreEqual( result[2].Row,             0 );
-        Assert.AreEqual( result[2].LogicalColumn,   2 );
-        Assert.AreEqual( result[2].Ties.Count,      0 );
+        Assert.AreEqual( result[2].Column, 1 );
+        Assert.AreEqual( result[2].Row, 0 );
+        Assert.AreEqual( result[2].LogicalColumn, 2 );
+        Assert.AreEqual( result[2].Ties.Count, 0 );
     }
 
     [TestMethod]
@@ -395,53 +395,53 @@ public class RoadMapGenerator_Test
 
         expectedBigEye.Add( MoRoad.Red );
 
-        expectedBigEye.Add( MoRoad.Blue ); 
+        expectedBigEye.Add( MoRoad.Blue );
         expectedBigEye.Add( MoRoad.Blue );
         expectedBigEye.Add( MoRoad.Red );
         expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
         expectedBigEye.Add( MoRoad.Blue );
         expectedBigEye.Add( MoRoad.Blue );
 
         expectedBigEye.Add( MoRoad.Red );
         expectedBigEye.Add( MoRoad.Red );
         expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
         expectedBigEye.Add( MoRoad.Red );
 
         expectedBigEye.Add( MoRoad.Blue );
-
-        expectedBigEye.Add( MoRoad.Red );
-        expectedBigEye.Add( MoRoad.Red );
-        expectedBigEye.Add( MoRoad.Blue );
-        expectedBigEye.Add( MoRoad.Blue );
-        expectedBigEye.Add( MoRoad.Red );
-        expectedBigEye.Add( MoRoad.Red );
-
         expectedBigEye.Add( MoRoad.Blue );
         expectedBigEye.Add( MoRoad.Red );
         expectedBigEye.Add( MoRoad.Red );
 
         expectedBigEye.Add( MoRoad.Blue );
-        expectedBigEye.Add( MoRoad.Blue );
-        expectedBigEye.Add( MoRoad.Blue );
-
-        expectedBigEye.Add( MoRoad.Red ); 
         expectedBigEye.Add( MoRoad.Red );
-        expectedBigEye.Add( MoRoad.Red );
-
         expectedBigEye.Add( MoRoad.Blue );
         expectedBigEye.Add( MoRoad.Red );
 
-        expectedBigEye.Add( MoRoad.Blue );         
         expectedBigEye.Add( MoRoad.Blue );
-        expectedBigEye.Add( MoRoad.Red );
-        expectedBigEye.Add( MoRoad.Red );
-
-        expectedBigEye.Add( MoRoad.Blue ); 
-        expectedBigEye.Add( MoRoad.Red ); 
-        expectedBigEye.Add( MoRoad.Blue ); 
-        expectedBigEye.Add( MoRoad.Red ); 
-        
-        expectedBigEye.Add( MoRoad.Blue ); 
         expectedBigEye.Add( MoRoad.Blue );
 
         expectedBigEye.Add( MoRoad.Red );
@@ -467,13 +467,13 @@ public class RoadMapGenerator_Test
 
 
         List<GameResult> gameResults = new List<GameResult>();
-                                                                   //[
+        //[
         gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
         gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
         gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
         gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player8', 'pair': 'none'},
         gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
-        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'banker'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'b//},
         gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
         gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
         gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
@@ -545,7 +545,7 @@ public class RoadMapGenerator_Test
         gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
         gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
         gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
-        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'banker'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'b//},
         gameResults.Add( new GameResult( Baccarat.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
         gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
         gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'none'},
@@ -637,7 +637,7 @@ public class RoadMapGenerator_Test
         expectedBigEye.Add( MoRoad.Blue );
         expectedBigEye.Add( MoRoad.Red );
         expectedBigEye.Add( MoRoad.Blue );
-        
+
         expectedBigEye.Add( MoRoad.Red );
         expectedBigEye.Add( MoRoad.Red );
         expectedBigEye.Add( MoRoad.Blue );
@@ -652,7 +652,7 @@ public class RoadMapGenerator_Test
         expectedBigEye.Add( MoRoad.Red );
         expectedBigEye.Add( MoRoad.Blue );
         expectedBigEye.Add( MoRoad.Blue );
-        
+
         expectedBigEye.Add( MoRoad.Red );
         expectedBigEye.Add( MoRoad.Blue );
         expectedBigEye.Add( MoRoad.Red );
@@ -669,7 +669,7 @@ public class RoadMapGenerator_Test
         expectedBigEye.Add( MoRoad.Red );
         expectedBigEye.Add( MoRoad.Red );
 
-        
+
 
 
         List<GameResult> gameResults = new List<GameResult>();
@@ -737,7 +737,7 @@ public class RoadMapGenerator_Test
         gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
         gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
         gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
-        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'banker'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'b//}, 
         gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'player9', 'pair': 'none'}, 
         gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'player8', 'pair': 'none'}, 
         gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
@@ -764,7 +764,7 @@ public class RoadMapGenerator_Test
         gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
         gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
         gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
-        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'banker'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'b//}, 
         gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
         gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker9', 'pair': 'none'}, 
         gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker9', 'pair': 'none'}, 
@@ -777,7 +777,7 @@ public class RoadMapGenerator_Test
         gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}];
 
         var bigRoad = _generator.bigRoad( gameResults, 100, 6 );
-        var result = _generator.bigEyeRoad( bigRoad );      
+        var result = _generator.bigEyeRoad( bigRoad );
 
         var tobeTested = Math.Min( result.Count, expectedBigEye.Count );
 
@@ -795,7 +795,7 @@ public class RoadMapGenerator_Test
 
         expectedSmallRoad.Add( MoRoad.Blue );
         expectedSmallRoad.Add( MoRoad.Blue );
-        expectedSmallRoad.Add( MoRoad.Blue );        
+        expectedSmallRoad.Add( MoRoad.Blue );
 
         expectedSmallRoad.Add( MoRoad.Red );
         expectedSmallRoad.Add( MoRoad.Red );
@@ -875,10 +875,10 @@ public class RoadMapGenerator_Test
         expectedcockroachPig.Add( MoRoad.Blue );
         expectedcockroachPig.Add( MoRoad.Red );
 
-        
+
         expectedcockroachPig.Add( MoRoad.Blue );
         expectedcockroachPig.Add( MoRoad.Blue );
-        
+
         expectedcockroachPig.Add( MoRoad.Red );
         expectedcockroachPig.Add( MoRoad.Blue );
         expectedcockroachPig.Add( MoRoad.Red );
@@ -932,4 +932,473 @@ public class RoadMapGenerator_Test
             Assert.AreEqual( cockroachPig[i], expectedcockroachPig[i] );
         }
     }
+
+    [TestMethod]
+    public void bigEyeRoad_TestC()
+    {
+        List<GameResult> gameResults = new List<GameResult>();
+
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player8', 'pair': 'p//}, 
+        gameResults.Add( new GameResult( Baccarat.T ) );//natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) );//natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) );//natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) );//natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) );//natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) );//natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) );//natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker8', 'pair': 'p//}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player9', 'pair': 'b//}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) );//natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker8', 'pair': 'p//}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'p//}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'p//}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'p//}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker8', 'pair': 'both'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) );//natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'p//}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker8', 'pair': 'b//}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player9', 'pair': 'b//}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'none', 'pair': 'none'}];
+
+        var bigRoad = _generator.bigRoad( gameResults, 100, 6 );
+        var bigEyeRoad = _generator.bigEyeRoad( bigRoad );
+
+        IList<MoRoad> expectedBigEye = new BindingList<MoRoad>();
+
+        // Something is causing this red dot to be need detected in the algorithm.
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        var tobeTested1 = Math.Min( bigEyeRoad.Count, expectedBigEye.Count );
+
+        for (int i = 0; i < tobeTested1; i++)
+        {
+            Assert.AreEqual( bigEyeRoad[i], expectedBigEye[i] );
+        }
+
+
+        var smallRoad = _generator.smallRoad( bigRoad );
+
+        IList<MoRoad> expectedSmallRoad = new BindingList<MoRoad>();
+
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+
+
+        var tobeTested2 = Math.Min( smallRoad.Count, expectedSmallRoad.Count );
+
+        for (int i = 0; i < tobeTested2; i++)
+        {
+            Assert.AreEqual( smallRoad[i], expectedSmallRoad[i] );
+        }
+
+
+
+        var cockroachPig = _generator.cockroachPig( bigRoad );
+
+        IList<MoRoad> expectedcockroachPig = new BindingList<MoRoad>();
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+
+
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+
+        var tobeTested3 = Math.Min( cockroachPig.Count, expectedcockroachPig.Count );
+
+        for (int i = 0; i < tobeTested3; i++)
+        {
+            Assert.AreEqual( cockroachPig[i], expectedcockroachPig[i] );
+        }
+    }
+
+    [TestMethod]
+    public void bigEyeRoad_Test_ZeroGame()
+    {
+        List<GameResult> gameResults = new List<GameResult>();
+
+        var bigRoad = _generator.bigRoad( gameResults, 100, 6 );
+        var bigEyeRoad = _generator.bigEyeRoad( bigRoad );
+
+        Assert.AreEqual( bigEyeRoad.Count, 0 );
+    }
+
+    [TestMethod]
+    public void bigEyeRoad_Test_OneGame()
+    {
+        List<GameResult> gameResults = new List<GameResult>();
+        gameResults.Add( new GameResult( Baccarat.P ) ); 
+
+        var bigRoad = _generator.bigRoad( gameResults, 100, 6 );
+        var bigEyeRoad = _generator.bigEyeRoad( bigRoad );
+
+        Assert.AreEqual( bigEyeRoad.Count, 0 );
+    }
+
+    [TestMethod]
+    public void bigEyeRoad_Test_FiveGames_Blue()
+    {
+        List<GameResult> gameResults = new List<GameResult>();
+        
+        gameResults.Add( new GameResult( Baccarat.B ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'player8', 'pair': 'p//}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'none'}, 
+        
+        var bigRoad = _generator.bigRoad( gameResults, 100, 6 );
+        var bigEyeRoad = _generator.bigEyeRoad( bigRoad );
+
+        IList<MoRoad> expectedBigEye = new BindingList<MoRoad>();
+
+        // Something is causing this red dot to be need detected in the algorithm.
+        expectedBigEye.Add( MoRoad.Blue );
+        
+        var tobeTested1 = Math.Min( bigEyeRoad.Count, expectedBigEye.Count );
+
+        for (int i = 0; i < tobeTested1; i++)
+        {
+            Assert.AreEqual( bigEyeRoad[i], expectedBigEye[i] );
+        }
+
+
+        
+    }
+
+    [TestMethod]
+    public void bigEyeRoad_Test_FiveGames_Red()
+    {
+        List<GameResult> gameResults = new List<GameResult>();
+
+        // [{'outcome': 'banker', 'natural': 'none', 'pair': 'none'}, {'outcome': 'banker', 'natural': 'none', 'pair': 'none'}, {'outcome': 'player', 'natural': 'none', 'pair': 'none'}, {'outcome': 'player', 'natural': 'none', 'pair': 'none'}, {'outcome': 'banker', 'natural': 'banker8', 'pair': 'none'}];
+        gameResults.Add( new GameResult( Baccarat.B ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'player8', 'pair': 'p//}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) );//, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) );//, 'natural': 'banker9', 'pair': 'none'}, 
+
+        var bigRoad = _generator.bigRoad( gameResults, 100, 6 );
+        var bigEyeRoad = _generator.bigEyeRoad( bigRoad );
+
+        IList<MoRoad> expectedBigEye = new BindingList<MoRoad>();
+
+        // Something is causing this red dot to be need detected in the algorithm.
+        expectedBigEye.Add( MoRoad.Red );
+
+        var tobeTested1 = Math.Min( bigEyeRoad.Count, expectedBigEye.Count );
+
+        for (int i = 0; i < tobeTested1; i++)
+        {
+            Assert.AreEqual( bigEyeRoad[i], expectedBigEye[i] );
+        }
+
+
+
+    }
+
 }
+
