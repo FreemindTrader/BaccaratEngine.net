@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -85,7 +86,7 @@ namespace BaccaratEngine
 
                         if (lastItem.Outcome == Baccarat.T)
                         {
-                            if (lastItemInResults != null )
+                            if (lastItemInResults != null)
                             {
                                 lastItemInResults.Ties = tieStack;          // Assign the old TieStack to it
                                 tieStack = new List<GameResult>();          // here we create a new list
@@ -95,7 +96,7 @@ namespace BaccaratEngine
                                 {
                                     logicalColumnNumber++;
                                 }
-                            }                            
+                            }
                         }
                         else if (lastItem.Outcome != result.Outcome)
                         {
@@ -111,7 +112,7 @@ namespace BaccaratEngine
                             // If this item is the same as the outcome of current game and not a tie, then we must clear the tie stack
                             tieStack = new List<GameResult>();
                             lastTieItem = null;
-                        }                        
+                        }
                     }
 
                     var probeColumn = logicalColumnNumber;
@@ -169,7 +170,7 @@ namespace BaccaratEngine
             // There were no outcomes added to the placement map.
             // We only have ties.
 
-            if (returnList.Count == 0 && tieStack.Count > 0 )
+            if (returnList.Count == 0 && tieStack.Count > 0)
             {
                 var newEntry = new bigRoadPos();
                 newEntry.Row = 0;
@@ -209,6 +210,152 @@ namespace BaccaratEngine
             }
 
             return validItems;
+        }
+
+
+        /// <summary>
+        /// Big road column definitions
+        /// </summary>
+        /// <param name="bigRoad">The big road data</param>
+        /// <returns>Dictionary< int, ColumnDefinitions > Map of columns</returns>
+        private Dictionary<int, ColumnDefinitions> bigRoadColumnDefinitions( IList<bigRoadPos> bigRoad )
+        {
+            var columnDictionary = new Dictionary<int, ColumnDefinitions>();
+
+            foreach (bigRoadPos item in bigRoad)
+            {
+                if (!columnDictionary.ContainsKey( item.LogicalColumn ))
+                {
+                    columnDictionary.Add( item.LogicalColumn, new ColumnDefinitions( item.LogicalColumn, 1, item.Result.Outcome ) );
+                }
+                else
+                {
+                    columnDictionary[item.LogicalColumn].LogicalColumnDepth++;
+                }
+            }
+
+            return columnDictionary;
+        }
+
+        /// <summary>
+        /// Derived Road using the given cycle
+        /// </summary>
+        /// <param name="bigRoad">bigRoad The big road data</param>
+        /// <param name="cycleLength">Cycle used to calculate the derived road</param>
+        /// <returns>A new list of derived road items (i.e., list of red/blue)</returns>
+        public IList<MoRoad> derivedRoad( IList<bigRoadPos> bigRoad, int cycleLength )
+        {
+            var columnDefinitionsDictionary = this.bigRoadColumnDefinitions( bigRoad );
+            /*
+                1.    Let k be the Cycle of the roadmap.  k = 1 for big eye road.
+                2.    Assume that the last icon added to the 大路 (Big Road) is on row m of column n.
+                2.a.    If m >= 2, we compare with column (n-k).
+                2.a.1.    If there is no such column (i.e. before the 1st column) …  No need to add any icon.
+                2.a.2.    If there is such a column, and the column has p icons.
+                2.a.2.1.    If m <= p  …  The answer is red.
+                2.a.2.2.    If m = p + 1  …  The answer is blue.
+                2.a.2.3.    If m > p + 1  … The answer is red.
+                2.b.    If m = 1, reverse the result (Banker to Player, and vice versa), determine the result as in rule 2.a above, and reverse the answer (Red to blue, and vice versa) to get the real answer.
+            */
+            IList<MoRoad> outcomes = new BindingList<MoRoad>();
+            var k = cycleLength;
+
+            var columnDefinitions = columnDefinitionsDictionary.Values;
+
+            foreach (var bigRoadColumn in columnDefinitions)
+            {
+                var outcome = MoRoad.Blue;
+                var n = bigRoadColumn.LogicalColumn;
+
+                for (var m = 0; m < bigRoadColumn.LogicalColumnDepth; m++)
+                {
+                    var rowMDepth = m + 1;
+
+                    if (rowMDepth >= 2)
+                    {
+                        var compareColumn = n - k;
+
+                        // Step 2.a.1 - No column exists here.
+                        // I seemed to have fixed a bug in the original Javascript code for BigEyeRoad. The second Column Second row was not calculated becuase the code was as followed
+                        // if (compareColumn <= 0)
+                        // I changed it to be as followed.
+                        // Column 0 is there. Because in C#, we represent the first column as 0, instead of 1.
+                        if (compareColumn < 0)
+                            continue;
+
+                        // Step 2.a.1
+                        if ( ! columnDefinitionsDictionary.ContainsKey( compareColumn ) )
+                            continue;
+
+                        var p = columnDefinitionsDictionary[compareColumn].LogicalColumnDepth;
+
+                        if (rowMDepth <= p)
+                        {
+                            outcome = MoRoad.Red;
+                        }
+                        else if (rowMDepth == (p + 1))
+                        {
+                            outcome = MoRoad.Blue;
+                        }
+                        else if (rowMDepth > (p + 1))
+                        {
+                            outcome = MoRoad.Red;
+                        }
+
+                        outcomes.Add( outcome );
+                    }
+                    else
+                    {
+                        var kDistanceColumn = n - (k + 1);
+                        var leftColumn = n - 1;
+
+                        if ( columnDefinitionsDictionary.ContainsKey( kDistanceColumn ) && columnDefinitionsDictionary.ContainsKey( leftColumn ) )
+                        {
+                            var kDistanceColumnDefinition = columnDefinitionsDictionary[kDistanceColumn];
+                            var leftColumnDefinition = columnDefinitionsDictionary[leftColumn];
+
+                            if (kDistanceColumnDefinition.LogicalColumnDepth == leftColumnDefinition.LogicalColumnDepth)
+                                outcome = MoRoad.Red;
+                            else
+                                outcome = MoRoad.Blue;
+
+                            outcomes.Add( outcome );
+                        }
+                    }
+                }
+            }
+
+            return outcomes;
+        }
+
+        /// <summary>
+        /// the big eye road - derived road with a cycle of 1
+        /// </summary>
+        /// <param name="bigRoad">The big road data</param>
+        /// <returns>A new list of derived road items</returns>
+        public IList<MoRoad> bigEyeRoad( IList<bigRoadPos> bigRoad )
+        {
+            return derivedRoad( bigRoad, 1 );
+        }
+
+        /// <summary>
+        /// the big eye road - derived road with a cycle of 2
+        /// </summary>
+        /// <param name="bigRoad">The big road data</param>
+        /// <returns>A new list of derived road items</returns>
+        public IList<MoRoad> smallRoad( IList<bigRoadPos> bigRoad )
+        {
+            return derivedRoad( bigRoad, 2 );
+        }
+
+        /// <summary>
+        /// the cockroach pig - derived road with a cycle of 3
+        /// </summary>
+        /// <param name="bigRoad">The big road data</param>
+        /// <returns>A new list of derived road items</returns>
+        public IList<MoRoad> cockroachPig( IList<bigRoadPos> bigRoad )
+        {
+            return derivedRoad( bigRoad, 3 );
         }
     } 
 }

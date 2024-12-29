@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BaccaratEngine.Tests;
 
@@ -375,5 +376,473 @@ public class RoadMapGenerator_Test
         Assert.AreEqual( result[2].Row,             0 );
         Assert.AreEqual( result[2].LogicalColumn,   2 );
         Assert.AreEqual( result[2].Ties.Count,      0 );
+    }
+
+    [TestMethod]
+    public void bigEyeRoad_TestA()
+    {
+        IList<MoRoad> expectedBigEye = new BindingList<MoRoad>();
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue ); 
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red ); 
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );         
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue ); 
+        expectedBigEye.Add( MoRoad.Red ); 
+        expectedBigEye.Add( MoRoad.Blue ); 
+        expectedBigEye.Add( MoRoad.Red ); 
+        
+        expectedBigEye.Add( MoRoad.Blue ); 
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+
+
+        List<GameResult> gameResults = new List<GameResult>();
+                                                                   //[
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'banker'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'p )); //},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'both'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player8', 'pair': 'p )); //},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker9', 'pair': 'p )); //},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player8', 'pair': 'both'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'banker'},
+        gameResults.Add( new GameResult( Baccarat.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'player8', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker9', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( Baccarat.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'p )); //},
+        gameResults.Add( new GameResult( Baccarat.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'}];
+
+        var bigRoad = _generator.bigRoad( gameResults, 100, 6 );
+        var result = _generator.bigEyeRoad( bigRoad );
+
+        //Assert.AreEqual( result.Count, expectedBigEye.Count );
+
+        var tobeTested = Math.Min( result.Count, expectedBigEye.Count );
+
+        for (int i = 0; i < tobeTested; i++)
+        {
+            Assert.AreEqual( result[i], expectedBigEye[i] );
+        }
+    }
+
+    [TestMethod]
+    public void bigEyeRoad_TestB()
+    {
+        IList<MoRoad> expectedBigEye = new BindingList<MoRoad>();
+
+        // Something is causing this red dot to be need detected in the algorithm.
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+
+
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Blue );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+        expectedBigEye.Add( MoRoad.Red );
+
+        
+
+
+        List<GameResult> gameResults = new List<GameResult>();
+
+
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'p )); //}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'p )); //}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'banker'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'player8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker8', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'player9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'p )); //}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.T ) ); //natural': 'none', 'pair': 'banker'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'banker9', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
+        gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}];
+
+        var bigRoad = _generator.bigRoad( gameResults, 100, 6 );
+        var result = _generator.bigEyeRoad( bigRoad );
+       
+
+        //Assert.AreEqual( result.Count, expectedBigEye.Count );
+
+        var tobeTested = Math.Min( result.Count, expectedBigEye.Count );
+
+        for (int i = 0; i < tobeTested; i++)
+        {
+            Assert.AreEqual( result[i], expectedBigEye[i] );
+        }
+
+        var smallRoad = _generator.smallRoad( bigRoad );
+
+        IList<MoRoad> expectedSmallRoad = new BindingList<MoRoad>();
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );        
+
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Blue );
+
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+        expectedSmallRoad.Add( MoRoad.Red );
+
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+        expectedSmallRoad.Add( MoRoad.Blue );
+
+
+        var tobeTested2 = Math.Min( smallRoad.Count, expectedSmallRoad.Count );
+
+        for (int i = 0; i < tobeTested2; i++)
+        {
+            Assert.AreEqual( smallRoad[i], expectedSmallRoad[i] );
+        }
     }
 }
