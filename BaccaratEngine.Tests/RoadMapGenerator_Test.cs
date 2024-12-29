@@ -777,10 +777,7 @@ public class RoadMapGenerator_Test
         gameResults.Add( new GameResult( Baccarat.B ) ); // 'natural': 'none', 'pair': 'none'}];
 
         var bigRoad = _generator.bigRoad( gameResults, 100, 6 );
-        var result = _generator.bigEyeRoad( bigRoad );
-       
-
-        //Assert.AreEqual( result.Count, expectedBigEye.Count );
+        var result = _generator.bigEyeRoad( bigRoad );      
 
         var tobeTested = Math.Min( result.Count, expectedBigEye.Count );
 
@@ -788,6 +785,9 @@ public class RoadMapGenerator_Test
         {
             Assert.AreEqual( result[i], expectedBigEye[i] );
         }
+
+
+
 
         var smallRoad = _generator.smallRoad( bigRoad );
 
@@ -843,6 +843,93 @@ public class RoadMapGenerator_Test
         for (int i = 0; i < tobeTested2; i++)
         {
             Assert.AreEqual( smallRoad[i], expectedSmallRoad[i] );
+        }
+
+
+        var cockroachPig = _generator.cockroachPig( bigRoad );
+
+        IList<MoRoad> expectedcockroachPig = new BindingList<MoRoad>();
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Blue );
+
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+        
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Blue );
+
+
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Blue );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+        expectedcockroachPig.Add( MoRoad.Red );
+
+
+        var tobeTested3 = Math.Min( cockroachPig.Count, expectedcockroachPig.Count );
+
+        for (int i = 0; i < tobeTested3; i++)
+        {
+            Assert.AreEqual( cockroachPig[i], expectedcockroachPig[i] );
         }
     }
 }
