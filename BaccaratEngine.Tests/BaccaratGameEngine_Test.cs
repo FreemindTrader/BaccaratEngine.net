@@ -71,15 +71,15 @@ public class BaccaratGameEngine_Test
             var hand = _gameEngine.dealGame();
             var result = _gameResult.calculateGameResult( hand );
 
-            switch (result.Outcomes)
+            switch (result.Outcome)
             {
-                case GameResultOutcomes.Tie:
+                case BpOutcome.T:
                 ties++;
                 break;
-                case GameResultOutcomes.Banker:
+                case BpOutcome.B:
                 bankerWins++;
                 break;
-                case GameResultOutcomes.Player:
+                case BpOutcome.P:
                 playerWins++;
                 break;
             }

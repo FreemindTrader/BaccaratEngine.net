@@ -31,10 +31,10 @@ namespace BaccaratEngine
         public GameResult calculateGameResult( Hand hand )
         {
             var game = new GameResult( hand );
-            game.Outcomes = this.calculateOutcome( hand );
-            game.IsNatural = this.calculateNatural( game.Outcomes, hand );
+            game.Outcome = this.calculateOutcome( hand );
+            game.IsNatural = this.calculateNatural( game.Outcome, hand );
             game.HasPair = this.calculatePairs( hand );
-            game.IsMonster = this.checkforMonster( game.Outcomes, hand );
+            game.IsMonster = this.checkforMonster( game.Outcome, hand );
 
             return game;
         }
@@ -61,16 +61,16 @@ namespace BaccaratEngine
         /// </summary>
         /// <param name="hand">The hand for the baccarat game played</param>
         /// <returns>The outcome</returns>
-        public GameResultOutcomes calculateOutcome( Hand hand )
+        public BpOutcome calculateOutcome( Hand hand )
         {
             var playerValue = calculateHandValue( hand.Playercards );
             var bankerValue = calculateHandValue( hand.Bankercards );
 
             var difference = bankerValue - playerValue;
 
-            if (difference == 0) return GameResultOutcomes.Tie;
-            else if (difference > 0) return GameResultOutcomes.Banker;
-            else return GameResultOutcomes.Player;
+            if (difference == 0) return BpOutcome.T;
+            else if (difference > 0) return BpOutcome.B;
+            else return BpOutcome.P;
         }
 
         /// <summary>
@@ -79,39 +79,39 @@ namespace BaccaratEngine
         /// <param name="outcome">The outcome for the game played</param>
         /// <param name="hand">The hand for the baccarat game played</param>
         /// <returns></returns>
-        public GameResultNatural calculateNatural( GameResultOutcomes outcome, Hand hand )
+        public BpNatural calculateNatural( BpOutcome outcome, Hand hand )
         {
             switch (outcome)
             {
-                case GameResultOutcomes.Player:
+                case BpOutcome.P:
                 {
                     var handValue = this.calculateHandValue( hand.Playercards );
                     if (handValue == 8)
                     {
-                        return GameResultNatural.PlayerNatural8;
+                        return BpNatural.P8;
                     }
                     else if (handValue == 9)
-                        return GameResultNatural.PlayerNatural9;
+                        return BpNatural.P9;
                 }
                 break;
 
-                case GameResultOutcomes.Banker:
+                case BpOutcome.B:
                 {
                     var handValue = this.calculateHandValue( hand.Bankercards );
                     if (handValue == 8)
                     {
-                        return GameResultNatural.BankerNatural8;
+                        return BpNatural.B8;
                     }
                     else if (handValue == 9)
-                        return GameResultNatural.BankerNatural9;
+                        return BpNatural.B9;
                 }
                 break;
 
                 default:
-                return GameResultNatural.NoNatural;
+                return BpNatural.None;
             }
 
-            return GameResultNatural.NoNatural;
+            return BpNatural.None;
         }
 
 
@@ -120,67 +120,67 @@ namespace BaccaratEngine
         /// </summary>
         /// <param name="hand">The hand for the baccarat game played.</param>
         /// <returns></returns>
-        public GameResultPair calculatePairs( Hand hand )
+        public BpPair calculatePairs( Hand hand )
         {
             var isPlayerPair = hand.PlayerHasPairs();
             var isBankerPair = hand.BankerHasPairs();
 
             if (isPlayerPair && isBankerPair)
-                return GameResultPair.BothPair;
+                return BpPair.BBPP;
             else if (isPlayerPair)
-                return GameResultPair.PlayerPair;
+                return BpPair.PP;
             else if (isBankerPair)
-                return GameResultPair.BankerPair;
+                return BpPair.BB;
             else
-                return GameResultPair.NoPair;
+                return BpPair.None;
         }
 
-        public GameResultMonster checkforMonster( GameResultOutcomes outcome, Hand hand )
+        public BpMonster checkforMonster( BpOutcome outcome, Hand hand )
         {
             var playerValue = this.calculateHandValue( hand.Playercards );
             var bankerValue = this.calculateHandValue( hand.Bankercards );
 
             switch (outcome)
             {
-                case GameResultOutcomes.Player:
+                case BpOutcome.P:
                 {
                     if (playerValue == 7 && bankerValue == 6)
-                        return GameResultMonster.Lucky73;
+                        return BpMonster.Lucky73;
                     else if (playerValue == 7)
-                        return GameResultMonster.Lucky7;
+                        return BpMonster.Lucky7;
 
                     if ( playerValue == 8 && hand.Playercards.Count == 3)
                     {
-                        return GameResultMonster.Panda;
+                        return BpMonster.Panda;
                     }
                 }
                 break;
 
-                case GameResultOutcomes.Banker:
+                case BpOutcome.B:
                 {
                     if ( bankerValue == 6 )
                     {
-                        if (hand.Bankercards.Count == 3) return GameResultMonster.Lucky63;
+                        if (hand.Bankercards.Count == 3) return BpMonster.Lucky63;
 
-                        return GameResultMonster.Lucky6;
+                        return BpMonster.Lucky6;
                     }                                            
                 }
                 break;
 
-                case GameResultOutcomes.Tie:
+                case BpOutcome.T:
                 {
                     var handValue = this.calculateHandValue( hand.Bankercards );
                     if (handValue == 6)
                     {
-                        return GameResultMonster.TigerTie;
+                        return BpMonster.TigerTie;
                     }
 
-                    return GameResultMonster.Tie;
+                    return BpMonster.Tie;
                 }
                 break;
             }
 
-            return GameResultMonster.NoMonster;
+            return BpMonster.None;
         }
 
     }

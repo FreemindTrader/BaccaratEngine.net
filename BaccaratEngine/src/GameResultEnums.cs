@@ -6,33 +6,39 @@ using System.Threading.Tasks;
 
 namespace BaccaratEngine
 {
-    public enum GameResultOutcomes
+    public enum MoRoad
     {
-        Player,
-        Banker,
-        Tie
+        Red, 
+        Blue
     }
 
-    public enum GameResultNatural
+    public enum BpOutcome
     {
-        NoNatural,
-        PlayerNatural8,
-        PlayerNatural9,
-        BankerNatural8,
-        BankerNatural9        
+        P,
+        B,
+        T
     }
 
-    public enum GameResultPair
+    public enum BpNatural
     {
-        NoPair,
-        PlayerPair,
-        BankerPair,
-        BothPair,        
+        None,
+        P8,
+        P9,
+        B8,
+        B9        
     }
 
-    public enum GameResultMonster
+    public enum BpPair
     {
-        NoMonster = 0,
+        None,
+        PP,
+        BB,
+        BBPP,        
+    }
+
+    public enum BpMonster
+    {
+        None = 0,
         Tie =1,
         TigerTie, 
         Lucky6,        

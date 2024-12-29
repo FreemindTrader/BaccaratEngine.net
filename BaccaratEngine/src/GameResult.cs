@@ -8,20 +8,42 @@ namespace BaccaratEngine
 {
     public class GameResult
     {
-        private Hand _lastHand;
+        private Hand? _lastHand;
 
         public GameResult( Hand hand )
         {
             _lastHand = hand;
-        }                        
+        }  
+        
+        public GameResult( BpOutcome outcome )
+        {
+            Outcome = outcome;
+            IsNatural = BpNatural.None;
+            HasPair = BpPair.None;
+            IsMonster = BpMonster.None;
+            _lastHand = null;
+        }
 
-        public GameResultOutcomes Outcomes { get; set; }
+        public BpOutcome Outcome { get; set; }
 
-        public GameResultNatural IsNatural { get; set; }
+        public BpNatural IsNatural { get; set; }
 
-        public GameResultPair HasPair { get; set; }
+        public BpPair HasPair { get; set; }
 
-        public GameResultMonster IsMonster { get; set; }
+        public BpMonster IsMonster { get; set; }
+
+        public override string ToString() 
+        {
+            string output = "[" + Outcome.ToString() + "]";
+
+            if (IsNatural != BpNatural.None ) output += " " + IsNatural.ToString() + " ";
+
+            if (HasPair != BpPair.None) output += " [" + HasPair.ToString() + "] ";
+
+            if ( IsMonster != BpMonster.None ) output += " [" + IsMonster.ToString() + "] ";
+
+            return output;
+        }
 
     }
 }
