@@ -27,6 +27,14 @@ namespace BaccaratEngine
             }
         }
 
+        public Shoe Shoe
+        {
+            get
+            {
+                return _shoe;
+            }
+        }
+
         /// <summary>
         /// Performs a burn operation
         /// </summary>
