@@ -12,14 +12,14 @@ namespace BaccaratEngine
         Blue
     }
 
-    public enum BpOutcome
+    public enum Baccarat
     {
         P,
         B,
         T
     }
 
-    public enum BpNatural
+    public enum Baccarat89
     {
         None,
         P8,
@@ -28,7 +28,7 @@ namespace BaccaratEngine
         B9        
     }
 
-    public enum BpPair
+    public enum BaccaratPairs
     {
         None,
         PP,
@@ -36,7 +36,7 @@ namespace BaccaratEngine
         BBPP,        
     }
 
-    public enum BpMonster
+    public enum BaccaratXXX
     {
         None = 0,
         Tie =1,
