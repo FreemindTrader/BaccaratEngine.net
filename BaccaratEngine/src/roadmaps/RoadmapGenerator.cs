@@ -54,7 +54,7 @@ namespace BaccaratEngine
         }
 
 
-        public IList<bigRoadPos> bigRoad( List<GameResult> results, int columns = 6, int rows = 6, bool scroll = true )
+        public ( IList<bigRoadPos> RoadList, int MaxColumn ) bigRoad( List<GameResult> results, int columns = 6, int rows = 6, bool scroll = true )
         {
             IList<bigRoadPos> returnList = new List<bigRoadPos>();
 
@@ -194,7 +194,7 @@ namespace BaccaratEngine
                 returnList = this.scrollBigRoad( returnList, maximumColumnReached, columns );
             }
 
-            return returnList;
+            return ( returnList, maximumColumnReached) ;
         }
 
         public IList<bigRoadPos> scrollBigRoad( IList<bigRoadPos> results, int highestDrawingColumn, int drawingColumns )

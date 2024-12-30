@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 
 namespace BaccaratEngine
 {
-    public class DatabindingUI
+    public static class UIExtensions
     {
-        
-        public DatabindingUI()
+
+        public static BindingList<bigRoadPos> ToBindingList( this IList<bigRoadPos> bigRoadItems, int maxColumns )
         {
-            
+            var bindingList = new BindingList<bigRoadPos>();
+
+            return bindingList;
         }
     }
 
