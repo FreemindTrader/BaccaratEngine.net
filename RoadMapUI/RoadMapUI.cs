@@ -15,6 +15,7 @@ namespace RoadMapUI
     {
         private BindingList<xColumn> _roadMapColumns = new BindingList<xColumn>();
         Image _image = Image.FromFile( "c:\\circle2.png" );
+        Image _blue = Image.FromFile( "c:\\circle3.png" );
         public RoadMapUI()
         {
             InitializeComponent();            
@@ -43,9 +44,14 @@ namespace RoadMapUI
             // Paint images in cells if discounts > 0.
             //
             
-            e.Cache.DrawImage( _image, e.Bounds.Location );
+            if ( e.CellText == "1")
+                e.Cache.DrawImage( _image, e.Bounds.Location );
+            else if ( e.CellText == "2")
+                e.Cache.DrawImage( _blue, e.Bounds.Location );
 
-            e.Appearance.BackColor = Color.FromArgb( 60, Color.Salmon );
+            e.Appearance.BackColor = Color.FromArgb( 60, Color.White );
+
+            e.Handled = true;
         }
 
         private RoadmapGenerator _generator = new RoadmapGenerator();
