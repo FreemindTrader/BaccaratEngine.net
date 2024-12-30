@@ -14,43 +14,38 @@ namespace RoadMapUI
     public partial class RoadMapUI : DevExpress.XtraEditors.DirectXForm
     {
         private BindingList<xColumn> _roadMapColumns = new BindingList<xColumn>();
+        Image _image = Image.FromFile( "c:\\circle2.png" );
         public RoadMapUI()
         {
             InitializeComponent();            
             
-            _roadmapGrid.CustomDrawRowValueCell += _roadmapGrid_CustomDrawRowValueCell;
+            _roadmapGridControl.CustomDrawRowValueCell += _roadmapGrid_CustomDrawRowValueCell;
+            //_roadmapGridControl.CustomRecordCellEdit += _roadmapGridControl_CustomRecordCellEdit;
+        }
+
+        private void _roadmapGridControl_CustomRecordCellEdit( object sender, DevExpress.XtraVerticalGrid.Events.GetCustomRowCellEditEventArgs e )
+        {
+            
         }
 
         protected override void OnLoad( EventArgs e )
         {            
             PopulateData();
 
-            _roadmapGrid.DataSource = _roadMapColumns;
+            _roadmapGridControl.DataSource = _roadMapColumns;
 
             base.OnLoad( e );
         }
 
         private void _roadmapGrid_CustomDrawRowValueCell( object sender, DevExpress.XtraVerticalGrid.Events.CustomDrawRowValueCellEventArgs e )
         {
-            //_bigRoad.Where( s => s.Row == e.Row && s.Column == e.)
-            var cellIndex = e.CellIndex;
-            var recordIndex = e.RecordIndex;
+            //e.DefaultDraw();
+            // Paint images in cells if discounts > 0.
+            //
+            
+            e.Cache.DrawImage( _image, e.Bounds.Location );
 
-            var found = _bigRoad.Where( x => x.Column == recordIndex && x.Row == cellIndex );
-
-            //if ( found.Count() > 0 )
-            //{
-            //    var outcome = found.First();
-            //    e.CellText = outcome.Result.Outcome.ToString();
-            //}
-            //else
-            //{
-            //    e.CellText = "";
-            //}
-
-
-
-            //e.Handled = true;
+            e.Appearance.BackColor = Color.FromArgb( 60, Color.Salmon );
         }
 
         private RoadmapGenerator _generator = new RoadmapGenerator();
