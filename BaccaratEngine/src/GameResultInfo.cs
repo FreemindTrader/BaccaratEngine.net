@@ -17,6 +17,11 @@ namespace BaccaratEngine
     {
         private uint _gBits;
 
+        public uint MyUint
+        {
+            get { return _gBits; }
+        }
+
         public GBits( GResult gameResult, GNatural isNatural, GPair hasPair, GTie isTie, GMonster monster )
         {
             _gBits = 0;

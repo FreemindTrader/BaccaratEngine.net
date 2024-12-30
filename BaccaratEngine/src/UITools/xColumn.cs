@@ -4,61 +4,112 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.Common;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BaccaratEngine
 {    
-    public class xColumn
+    public class xColumn : INotifyPropertyChanged
     {
         public xColumn() { }
 
 
-        GBits row0;
-        GBits row5;
-        GBits row4;
-        GBits row3;
-        GBits row2;
-        GBits row1;
+        int row0;
+        int row5;
+        int row4;
+        int row3;
+        int row2;
+        int row1;
 
-        public GBits Row0
+        protected void OnPropertyChanged( [CallerMemberName] string propertyName = "" )
+        {
+            if (PropertyChanged != null)
+                PropertyChanged( this, new PropertyChangedEventArgs( propertyName ) );
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        public int Row0
         {
             get => row0;
-            set => row0 = value;
+            set
+            {
+                if (row0 != value)
+                {
+                    row0 = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
-        public GBits Row1
+        public int Row1
         {
             get => row1;
-            set => row1 = value;
+            set
+            {
+                if (row1 != value)
+                {
+                    row1 = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
 
-        public GBits Row2
+        public int Row2
         {
             get => row2;
-            set => row2 = value;
+            set
+            {
+                if (row2 != value)
+                {
+                    row2 = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
 
-        public GBits Row3
+        public int Row3
         {
             get => row3;
-            set => row3 = value;
+            set
+            {
+                if (row3 != value)
+                {
+                    row3 = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
 
-        public GBits Row4
+        public int Row4
         {
             get => row4;
-            set => row4 = value;
+            set
+            {
+                if (row4 != value)
+                {
+                    row4 = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
 
-        public GBits Row5
+        public int Row5
         {
             get => row5;
-            set => row5 = value;
+            set
+            {
+                if (row5 != value)
+                {
+                    row5 = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
         

@@ -29,25 +29,27 @@ namespace BaccaratEngine
                         switch (brCell.Row)
                         {
                             case 0:
-                            colEntry.Row0 = brCell.Result.RawData;
+                            colEntry.Row0 = (int)brCell.Result.RawData.MyUint;
                             break;
                             case 1:
-                            colEntry.Row1 = brCell.Result.RawData;
+                            colEntry.Row1 = (int)brCell.Result.RawData.MyUint;
                             break;
                             case 2:
-                            colEntry.Row2 = brCell.Result.RawData;
+                            colEntry.Row2 = (int)brCell.Result.RawData.MyUint;
                             break;
                             case 3:
-                            colEntry.Row3 = brCell.Result.RawData;
+                            colEntry.Row3 = (int)brCell.Result.RawData.MyUint;
                             break;
                             case 4:
-                            colEntry.Row4 = brCell.Result.RawData;
+                            colEntry.Row4 = (int)brCell.Result.RawData.MyUint;
                             break;
                             case 5:
-                            colEntry.Row5 = brCell.Result.RawData;
+                            colEntry.Row5 = (int)brCell.Result.RawData.MyUint;
                             break;
                         }
                     }
+
+                    bindingList.Add( colEntry );
                 }
 
                 
