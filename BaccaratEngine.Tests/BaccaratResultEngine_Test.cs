@@ -30,8 +30,8 @@ public class BaccaratResultEngine_Test
         var result = _engine.calculateGameResult( hand );
 
         Assert.AreEqual( result.Outcome, Baccarat.B );
-        Assert.AreEqual( result.IsNatural, Baccarat89.B9 );
-        Assert.AreEqual( result.HasPair, BaccaratPairs.None );
+        Assert.AreEqual( result.NaturalInfo, BaccaratEx.B9 );
+        Assert.AreEqual( result.PairInfo, BaccaratEx.None );
     }
 
     [TestMethod]
@@ -54,8 +54,8 @@ public class BaccaratResultEngine_Test
         var result = _engine.calculateGameResult( hand );
 
         Assert.AreEqual( result.Outcome, Baccarat.T );
-        Assert.AreEqual( result.IsNatural, Baccarat89.None );
-        Assert.AreEqual( result.HasPair, BaccaratPairs.None );
+        Assert.AreEqual( result.NaturalInfo, BaccaratEx.None );
+        Assert.AreEqual( result.PairInfo, BaccaratEx.None );
     }
 
     [TestMethod]
@@ -78,8 +78,8 @@ public class BaccaratResultEngine_Test
         var result = _engine.calculateGameResult( hand );
 
         Assert.AreEqual( result.Outcome, Baccarat.P );
-        Assert.AreEqual( result.IsNatural, Baccarat89.P8 );
-        Assert.AreEqual( result.HasPair, BaccaratPairs.BBPP );
+        Assert.AreEqual( result.NaturalInfo, BaccaratEx.P8 );
+        Assert.AreEqual( result.PairInfo, BaccaratEx.BBPP );
     }
 
     [TestMethod]
@@ -104,9 +104,9 @@ public class BaccaratResultEngine_Test
         var result = _engine.calculateGameResult( hand );
 
         Assert.AreEqual( result.Outcome, Baccarat.B );
-        Assert.AreEqual( result.IsNatural, Baccarat89.None );
-        Assert.AreEqual( result.HasPair, BaccaratPairs.PP );
-        Assert.AreEqual( result.IsMonster, BaccaratXXX.Lucky6 );
+        Assert.AreEqual( result.NaturalInfo, BaccaratEx.None );
+        Assert.AreEqual( result.PairInfo, BaccaratEx.PP );
+        Assert.AreEqual( result.MonsterInfo, BaccaratEx.B6 );
     }
 
     [TestMethod]
@@ -133,9 +133,9 @@ public class BaccaratResultEngine_Test
         var result = _engine.calculateGameResult( hand );
 
         Assert.AreEqual( result.Outcome, Baccarat.B );
-        Assert.AreEqual( result.IsNatural, Baccarat89.None );
-        Assert.AreEqual( result.HasPair, BaccaratPairs.BBPP );
-        Assert.AreEqual( result.IsMonster, BaccaratXXX.Lucky63 );
+        Assert.AreEqual( result.NaturalInfo, BaccaratEx.None );
+        Assert.AreEqual( result.PairInfo, BaccaratEx.BBPP );
+        Assert.AreEqual( result.MonsterInfo, BaccaratEx.B63 );
     }
 
     [TestMethod]
@@ -162,9 +162,9 @@ public class BaccaratResultEngine_Test
         var result = _engine.calculateGameResult( hand );
 
         Assert.AreEqual( result.Outcome, Baccarat.P );
-        Assert.AreEqual( result.IsNatural, Baccarat89.None );
-        Assert.AreEqual( result.HasPair, BaccaratPairs.BBPP );
-        Assert.AreEqual( result.IsMonster, BaccaratXXX.Lucky7 );
+        Assert.AreEqual( result.NaturalInfo, BaccaratEx.None );
+        Assert.AreEqual( result.PairInfo, BaccaratEx.BBPP );
+        Assert.AreEqual( result.MonsterInfo, BaccaratEx.P7 );
     }
 
     [TestMethod]
@@ -191,8 +191,8 @@ public class BaccaratResultEngine_Test
         var result = _engine.calculateGameResult( hand );
 
         Assert.AreEqual( result.Outcome, Baccarat.P );
-        Assert.AreEqual( result.IsNatural, Baccarat89.None );
-        Assert.AreEqual( result.HasPair, BaccaratPairs.BBPP );
-        Assert.AreEqual( result.IsMonster, BaccaratXXX.Lucky73 );
+        Assert.AreEqual( result.NaturalInfo, BaccaratEx.None );
+        Assert.AreEqual( result.PairInfo, BaccaratEx.BBPP );
+        Assert.AreEqual( result.MonsterInfo, BaccaratEx.P76 );
     }
 }

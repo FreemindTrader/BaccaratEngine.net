@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace BaccaratEngine
 {
+    
+
     public enum MoRoad
     {
         Red, 
@@ -14,39 +16,35 @@ namespace BaccaratEngine
 
     public enum Baccarat
     {
-        P,
-        B,
-        T
+        P = 10,
+        B = 20,
+        T = 30,
     }
 
-    public enum Baccarat89
-    {
-        None,
-        P8,
-        P9,
-        B8,
-        B9        
-    }
-
-    public enum BaccaratPairs
-    {
-        None,
-        PP,
-        BB,
-        BBPP,        
-    }
-
-    public enum BaccaratXXX
+    public enum BaccaratEx
     {
         None = 0,
-        Tie =1,
-        TigerTie, 
-        Lucky6,        
-        Lucky63 = 3,
-        Lucky7,
-        Lucky73,
-        Tiger,
-        Dragon,
-        Panda
-    }
+        P = 10,
+        P8 = 11,
+        P9 = 12,                
+        P7 = 13,
+        P76 = 14,
+        P83 = 15,
+        PP = 16,
+
+        B = 20,        
+        B8 = 21,
+        B9 = 22,
+        B6 = 23,
+        B63 = 24,
+        B7 = 25,
+        B76 = 26,
+        BB = 27,
+
+        T = 30,
+        T0 = 31,
+        T6 = 32,
+
+        BBPP = 40
+    }    
 }

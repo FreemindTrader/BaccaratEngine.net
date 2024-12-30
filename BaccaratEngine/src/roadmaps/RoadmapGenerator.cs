@@ -35,9 +35,9 @@ namespace BaccaratEngine
             return gameNumber % columnSize;
         }
 
-        public BindingList<beadPlatePos> beadPlate( List<GameResult> results, int columns = 6, int rows = 6 )
+        public List<beadPlatePos> beadPlate( List<GameResult> results, int columns = 6, int rows = 6 )
         {
-            var beamPlateGrid = new BindingList<beadPlatePos>();
+            var beamPlateGrid = new List<beadPlatePos>();
             var DisplayEntries = columns * rows;
             var ColumnSize = rows;
 
@@ -56,7 +56,7 @@ namespace BaccaratEngine
 
         public IList<bigRoadPos> bigRoad( List<GameResult> results, int columns = 6, int rows = 6, bool scroll = true )
         {
-            IList<bigRoadPos> returnList = new BindingList<bigRoadPos>();
+            IList<bigRoadPos> returnList = new List<bigRoadPos>();
 
             var placementMap = new Dictionary<string, bigRoadPos>();
 
@@ -257,7 +257,7 @@ namespace BaccaratEngine
                 2.a.2.3.    If m > p + 1  … The answer is red.
                 2.b.    If m = 1, reverse the result (Banker to Player, and vice versa), determine the result as in rule 2.a above, and reverse the answer (Red to blue, and vice versa) to get the real answer.
             */
-            IList<MoRoad> outcomes = new BindingList<MoRoad>();
+            IList<MoRoad> outcomes = new List<MoRoad>();
             var k = cycleLength;
 
             var columnDefinitions = columnDefinitionsDictionary.Values;

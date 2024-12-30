@@ -18,29 +18,105 @@ namespace BaccaratEngine
         public GameResult( Baccarat outcome )
         {
             Outcome = outcome;
-            IsNatural = Baccarat89.None;
-            HasPair = BaccaratPairs.None;
-            IsMonster = BaccaratXXX.None;
+            
+            NaturalInfo = BaccaratEx.None;
+            PairInfo = BaccaratEx.None;
+            MonsterInfo = BaccaratEx.None;
             _lastHand = null;
+        }        
+
+        public bool isNatural
+        {
+            get
+            {
+                return this.PlayerIsNatural || this.BankerIsNatural;
+            }
+                        
         }
+
+        public bool BankerIsNatural
+        {
+            get
+            {
+                return (NaturalInfo == BaccaratEx.B8 || NaturalInfo == BaccaratEx.B9);
+            }
+        }
+
+        public bool PlayerIsNatural
+        {
+            get
+            {
+                return (NaturalInfo == BaccaratEx.P8 || NaturalInfo == BaccaratEx.P9);
+            }
+        }
+
+        public bool HasPairs
+        {
+            get
+            {
+                return this.BankerHasPair || this.PlayerHasPair;
+            }
+        }
+
+        public bool BankerHasPair
+        {
+            get
+            {
+                return (PairInfo == BaccaratEx.BB || PairInfo == BaccaratEx.BBPP);
+            }
+        }
+
+        public bool PlayerHasPair
+        {
+            get
+            {
+                return (PairInfo == BaccaratEx.PP || PairInfo == BaccaratEx.BBPP);
+            }
+        }
+
+        public bool HasMonster
+        {
+            get
+            {
+                return this.BankerHasMonster || this.PlayerHasMonster;
+            }
+        }
+
+        public bool BankerHasMonster
+        {
+            get
+            {
+                return (MonsterInfo == BaccaratEx.B6 || MonsterInfo == BaccaratEx.B63);
+            }
+        }
+
+        public bool PlayerHasMonster
+        {
+            get
+            {
+                return (MonsterInfo == BaccaratEx.P7 || MonsterInfo == BaccaratEx.P76);
+            }
+        }
+
 
         public Baccarat Outcome { get; set; }
 
-        public Baccarat89 IsNatural { get; set; }
+        public BaccaratEx NaturalInfo { get; set; }
 
-        public BaccaratPairs HasPair { get; set; }
+        public BaccaratEx PairInfo { get; set; }
 
-        public BaccaratXXX IsMonster { get; set; }
+        public BaccaratEx MonsterInfo { get; set; }
+        
 
         public override string ToString() 
         {
             string output = "[" + Outcome.ToString() + "]";
 
-            if (IsNatural != Baccarat89.None ) output += " " + IsNatural.ToString() + " ";
+            if (NaturalInfo != BaccaratEx.None ) output += " " + NaturalInfo.ToString() + " ";
 
-            if (HasPair != BaccaratPairs.None) output += " [" + HasPair.ToString() + "] ";
+            if (PairInfo != BaccaratEx.None) output += " [" + PairInfo.ToString() + "] ";
 
-            if ( IsMonster != BaccaratXXX.None ) output += " [" + IsMonster.ToString() + "] ";
+            if ( MonsterInfo != BaccaratEx.None ) output += " [" + MonsterInfo.ToString() + "] ";
 
             return output;
         }
