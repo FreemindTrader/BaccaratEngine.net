@@ -70,7 +70,7 @@ namespace BaccaratEngine
             // the actual "drawn" roadmap.
             foreach (var result in results)
             {
-                if (result.Outcome == Baccarat.T)
+                if (result.Outcome == GResult.T)
                 {
                     tieStack.Add( result );
                     lastTieItem = result;
@@ -84,7 +84,7 @@ namespace BaccaratEngine
                         // last entered big road item.
                         var lastItemInResults = returnList.LastOrDefault();
 
-                        if (lastItem.Outcome == Baccarat.T)
+                        if (lastItem.Outcome == GResult.T)
                         {
                             if (lastItemInResults != null)
                             {

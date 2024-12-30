@@ -52,7 +52,7 @@ namespace BaccaratEngine
     {
         public ColumnDefinitions() { }
 
-        public ColumnDefinitions( int logicalColumn, int depth, Baccarat outcome ) 
+        public ColumnDefinitions( int logicalColumn, int depth, GResult outcome ) 
         {
             LogicalColumn = logicalColumn;
             LogicalColumnDepth = depth;
@@ -60,7 +60,7 @@ namespace BaccaratEngine
         }
 
 
-        Baccarat outcome;
+        GResult outcome;
         int logicalColumnDepth;
         int logicalColumn;
 
@@ -78,7 +78,7 @@ namespace BaccaratEngine
         }
 
 
-        public Baccarat Outcome
+        public GResult Outcome
         {
             get => outcome;
             set => outcome = value;

@@ -61,16 +61,16 @@ namespace BaccaratEngine
         /// </summary>
         /// <param name="hand">The hand for the baccarat game played</param>
         /// <returns>The outcome</returns>
-        public Baccarat calculateOutcome( Hand hand )
+        public GResult calculateOutcome( Hand hand )
         {
             var playerValue = calculateHandValue( hand.Playercards );
             var bankerValue = calculateHandValue( hand.Bankercards );
 
             var difference = bankerValue - playerValue;
 
-            if (difference == 0) return Baccarat.T;
-            else if (difference > 0) return Baccarat.B;
-            else return Baccarat.P;
+            if (difference == 0) return GResult.T;
+            else if (difference > 0) return GResult.B;
+            else return GResult.P;
         }
 
         public void ProcessExtraInfo( Hand hand, GameResult game )
@@ -90,32 +90,32 @@ namespace BaccaratEngine
         {
             switch (game.Outcome)
             {
-                case Baccarat.P:
+                case GResult.P:
                 {
                     var handValue = this.calculateHandValue( hand.Playercards );
                     if (handValue == 8)
                     {
-                        game.NaturalInfo = BaccaratEx.P8;
+                        game.NaturalInfo = GNatural.P8;
                     }
                     else if (handValue == 9)
-                        game.NaturalInfo = BaccaratEx.P9;
+                        game.NaturalInfo = GNatural.P9;
                 }
                 break;
 
-                case Baccarat.B:
+                case GResult.B:
                 {
                     var handValue = this.calculateHandValue( hand.Bankercards );
                     if (handValue == 8)
                     {
-                        game.NaturalInfo = BaccaratEx.B8;
+                        game.NaturalInfo = GNatural.B8;
                     }
                     else if (handValue == 9)
-                        game.NaturalInfo = BaccaratEx.B9;
+                        game.NaturalInfo = GNatural.B9;
                 }
                 break;
 
                 default:
-                game.NaturalInfo = BaccaratEx.None;
+                game.NaturalInfo = GNatural.None;
                 break;
             }
         }
@@ -132,13 +132,52 @@ namespace BaccaratEngine
             var isBankerPair = hand.BankerHasPairs();
 
             if (isPlayerPair && isBankerPair)
-                game.PairInfo = BaccaratEx.BBPP;
+            {
+                game.PairInfo = GPair.BBPP;
+            }                
             else if (isPlayerPair)
-                game.PairInfo = BaccaratEx.PP;            
+            {
+                switch(hand.Playercards[0].valueForCard())
+                {
+                    case 3:
+                    game.PairInfo = GPair.P33;
+                    break;
+
+                    case 4:
+                    game.PairInfo = GPair.P44;
+                    break;
+                    case 9:
+                    game.PairInfo = GPair.P99;
+                    break;
+
+                    default:
+                    game.PairInfo = GPair.PP;
+                    break;
+                }
+                
+            }                
             else if (isBankerPair)
-                game.PairInfo = BaccaratEx.BB;
+            {
+                switch (hand.Playercards[0].valueForCard())
+                {
+                    case 3:
+                    game.PairInfo = GPair.B33;
+                    break;
+
+                    case 4:
+                    game.PairInfo = GPair.B44;
+                    break;
+                    case 9:
+                    game.PairInfo = GPair.B99;
+                    break;
+
+                    default:
+                    game.PairInfo = GPair.BB;
+                    break;
+                }                
+            }                
             else
-                game.PairInfo = BaccaratEx.None;
+                game.PairInfo = GPair.None;
         }
 
         public void CheckForMonsters( Hand hand, GameResult game )
@@ -146,53 +185,53 @@ namespace BaccaratEngine
             var playerValue = this.calculateHandValue( hand.Playercards );
             var bankerValue = this.calculateHandValue( hand.Bankercards );
 
-            game.MonsterInfo = BaccaratEx.None;
+            game.MonsterInfo = GMonster.None;
 
             switch (game.Outcome)
             {
-                case Baccarat.P:
+                case GResult.P:
                 {
                     if (playerValue == 7 && bankerValue == 6)
-                        game.MonsterInfo = BaccaratEx.P76;
+                        game.MonsterInfo = GMonster.P76;
                     else if (playerValue == 7)
-                        game.MonsterInfo = BaccaratEx.P7;                    
+                        game.MonsterInfo = GMonster.P7;                    
 
                     if ( playerValue == 8 && hand.Playercards.Count == 3)
                     {
-                        game.MonsterInfo = BaccaratEx.P83;
+                        game.MonsterInfo = GMonster.P83;
                     }
                 }
                 break;
 
-                case Baccarat.B:
+                case GResult.B:
                 {
                     if ( bankerValue == 6 )
                     {
                         if (hand.Bankercards.Count == 3)
                         {
-                            game.MonsterInfo = BaccaratEx.B63;
+                            game.MonsterInfo = GMonster.B63;
                         }
                         else
                         {
-                            game.MonsterInfo = BaccaratEx.B6;
+                            game.MonsterInfo = GMonster.B6;
                         }                            
                     }                                            
                 }
                 break;
 
-                case Baccarat.T:
+                case GResult.T:
                 {
                     var handValue = this.calculateHandValue( hand.Bankercards );
                     if (handValue == 6)
                     {
-                        game.MonsterInfo = BaccaratEx.T6;                        
+                        game.MonsterInfo = GMonster.T6;                        
                     }
                     else if (handValue == 0)
                     {
-                        game.MonsterInfo = BaccaratEx.T0;
+                        game.MonsterInfo = GMonster.T0 ;
                     }
 
-                    game.MonsterInfo = BaccaratEx.T;
+                    game.MonsterInfo = GMonster.T;
                 }
                 break;
             }            

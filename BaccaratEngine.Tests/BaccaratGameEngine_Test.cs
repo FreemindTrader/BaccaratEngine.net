@@ -73,13 +73,13 @@ public class BaccaratGameEngine_Test
 
             switch (result.Outcome)
             {
-                case Baccarat.T:
+                case GResult.T:
                 ties++;
                 break;
-                case Baccarat.B:
+                case GResult.B:
                 bankerWins++;
                 break;
-                case Baccarat.P:
+                case GResult.P:
                 playerWins++;
                 break;
             }
