@@ -54,7 +54,7 @@ namespace BaccaratEngine
         }
 
 
-        public BindingList<xColumn> createBigRoadBindingList( int maxColumn )
+        public BindingList<xColumn> initBindingList( int maxColumn )
         {            
             var bindingList = new BindingList<xColumn>();
 
