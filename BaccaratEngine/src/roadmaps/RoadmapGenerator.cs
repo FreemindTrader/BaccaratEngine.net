@@ -236,16 +236,43 @@ namespace BaccaratEngine
                     // last entered big road item.
                     var lastItemInResults = returnList.LastOrDefault();
 
-                    if (result.Outcome != GResult.T && lastItemInResults.Result.Outcome != GResult.T )
+                    if ( result.Outcome == GResult.T )
+                    {
+                        // Since we append to the end of the previous Trend, we don't need to increment the logical Column
+                    }
+                    else
                     {                        
-                        if (lastItem.Outcome != result.Outcome)
+                        if (lastItemInResults.Result.Outcome != GResult.T)
                         {
-                            // If this item is different from the outcome of
-                            // the last game then we must place it in another column
-                            // lastItem is not tie so we can clear the tieStack
-                            logicalColumnNumber++;
+                            if (lastItem.Outcome != result.Outcome)
+                            {
+                                // If this item is different from the outcome of
+                                // the last game then we must place it in another column
+                                // lastItem is not tie so we can clear the tieStack
+                                logicalColumnNumber++;
+                            }
                         }
-                    }                    
+                        else
+                        {
+                            // Here we need to scan backward to check what's the last entry before Tie
+
+                            for (int i = returnList.Count - 2; i >= 0; i--)
+                            {
+                                if (returnList[i].Result.Outcome != GResult.T )
+                                {
+                                    if (returnList[i].Result.Outcome != result.Outcome)
+                                    {
+                                        // If this item is different from the outcome of
+                                        // the last game then we must place it in another column
+                                        // lastItem is not tie so we can clear the tieStack
+                                        logicalColumnNumber++;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }                                   
                 }
 
                 var probeColumn = logicalColumnNumber;
@@ -275,7 +302,7 @@ namespace BaccaratEngine
                     else if (probeRow + 1 >= rows)
                     {
                         // The spot below would go beyond the table bounds.
-                        probeColumn++;
+                        probeColumn++;                        
                     }
                     else if (!placementMap.ContainsKey( keySearchBelow ))
                     {
@@ -284,16 +311,27 @@ namespace BaccaratEngine
                     }
                     else if (result.Outcome == GResult.T || placementMap[keySearchBelow].Result.Outcome == GResult.T )
                     {
+                        var belowSearch = placementMap[keySearchBelow];
+                        var belowSearchLogicalColumn = belowSearch.LogicalColumn;
                         // The input is a Tie, we append to the previous trend
-                        probeRow++;
+
+                        if (belowSearchLogicalColumn == logicalColumnNumber )
+                        {
+                            probeRow++;
+                        }
+                        else
+                        {
+                            probeColumn++;
+                        }
+                        
                     }
-                    else if (placementMap[keySearchBelow].Result.Outcome == result.Outcome )
+                    else if (placementMap[keySearchBelow].Result.Outcome == result.Outcome /*|| placementMap[keySearchBelow].Result.Outcome == GResult.T */)
                     {
                         // The result below is the same outcome.
                         probeRow++;
                     }
                     else
-                    {
+                    {                        
                         probeColumn++;
                     }
                 }

@@ -16,7 +16,7 @@ namespace BaccaratEngine
         {
             var bindingList = new BindingList<xColumn>();
 
-            for (int i = 0; i < maxColumns; i++)
+            for (int i = 0; i <= maxColumns; i++)
             {
                 var perColumn = bigRoadItems.Where( x => x.Column == i ).OrderBy( x => x.Row );
 
@@ -59,7 +59,7 @@ namespace BaccaratEngine
 
         public static BindingList<xColumn> UpdateBindingList( this IList<bigRoadPos> bigRoadItems, BindingList<xColumn> input, int maxColumns )
         {            
-            for (int i = 0; i < maxColumns; i++)
+            for (int i = 0; i <= maxColumns; i++)
             {
                 var perColumn = bigRoadItems.Where( x => x.Column == i ).OrderBy( x => x.Row );
 

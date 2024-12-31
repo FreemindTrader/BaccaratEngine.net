@@ -190,7 +190,6 @@ public class RoadMapGenerator_Test
         Assert.AreEqual( result[0].Ties[1].Outcome, GResult.T );
     }
 
-    [TestMethod]
     public void bigRoadBankerWithTies_Test()
     {
         // When called with game results starting with ties and ending with a banker win
@@ -213,37 +212,234 @@ public class RoadMapGenerator_Test
         Assert.AreEqual( result[0].Column, 0 );
         Assert.AreEqual( result[0].Row, 0 );
         Assert.AreEqual( result[0].LogicalColumn, 0 );
-        
+
 
         Assert.AreEqual( result[1].Result.Outcome, GResult.B );
         Assert.AreEqual( result[1].Column, 0 );
         Assert.AreEqual( result[1].Row, 1 );
         Assert.AreEqual( result[1].LogicalColumn, 0 );
-        
+
 
         Assert.AreEqual( result[2].Result.Outcome, GResult.T );
         Assert.AreEqual( result[2].Column, 0 );
         Assert.AreEqual( result[2].Row, 2 );
         Assert.AreEqual( result[2].LogicalColumn, 0 );
-        
+
 
         Assert.AreEqual( result[3].Result.Outcome, GResult.T );
         Assert.AreEqual( result[3].Column, 0 );
         Assert.AreEqual( result[3].Row, 3 );
         Assert.AreEqual( result[3].LogicalColumn, 0 );
-        
+
 
         Assert.AreEqual( result[4].Result.Outcome, GResult.B );
         Assert.AreEqual( result[4].Column, 0 );
         Assert.AreEqual( result[4].Row, 4 );
         Assert.AreEqual( result[4].LogicalColumn, 0 );
-        
+
 
         Assert.AreEqual( result[5].Result.Outcome, GResult.P );
         Assert.AreEqual( result[5].Column, 1 );
         Assert.AreEqual( result[5].Row, 0 );
         Assert.AreEqual( result[5].LogicalColumn, 1 );
+
+    }
+
+    [TestMethod]
+    public void bigRoadBankerWithTies_PTBP_Test()
+    {
+        // When called with game results starting with ties and ending with a banker win
+        // Should return a big road with a single Banker win with ties        
+
+        List<GameResult> input_result = new List<GameResult>();
+        input_result.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'player9', 'pair': 'none'},
+        input_result.Add( new GameResult( GResult.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        input_result.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        input_result.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+
+        var result = _generator.bigRoadShowTies( input_result, 10, 6 ).RoadList;
+
+        Assert.IsNotNull( result );
+        Assert.AreEqual( result.Count, 4 );
+
+        Assert.AreEqual( result[0].Result.Outcome, GResult.P );
+        Assert.AreEqual( result[0].Column, 0 );
+        Assert.AreEqual( result[0].Row, 0 );
+        Assert.AreEqual( result[0].LogicalColumn, 0 );
         
+
+        Assert.AreEqual( result[1].Result.Outcome, GResult.T );
+        Assert.AreEqual( result[1].Column, 0 );
+        Assert.AreEqual( result[1].Row, 1 );
+        Assert.AreEqual( result[1].LogicalColumn, 0 );
+        
+
+        Assert.AreEqual( result[2].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[2].Column, 1 );
+        Assert.AreEqual( result[2].Row, 0 );
+        Assert.AreEqual( result[2].LogicalColumn, 1 );
+        
+
+        Assert.AreEqual( result[3].Result.Outcome, GResult.P );
+        Assert.AreEqual( result[3].Column, 2 );
+        Assert.AreEqual( result[3].Row, 0 );
+        Assert.AreEqual( result[3].LogicalColumn, 2 );                
+    }
+
+    [TestMethod]
+    public void bigRoadBanker8T8B8P_Test()
+    {
+        // When called with game results starting with ties and ending with a banker win
+        // Should return a big road with a single Banker win with ties        
+
+        List<GameResult> gameResults = new List<GameResult>();
+        gameResults.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.T ) );           //  {'outcome': 't )); //natural': 'none', 'pair': 'none'},
+
+
+        gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
+        gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'}
+        gameResults.Add( new GameResult( GResult.P ) );
+
+        var result = _generator.bigRoadShowTies( gameResults, 100, 6 ).RoadList;
+
+        Assert.IsNotNull( result );
+        Assert.AreEqual( result.Count, 24 );
+
+        Assert.AreEqual( result[0].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[0].Column, 0 );
+        Assert.AreEqual( result[0].Row, 0 );
+        Assert.AreEqual( result[0].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[1].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[1].Column, 0 );
+        Assert.AreEqual( result[1].Row, 1 );
+        Assert.AreEqual( result[1].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[2].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[2].Column, 0 );
+        Assert.AreEqual( result[2].Row, 2 );
+        Assert.AreEqual( result[2].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[3].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[3].Column, 0 );
+        Assert.AreEqual( result[3].Row, 3 );
+        Assert.AreEqual( result[3].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[4].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[4].Column, 0 );
+        Assert.AreEqual( result[4].Row, 4 );
+        Assert.AreEqual( result[4].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[5].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[5].Column, 0 );
+        Assert.AreEqual( result[5].Row, 5 );
+        Assert.AreEqual( result[5].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[6].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[6].Column, 1 );
+        Assert.AreEqual( result[6].Row, 5 );
+        Assert.AreEqual( result[6].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[7].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[7].Column, 2 );
+        Assert.AreEqual( result[7].Row, 5 );
+        Assert.AreEqual( result[7].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[8].Result.Outcome, GResult.T );
+        Assert.AreEqual( result[8].Column, 3 );
+        Assert.AreEqual( result[8].Row, 5 );
+        Assert.AreEqual( result[8].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[9].Result.Outcome, GResult.T );
+        Assert.AreEqual( result[9].Column, 4 );
+        Assert.AreEqual( result[9].Row, 5 );
+        Assert.AreEqual( result[9].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[10].Result.Outcome, GResult.T );
+        Assert.AreEqual( result[10].Column, 5 );
+        Assert.AreEqual( result[10].Row, 5 );
+        Assert.AreEqual( result[10].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[11].Result.Outcome, GResult.T );
+        Assert.AreEqual( result[11].Column, 6 );
+        Assert.AreEqual( result[11].Row, 5 );
+        Assert.AreEqual( result[11].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[12].Result.Outcome, GResult.T );
+        Assert.AreEqual( result[12].Column, 7 );
+        Assert.AreEqual( result[12].Row, 5 );
+        Assert.AreEqual( result[12].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[13].Result.Outcome, GResult.T );
+        Assert.AreEqual( result[13].Column, 8 );
+        Assert.AreEqual( result[13].Row, 5 );
+        Assert.AreEqual( result[13].LogicalColumn, 0 );
+        Assert.AreEqual( result[14].Result.Outcome, GResult.T );
+        Assert.AreEqual( result[14].Column, 9 );
+        Assert.AreEqual( result[14].Row, 5 );
+        Assert.AreEqual( result[14].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[15].Result.Outcome, GResult.T );
+        Assert.AreEqual( result[15].Column, 10 );
+        Assert.AreEqual( result[15].Row, 5 );
+        Assert.AreEqual( result[15].LogicalColumn, 0 );
+
+        Assert.AreEqual( result[16].Result.Outcome, GResult.P );
+        Assert.AreEqual( result[16].Column, 1 );
+        Assert.AreEqual( result[16].Row, 0 );
+        Assert.AreEqual( result[16].LogicalColumn, 1 );
+
+        Assert.AreEqual( result[17].Result.Outcome, GResult.P );
+        Assert.AreEqual( result[17].Column, 1 );
+        Assert.AreEqual( result[17].Row, 1 );
+        Assert.AreEqual( result[17].LogicalColumn, 1 );
+
+        Assert.AreEqual( result[18].Result.Outcome, GResult.P );
+        Assert.AreEqual( result[18].Column, 1 );
+        Assert.AreEqual( result[18].Row, 2 );
+        Assert.AreEqual( result[18].LogicalColumn, 1 );
+
+        Assert.AreEqual( result[19].Result.Outcome, GResult.P );
+        Assert.AreEqual( result[19].Column, 1 );
+        Assert.AreEqual( result[19].Row, 3 );
+        Assert.AreEqual( result[19].LogicalColumn, 1 );
+
+        Assert.AreEqual( result[20].Result.Outcome, GResult.P );
+        Assert.AreEqual( result[20].Column, 1 );
+        Assert.AreEqual( result[20].Row, 4 );
+        Assert.AreEqual( result[20].LogicalColumn, 1 );
+
+        Assert.AreEqual( result[21].Result.Outcome, GResult.P );
+        Assert.AreEqual( result[21].Column, 2 );
+        Assert.AreEqual( result[21].Row, 4);
+        Assert.AreEqual( result[21].LogicalColumn, 1 );
+
+        Assert.AreEqual( result[22].Result.Outcome, GResult.P );
+        Assert.AreEqual( result[22].Column, 3 );
+        Assert.AreEqual( result[22].Row, 4 );
+        Assert.AreEqual( result[22].LogicalColumn, 1 );
+
+
     }
 
     [TestMethod]
