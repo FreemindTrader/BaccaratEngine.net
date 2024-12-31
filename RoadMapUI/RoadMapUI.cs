@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using static DevExpress.Xpo.Helpers.AssociatedCollectionCriteriaHelper;
 
 namespace RoadMapUI
 {
@@ -199,8 +200,9 @@ namespace RoadMapUI
             gameResults.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'p )); //},
             gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'}];
 
-
-            var result = _generator.bigRoad( gameResults, 100, 6 );
+            
+            var result = _generator.bigRoadShowTies( gameResults, 100, 6 );
+            //var result = _generator.bigRoad( gameResults, 100, 6 );
             _bigRoad = result.RoadList;
             
             

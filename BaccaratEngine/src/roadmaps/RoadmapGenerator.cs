@@ -213,6 +213,127 @@ namespace BaccaratEngine
             return ( returnList, maximumColumnReached) ;
         }
 
+        public (IList<bigRoadPos> RoadList, int MaxColumn) bigRoadShowTies( List<GameResult> results, int columns = 6, int rows = 6, bool scroll = true )
+        {
+            IList<bigRoadPos> returnList = new List<bigRoadPos>();
+
+            var placementMap = new Dictionary<string, bigRoadPos>();
+                        
+            int logicalColumnNumber = 0;
+            int maximumColumnReached = 0;
+            GameResult lastItem = null;
+
+            // Build the logical column definitions that doesn't represent
+            // the actual "drawn" roadmap.
+            foreach (var result in results)
+            {
+                
+                
+                if (lastItem != null)
+                {
+                    // Add the ties that happened in between the last placed
+                    // big road item  and this new big road item to the
+                    // last entered big road item.
+                    var lastItemInResults = returnList.LastOrDefault();
+
+                    if (result.Outcome != GResult.T && lastItemInResults.Result.Outcome != GResult.T )
+                    {                        
+                        if (lastItem.Outcome != result.Outcome)
+                        {
+                            // If this item is different from the outcome of
+                            // the last game then we must place it in another column
+                            // lastItem is not tie so we can clear the tieStack
+                            logicalColumnNumber++;
+                        }
+                    }                    
+                }
+
+                var probeColumn = logicalColumnNumber;
+                int probeRow = 0;
+                bool done = false;
+
+                while (!done)
+                {
+                    var keySearch = String.Format( "{0}{1}", probeColumn, probeRow );
+                    var keySearchBelow = String.Format( "{0}{1}", probeColumn, probeRow + 1 );
+
+                    // Position available at current probe location
+                    if (!placementMap.ContainsKey( keySearch ))
+                    {
+                        var newEntry = new bigRoadPos();
+                        newEntry.Row = probeRow;
+                        newEntry.Column = probeColumn;
+                        newEntry.LogicalColumn = logicalColumnNumber;                            
+                        newEntry.Result = result;
+
+                        placementMap.Add( keySearch, newEntry );
+
+                        returnList.Add( newEntry );
+
+                        done = true;
+                    }
+                    else if (probeRow + 1 >= rows)
+                    {
+                        // The spot below would go beyond the table bounds.
+                        probeColumn++;
+                    }
+                    else if (!placementMap.ContainsKey( keySearchBelow ))
+                    {
+                        // The spot below is empty.
+                        probeRow++;
+                    }
+                    else if (result.Outcome == GResult.T || placementMap[keySearchBelow].Result.Outcome == GResult.T )
+                    {
+                        // The input is a Tie, we append to the previous trend
+                        probeRow++;
+                    }
+                    else if (placementMap[keySearchBelow].Result.Outcome == result.Outcome )
+                    {
+                        // The result below is the same outcome.
+                        probeRow++;
+                    }
+                    else
+                    {
+                        probeColumn++;
+                    }
+                }
+
+                maximumColumnReached = Math.Max( maximumColumnReached, probeColumn );
+                
+
+                lastItem = result;
+            }
+
+            // There were no outcomes added to the placement map.
+            // We only have ties.
+
+            //if (returnList.Count == 0 && tieStack.Count > 0)
+            //{
+            //    var newEntry = new bigRoadPos();
+            //    newEntry.Row = 0;
+            //    newEntry.Column = 0;
+            //    newEntry.LogicalColumn = 0;
+            //    newEntry.Ties = new List<GameResult>( tieStack );       // Here we deepClone the tie stack
+            //    newEntry.Result = lastTieItem;
+            //    lastTieItem = null;
+
+            //    returnList.Add( newEntry );
+            //}
+            //else if (returnList.Count > 0)
+            //{
+            //    var lastElement = returnList.Last();
+            //    lastElement.Ties = new List<GameResult>( tieStack );
+            //    lastTieItem = null;
+            //}
+
+            if (scroll)
+            {
+                returnList = this.scrollBigRoad( returnList, maximumColumnReached, columns );
+            }
+
+            return (returnList, maximumColumnReached);
+        }
+
         public IList<bigRoadPos> scrollBigRoad( IList<bigRoadPos> results, int highestDrawingColumn, int drawingColumns )
         {
             var highestDrawableIndex = drawingColumns - 1;

@@ -169,26 +169,81 @@ public class RoadMapGenerator_Test
     [TestMethod]
     public void bigRoad2T1B_Test()
     {
-        // When called with game results starting with ties and ending with a banker win
-        // Should return a big road with a single Banker win with ties        
+        // When called with game results of []
+        // Should return an empty big road        
 
         List<GameResult> input_result = new List<GameResult>();
         input_result.Add( new GameResult( GResult.T ) );
         input_result.Add( new GameResult( GResult.T ) );
-        input_result.Add( new GameResult( GResult.B ) );
 
         var result = _generator.bigRoad( input_result, 10, 6 ).RoadList;
 
         Assert.IsNotNull( result );
         Assert.AreEqual( result.Count, 1 );
 
-        Assert.AreEqual( result[0].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[0].Result.Outcome, GResult.T );
         Assert.AreEqual( result[0].Column, 0 );
         Assert.AreEqual( result[0].Row, 0 );
         Assert.AreEqual( result[0].LogicalColumn, 0 );
         Assert.AreEqual( result[0].Ties.Count, 2 );
         Assert.AreEqual( result[0].Ties[0].Outcome, GResult.T );
         Assert.AreEqual( result[0].Ties[1].Outcome, GResult.T );
+    }
+
+    [TestMethod]
+    public void bigRoadBankerWithTies_Test()
+    {
+        // When called with game results starting with ties and ending with a banker win
+        // Should return a big road with a single Banker win with ties        
+
+        List<GameResult> input_result = new List<GameResult>();
+        input_result.Add( new GameResult( GResult.B ) );
+        input_result.Add( new GameResult( GResult.B ) );
+        input_result.Add( new GameResult( GResult.T ) );
+        input_result.Add( new GameResult( GResult.T ) );
+        input_result.Add( new GameResult( GResult.B ) );
+        input_result.Add( new GameResult( GResult.P ) );
+
+        var result = _generator.bigRoadShowTies( input_result, 10, 6 ).RoadList;
+
+        Assert.IsNotNull( result );
+        Assert.AreEqual( result.Count, 6 );
+
+        Assert.AreEqual( result[0].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[0].Column, 0 );
+        Assert.AreEqual( result[0].Row, 0 );
+        Assert.AreEqual( result[0].LogicalColumn, 0 );
+        
+
+        Assert.AreEqual( result[1].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[1].Column, 0 );
+        Assert.AreEqual( result[1].Row, 1 );
+        Assert.AreEqual( result[1].LogicalColumn, 0 );
+        
+
+        Assert.AreEqual( result[2].Result.Outcome, GResult.T );
+        Assert.AreEqual( result[2].Column, 0 );
+        Assert.AreEqual( result[2].Row, 2 );
+        Assert.AreEqual( result[2].LogicalColumn, 0 );
+        
+
+        Assert.AreEqual( result[3].Result.Outcome, GResult.T );
+        Assert.AreEqual( result[3].Column, 0 );
+        Assert.AreEqual( result[3].Row, 3 );
+        Assert.AreEqual( result[3].LogicalColumn, 0 );
+        
+
+        Assert.AreEqual( result[4].Result.Outcome, GResult.B );
+        Assert.AreEqual( result[4].Column, 0 );
+        Assert.AreEqual( result[4].Row, 4 );
+        Assert.AreEqual( result[4].LogicalColumn, 0 );
+        
+
+        Assert.AreEqual( result[5].Result.Outcome, GResult.P );
+        Assert.AreEqual( result[5].Column, 1 );
+        Assert.AreEqual( result[5].Row, 0 );
+        Assert.AreEqual( result[5].LogicalColumn, 1 );
+        
     }
 
     [TestMethod]
