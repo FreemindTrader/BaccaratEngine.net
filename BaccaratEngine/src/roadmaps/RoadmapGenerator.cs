@@ -54,6 +54,22 @@ namespace BaccaratEngine
         }
 
 
+        public BindingList<xColumn> createBigRoadBindingList( int maxColumn )
+        {            
+            var bindingList = new BindingList<xColumn>();
+
+            for (int i = 0; i < maxColumn; i++)
+            {
+                var colEntry = new xColumn();
+
+                colEntry.Row0 = 0;
+
+                bindingList.Add( colEntry );
+            }
+            return bindingList;            
+        }
+
+
         public ( IList<bigRoadPos> RoadList, int MaxColumn ) bigRoad( List<GameResult> results, int columns = 6, int rows = 6, bool scroll = true )
         {
             IList<bigRoadPos> returnList = new List<bigRoadPos>();
