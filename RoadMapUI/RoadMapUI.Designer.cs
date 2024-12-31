@@ -35,7 +35,8 @@ namespace RoadMapUI
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager( typeof( RoadMapUI ) );
-            directXFormContainerControl1 = new DevExpress.XtraEditors.DirectXFormContainerControl();
+            _mainForm = new DevExpress.XtraEditors.DirectXFormContainerControl();
+            
             _roadmapGridControl = new DevExpress.XtraVerticalGrid.VGridControl();
             repositoryItemImageComboBox1 = new RepositoryItemImageComboBox();
             _svgBaccarat = new DevExpress.Utils.SvgImageCollection( components );
@@ -45,28 +46,29 @@ namespace RoadMapUI
             row3 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             row4 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             row5 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            _pngBaccarat = new DevExpress.Utils.ImageCollection( components );
-            directXFormContainerControl1.SuspendLayout();
+            Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            _mainForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)_roadmapGridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemImageComboBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_svgBaccarat).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)_pngBaccarat).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Root).BeginInit();
             SuspendLayout();
             // 
-            // directXFormContainerControl1
+            // _mainForm
             // 
-            directXFormContainerControl1.Controls.Add( _roadmapGridControl );
-            directXFormContainerControl1.Location = new System.Drawing.Point( 1, 46 );
-            directXFormContainerControl1.Margin = new Padding( 5 );
-            directXFormContainerControl1.Name = "directXFormContainerControl1";
-            directXFormContainerControl1.Size = new System.Drawing.Size( 1606, 877 );
-            directXFormContainerControl1.TabIndex = 0;
+            _mainForm.Controls.Add( _roadmapGridControl );
+            _mainForm.Location = new System.Drawing.Point( 1, 46 );
+            _mainForm.Margin = new Padding( 5 );
+            _mainForm.Name = "_mainForm";
+            _mainForm.Size = new System.Drawing.Size( 1606, 877 );
+            _mainForm.TabIndex = 0;
+            
             // 
             // _roadmapGridControl
             // 
-            _roadmapGridControl.Dock = DockStyle.Fill;
-            _roadmapGridControl.Location = new System.Drawing.Point( 0, 0 );
+            _roadmapGridControl.Location = new System.Drawing.Point( 326, 77 );
             _roadmapGridControl.Name = "_roadmapGridControl";
+            _roadmapGridControl.Dock = DockStyle.Fill;
             _roadmapGridControl.OptionsView.MaxRowAutoHeight = 48;
             _roadmapGridControl.OptionsView.MinRowAutoHeight = 48;
             _roadmapGridControl.RecordWidth = 48;
@@ -74,7 +76,7 @@ namespace RoadMapUI
             _roadmapGridControl.RightToLeft = RightToLeft.No;
             _roadmapGridControl.RowHeaderWidth = 15;
             _roadmapGridControl.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { row, row1, row2, row3, row4, row5 } );
-            _roadmapGridControl.Size = new System.Drawing.Size( 1606, 877 );
+            _roadmapGridControl.Size = new System.Drawing.Size( 1093, 277 );
             _roadmapGridControl.TabIndex = 0;
             // 
             // repositoryItemImageComboBox1
@@ -83,7 +85,7 @@ namespace RoadMapUI
             repositoryItemImageComboBox1.Buttons.AddRange( new EditorButton[ ] { new EditorButton( ButtonPredefines.Combo ) } );
             repositoryItemImageComboBox1.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center;
             repositoryItemImageComboBox1.HtmlImages = _svgBaccarat;
-            repositoryItemImageComboBox1.Items.AddRange( new ImageComboBoxItem[ ] { new ImageComboBoxItem( "", 0, 0 ), new ImageComboBoxItem( "", 1, 1 ), new ImageComboBoxItem( "", 2, 2 ), new ImageComboBoxItem( "", 3, 3 ) } );
+            repositoryItemImageComboBox1.Items.AddRange( new ImageComboBoxItem[ ] { new ImageComboBoxItem( "", 0, 0 ), new ImageComboBoxItem( "", 1, 1 ), new ImageComboBoxItem( "", 2, 2 ), new ImageComboBoxItem( "", 3, 3 ), new ImageComboBoxItem( "", 4, 4 ), new ImageComboBoxItem( "", 5, 5 ), new ImageComboBoxItem( "", 6, 6 ), new ImageComboBoxItem( "", 7, 7 ), new ImageComboBoxItem( "", 8, 8 ), new ImageComboBoxItem( "", 9, 9 ), new ImageComboBoxItem( "", 10, 10 ), new ImageComboBoxItem( "", 11, 11 ), new ImageComboBoxItem( "", 12, 12 ), new ImageComboBoxItem( "", 13, 13 ), new ImageComboBoxItem( "", 14, 14 ) } );
             repositoryItemImageComboBox1.LargeImages = _svgBaccarat;
             repositoryItemImageComboBox1.Name = "repositoryItemImageComboBox1";
             repositoryItemImageComboBox1.SmallImages = _svgBaccarat;
@@ -95,6 +97,17 @@ namespace RoadMapUI
             _svgBaccarat.Add( "banker", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.banker" ) );
             _svgBaccarat.Add( "player", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.player" ) );
             _svgBaccarat.Add( "tie", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.tie" ) );
+            _svgBaccarat.Add( "banker8", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.banker8" ) );
+            _svgBaccarat.Add( "banker9", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.banker9" ) );
+            _svgBaccarat.Add( "player8", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.player8" ) );
+            _svgBaccarat.Add( "player9", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.player9" ) );
+            _svgBaccarat.Add( "banker6", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.banker6" ) );
+            _svgBaccarat.Add( "banker63", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.banker63" ) );
+            _svgBaccarat.Add( "player7", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.player7" ) );
+            _svgBaccarat.Add( "player76", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.player76" ) );
+            _svgBaccarat.Add( "tigerTie", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.tigerTie" ) );
+            _svgBaccarat.Add( "B76_3", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.B76_3" ) );
+            _svgBaccarat.Add( "player83", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBaccarat.player83" ) );
             // 
             // row
             // 
@@ -138,44 +151,53 @@ namespace RoadMapUI
             row5.Properties.FieldName = "Row5";
             row5.Properties.RowEdit = repositoryItemImageComboBox1;
             // 
-            // _pngBaccarat
+            // Root
             // 
-            _pngBaccarat.ImageStream = (DevExpress.Utils.ImageCollectionStreamer)resources.GetObject( "_pngBaccarat.ImageStream" );
-            _pngBaccarat.Images.SetKeyName( 0, "B" );
-            _pngBaccarat.Images.SetKeyName( 1, "P" );
+            Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            Root.GroupBordersVisible = false;
+            Root.Name = "Root";
+            Root.Size = new System.Drawing.Size( 1606, 877 );
+            Root.TextVisible = false;
             // 
             // RoadMapUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF( 10F, 22F );
             AutoScaleMode = AutoScaleMode.Font;
-            ChildControls.Add( directXFormContainerControl1 );
+            ChildControls.Add( _mainForm );
             ClientSize = new System.Drawing.Size( 1608, 924 );
             Margin = new Padding( 5 );
             Name = "RoadMapUI";
             Text = "Baccarat RoadMap";
-            directXFormContainerControl1.ResumeLayout( false );
+            _mainForm.ResumeLayout( false );
             ((System.ComponentModel.ISupportInitialize)_roadmapGridControl).EndInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemImageComboBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)_svgBaccarat).EndInit();
-            ((System.ComponentModel.ISupportInitialize)_pngBaccarat).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Root).EndInit();
             ResumeLayout( false );
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.DirectXFormContainerControl directXFormContainerControl1;
+        private DevExpress.XtraEditors.DirectXFormContainerControl _mainForm;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox _imageCBRepo;
+        private DevExpress.Utils.SvgImageCollection _svgBaccarat;        
         private DevExpress.XtraVerticalGrid.VGridControl _roadmapGridControl;
+        private RepositoryItemImageComboBox _svgBaccaratComboxRepoItems;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigRoadGridRow0;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigRoadGridRow1;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigRoadGridRow2;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigRoadGridRow3;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigRoadGridRow4;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigRowGridRow5;
+        
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private RepositoryItemImageComboBox repositoryItemImageComboBox1;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow row;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow row1;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow row2;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow row3;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow row4;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow row5;
-
-        private DevExpress.Utils.ImageCollection _pngBaccarat;
-        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox _imageCBRepo;
-        private DevExpress.Utils.SvgImageCollection _svgBaccarat;
-        private RepositoryItemImageComboBox repositoryItemImageComboBox1;
     }
 }
 

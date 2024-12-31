@@ -23,8 +23,26 @@ namespace BaccaratEngine
             _gBits.ResultInfo = outcome;
             
             _lastHand = null;
-        }  
-        
+        }
+
+        public GameResult( GResult outcome, GNatural natural )
+        {
+            Outcome = outcome;
+            _gBits.ResultInfo = outcome;
+            _gBits.NaturalInfo = natural;
+
+            _lastHand = null;
+        }
+
+        public GameResult( GResult outcome, GMonster monster )
+        {
+            Outcome = outcome;
+            _gBits.ResultInfo = outcome;
+            _gBits.MonsterInfo = monster;
+
+            _lastHand = null;
+        }
+
         public GBits RawData
         {
             get { return _gBits; }

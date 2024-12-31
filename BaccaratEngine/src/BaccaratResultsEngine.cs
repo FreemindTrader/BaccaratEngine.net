@@ -196,7 +196,7 @@ namespace BaccaratEngine
                     else if (playerValue == 7)
                         game.MonsterInfo = GMonster.P7;                    
 
-                    if ( playerValue == 8 && hand.Playercards.Count == 3)
+                    if ( playerValue == 8 && hand.Playercards.Count == 3 && hand.Bankercards.Count == 3)
                     {
                         game.MonsterInfo = GMonster.P83;
                     }
@@ -215,7 +215,14 @@ namespace BaccaratEngine
                         {
                             game.MonsterInfo = GMonster.B6;
                         }                            
-                    }                                            
+                    }      
+                    else if (bankerValue == 7 && playerValue == 6)
+                    {
+                        if (hand.Bankercards.Count == 3 && hand.Playercards.Count == 3)
+                        {
+                            game.MonsterInfo = GMonster.B763;
+                        }
+                    }
                 }
                 break;
 

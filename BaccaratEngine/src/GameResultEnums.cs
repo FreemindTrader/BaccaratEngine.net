@@ -30,30 +30,7 @@ namespace BaccaratEngine
         public const int POS_GMonster_length = 5;        
     }
 
-
     
-    //public enum Baccarat
-    //{
-    //    None = 0,
-    //    B = 1,          // Banker win
-    //    P = 2,          // Player Win
-    //    T = 3,          // Game is Tie
-    //    B8 = 4,         // Banker natural 8
-    //    B9 = 5,         // Banker natural 9
-    //    P8 = 6,         // Player natural 8
-    //    P9 = 7,         // Player natural 9
-    //    BB = 8,         // Banker has pair
-    //    PP = 9,         // Player has pair
-    //    T6 = 10,        // Tiger Tie
-    //    T0 = 11,        // Tie at 0
-
-    //    B6 = 12,        // Lucky 6
-    //    B63 = 13,       // Lucky 6 with 3 cards
-    //    P7 = 14,        // player lucky 7
-    //    P76 = 15,       // Player lucky 7 with over 6        
-    //    P83 = 16,       // Player get 8 with 3 cards        
-    //}
-
     public enum GResult : byte
     {
         None = 0,
@@ -85,6 +62,8 @@ namespace BaccaratEngine
         BBPP
     }
 
+    
+
     public enum GTie : byte
     {
         None = 0,
@@ -102,8 +81,42 @@ namespace BaccaratEngine
         P7 = 3,        // player lucky 7
         P76 = 4,       // Player lucky 7 with over 6        
         P83 = 5,       // Player get 8 with 3 cards 
+        B763 = 6,
         T0, 
         T6,
         T
-    }    
+    }
+
+    public enum GImageIndex
+    {
+        None = 0,
+        B = 1,          // Banker win
+        P = 2,          // Player Win
+        T = 3,          // Game is Tie
+        B8 = 4,         // Banker natural 8
+        B9 = 5,         // Banker natural 9
+        P8 = 6,         // Player natural 8
+        P9 = 7,         // Player natural 9
+        B6 = 8,        // Lucky 6
+        B63 = 9,       // Lucky 6 with 3 cards
+        P7 = 10,        // player lucky 7
+        P76 = 11,       // Player lucky 7 with over 6        
+        T6 = 12,        // Tiger Tie
+        B763 = 13,
+        P83 = 14,       // Player get 8 with 3 cards        
+        
+        
+        B33 = 24,
+        B44 = 15,
+        B99 = 16,
+        P33 = 17,
+        P44 = 18,
+        P99 = 19,
+        BBPP = 20,
+        T0 = 21,        // Tie at 0
+        BB = 22,         // Banker has pair
+        PP = 23,         // Player has pair
+        
+    }
+
 }

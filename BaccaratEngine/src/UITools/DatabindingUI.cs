@@ -72,22 +72,22 @@ namespace BaccaratEngine
                         switch (brCell.Row)
                         {
                             case 0:
-                            colEntry.Row0 = (int)brCell.Result.RawData.MyUint;
+                            colEntry.Row0 = (int)brCell.GetImageIndex();
                             break;
                             case 1:
-                            colEntry.Row1 = (int)brCell.Result.RawData.MyUint;
+                            colEntry.Row1 = (int)brCell.GetImageIndex();
                             break;
                             case 2:
-                            colEntry.Row2 = (int)brCell.Result.RawData.MyUint;
+                            colEntry.Row2 = (int)brCell.GetImageIndex();
                             break;
                             case 3:
-                            colEntry.Row3 = (int)brCell.Result.RawData.MyUint;
+                            colEntry.Row3 = (int)brCell.GetImageIndex();
                             break;
                             case 4:
-                            colEntry.Row4 = (int)brCell.Result.RawData.MyUint;
+                            colEntry.Row4 = (int)brCell.GetImageIndex();
                             break;
                             case 5:
-                            colEntry.Row5 = (int)brCell.Result.RawData.MyUint;
+                            colEntry.Row5 = (int)brCell.GetImageIndex();
                             break;
                         }
                     }                    
