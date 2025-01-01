@@ -38,19 +38,23 @@ namespace RoadMapUI
             _mainForm = new DevExpress.XtraEditors.DirectXFormContainerControl();
             _uiLayoutControl = new DevExpress.XtraLayout.LayoutControl();
             _cockRoachGrid = new DevExpress.XtraVerticalGrid.VGridControl();
-            row24 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row25 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row26 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row27 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row28 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row29 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _cockRoachCBEdit = new RepositoryItemImageComboBox();
+            _svgCockroach = new DevExpress.Utils.SvgImageCollection( components );
+            _cockRoachRow0 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _cockRoachRow1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _cockRoachRow2 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _cockRoachRow3 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _cockRoachRow4 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _cockRoachRow5 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             _bigEyeGrid = new DevExpress.XtraVerticalGrid.VGridControl();
-            row12 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row13 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row14 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row15 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row16 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row17 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _bigEyeRoadCBEdit = new RepositoryItemImageComboBox();
+            _svgBigEyeRoad = new DevExpress.Utils.SvgImageCollection( components );
+            _bigEyeRoad0 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _bigEyeRoad1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _bigEyeRoad2 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _bigEyeRoad3 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _bigEyeRoad4 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _bigEyeRoad5 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             _beadPlateGridControl = new DevExpress.XtraVerticalGrid.VGridControl();
             _beadPlateRepoCBEdit = new RepositoryItemImageComboBox();
             _svgBeadPlate = new DevExpress.Utils.SvgImageCollection( components );
@@ -61,12 +65,14 @@ namespace RoadMapUI
             _beadPlateRow4 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             _beadPlateRow5 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             _smallRoadGrid = new DevExpress.XtraVerticalGrid.VGridControl();
-            row18 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row19 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row20 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row21 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row22 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            row23 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _smallRoadImageCBEdit = new RepositoryItemImageComboBox();
+            _svgSmallRoad = new DevExpress.Utils.SvgImageCollection( components );
+            _smallRoadRow0 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _smallRoadRow1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _smallRoadRow2 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _smallRoadRow3 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _smallRoadRow4 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            _smallRoadRow5 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             _bigRoadGrid = new DevExpress.XtraVerticalGrid.VGridControl();
             _bigRoadImageCBEdit = new RepositoryItemImageComboBox();
             _svgBigRoad = new DevExpress.Utils.SvgImageCollection( components );
@@ -88,11 +94,17 @@ namespace RoadMapUI
             ((System.ComponentModel.ISupportInitialize)_uiLayoutControl).BeginInit();
             _uiLayoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)_cockRoachGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)_cockRoachCBEdit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)_svgCockroach).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_bigEyeGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)_bigEyeRoadCBEdit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)_svgBigEyeRoad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_beadPlateGridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_beadPlateRepoCBEdit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_svgBeadPlate).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_smallRoadGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)_smallRoadImageCBEdit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)_svgSmallRoad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_bigRoadGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_bigRoadImageCBEdit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_svgBigRoad).BeginInit();
@@ -136,76 +148,135 @@ namespace RoadMapUI
             _cockRoachGrid.Location = new System.Drawing.Point( 559, 678 );
             _cockRoachGrid.Name = "_cockRoachGrid";
             _cockRoachGrid.OptionsView.FixRowHeaderPanelWidth = true;
-            _cockRoachGrid.OptionsView.MaxRowAutoHeight = 18;
-            _cockRoachGrid.OptionsView.MinRowAutoHeight = 18;
+            _cockRoachGrid.OptionsView.MaxRowAutoHeight = 30;
+            _cockRoachGrid.OptionsView.MinRowAutoHeight = 30;
             _cockRoachGrid.OptionsView.ShowRows = false;
-            _cockRoachGrid.RecordWidth = 18;
+            _cockRoachGrid.RecordWidth = 30;
+            _cockRoachGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _cockRoachCBEdit } );
             _cockRoachGrid.RowHeaderWidth = 15;
-            _cockRoachGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { row24, row25, row26, row27, row28, row29 } );
+            _cockRoachGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _cockRoachRow0, _cockRoachRow1, _cockRoachRow2, _cockRoachRow3, _cockRoachRow4, _cockRoachRow5 } );
             _cockRoachGrid.Size = new System.Drawing.Size( 1035, 187 );
             _cockRoachGrid.TabIndex = 9;
             // 
-            // row24
+            // _cockRoachCBEdit
             // 
-            row24.Name = "row24";
+            _cockRoachCBEdit.AutoHeight = false;
+            _cockRoachCBEdit.Buttons.AddRange( new EditorButton[ ] { new EditorButton( ButtonPredefines.Combo ) } );
+            _cockRoachCBEdit.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center;
+            _cockRoachCBEdit.HtmlImages = _svgCockroach;
+            _cockRoachCBEdit.Items.AddRange( new ImageComboBoxItem[ ] { new ImageComboBoxItem( "", 0, 0 ), new ImageComboBoxItem( "", 1, 1 ), new ImageComboBoxItem( "", 2, 2 ) } );
+            _cockRoachCBEdit.LargeImages = _svgCockroach;
+            _cockRoachCBEdit.Name = "_cockRoachCBEdit";
+            _cockRoachCBEdit.SmallImages = _svgCockroach;
             // 
-            // row25
+            // _svgCockroach
             // 
-            row25.Name = "row25";
+            _svgCockroach.Add( "transparent", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCockroach.transparent" ) );
+            _svgCockroach.Add( "BackslashRed", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCockroach.BackslashRed" ) );
+            _svgCockroach.Add( "BackslashBlue", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCockroach.BackslashBlue" ) );
             // 
-            // row26
+            // _cockRoachRow0
             // 
-            row26.Name = "row26";
+            _cockRoachRow0.Name = "_cockRoachRow0";
+            _cockRoachRow0.Properties.FieldName = "Row0";
+            _cockRoachRow0.Properties.RowEdit = _cockRoachCBEdit;
             // 
-            // row27
+            // _cockRoachRow1
             // 
-            row27.Name = "row27";
+            _cockRoachRow1.Name = "_cockRoachRow1";
+            _cockRoachRow1.Properties.FieldName = "Row1";
+            _cockRoachRow1.Properties.RowEdit = _cockRoachCBEdit;
             // 
-            // row28
+            // _cockRoachRow2
             // 
-            row28.Name = "row28";
+            _cockRoachRow2.Name = "_cockRoachRow2";
+            _cockRoachRow2.Properties.FieldName = "Row2";
+            _cockRoachRow2.Properties.RowEdit = _cockRoachCBEdit;
             // 
-            // row29
+            // _cockRoachRow3
             // 
-            row29.Name = "row29";
+            _cockRoachRow3.Name = "_cockRoachRow3";
+            _cockRoachRow3.Properties.FieldName = "Row3";
+            _cockRoachRow3.Properties.RowEdit = _cockRoachCBEdit;
+            // 
+            // _cockRoachRow4
+            // 
+            _cockRoachRow4.Name = "_cockRoachRow4";
+            _cockRoachRow4.Properties.FieldName = "Row4";
+            _cockRoachRow4.Properties.RowEdit = _cockRoachCBEdit;
+            // 
+            // _cockRoachRow5
+            // 
+            _cockRoachRow5.Name = "_cockRoachRow5";
+            _cockRoachRow5.Properties.FieldName = "Row5";
+            _cockRoachRow5.Properties.RowEdit = _cockRoachCBEdit;
             // 
             // _bigEyeGrid
             // 
             _bigEyeGrid.Location = new System.Drawing.Point( 559, 332 );
             _bigEyeGrid.Name = "_bigEyeGrid";
             _bigEyeGrid.OptionsView.FixRowHeaderPanelWidth = true;
-            _bigEyeGrid.OptionsView.MaxRowAutoHeight = 18;
-            _bigEyeGrid.OptionsView.MinRowAutoHeight = 18;
+            _bigEyeGrid.OptionsView.MaxRowAutoHeight = 30;
+            _bigEyeGrid.OptionsView.MinRowAutoHeight = 30;
             _bigEyeGrid.OptionsView.ShowRows = false;
-            _bigEyeGrid.RecordWidth = 18;
+            _bigEyeGrid.RecordWidth = 30;
+            _bigEyeGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _bigEyeRoadCBEdit } );
             _bigEyeGrid.RowHeaderWidth = 15;
-            _bigEyeGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { row12, row13, row14, row15, row16, row17 } );
+            _bigEyeGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _bigEyeRoad0, _bigEyeRoad1, _bigEyeRoad2, _bigEyeRoad3, _bigEyeRoad4, _bigEyeRoad5 } );
             _bigEyeGrid.Size = new System.Drawing.Size( 1035, 126 );
             _bigEyeGrid.TabIndex = 8;
             // 
-            // row12
+            // _bigEyeRoadCBEdit
             // 
-            row12.Name = "row12";
+            _bigEyeRoadCBEdit.AutoHeight = false;
+            _bigEyeRoadCBEdit.Buttons.AddRange( new EditorButton[ ] { new EditorButton( ButtonPredefines.Combo ) } );
+            _bigEyeRoadCBEdit.HtmlImages = _svgBigEyeRoad;
+            _bigEyeRoadCBEdit.Items.AddRange( new ImageComboBoxItem[ ] { new ImageComboBoxItem( "Trans", 0, 0 ), new ImageComboBoxItem( "Red", 1, 1 ), new ImageComboBoxItem( "Blue", 2, 2 ) } );
+            _bigEyeRoadCBEdit.LargeImages = _svgBigEyeRoad;
+            _bigEyeRoadCBEdit.Name = "_bigEyeRoadCBEdit";
+            _bigEyeRoadCBEdit.SmallImages = _svgBigEyeRoad;
             // 
-            // row13
+            // _svgBigEyeRoad
             // 
-            row13.Name = "row13";
+            _svgBigEyeRoad.Add( "transparent", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBigEyeRoad.transparent" ) );
+            _svgBigEyeRoad.Add( "bigEyeRed2", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBigEyeRoad.bigEyeRed2" ) );
+            _svgBigEyeRoad.Add( "bigEyeBlue2", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBigEyeRoad.bigEyeBlue2" ) );
             // 
-            // row14
+            // _bigEyeRoad0
             // 
-            row14.Name = "row14";
+            _bigEyeRoad0.Name = "_bigEyeRoad0";
+            _bigEyeRoad0.Properties.FieldName = "Row0";
+            _bigEyeRoad0.Properties.RowEdit = _bigEyeRoadCBEdit;
             // 
-            // row15
+            // _bigEyeRoad1
             // 
-            row15.Name = "row15";
+            _bigEyeRoad1.Name = "_bigEyeRoad1";
+            _bigEyeRoad1.Properties.FieldName = "Row1";
+            _bigEyeRoad1.Properties.RowEdit = _bigEyeRoadCBEdit;
             // 
-            // row16
+            // _bigEyeRoad2
             // 
-            row16.Name = "row16";
+            _bigEyeRoad2.Name = "_bigEyeRoad2";
+            _bigEyeRoad2.Properties.FieldName = "Row2";
+            _bigEyeRoad2.Properties.RowEdit = _bigEyeRoadCBEdit;
             // 
-            // row17
+            // _bigEyeRoad3
             // 
-            row17.Name = "row17";
+            _bigEyeRoad3.Name = "_bigEyeRoad3";
+            _bigEyeRoad3.Properties.FieldName = "Row3";
+            _bigEyeRoad3.Properties.RowEdit = _bigEyeRoadCBEdit;
+            // 
+            // _bigEyeRoad4
+            // 
+            _bigEyeRoad4.Name = "_bigEyeRoad4";
+            _bigEyeRoad4.Properties.FieldName = "Row4";
+            _bigEyeRoad4.Properties.RowEdit = _bigEyeRoadCBEdit;
+            // 
+            // _bigEyeRoad5
+            // 
+            _bigEyeRoad5.Name = "_bigEyeRoad5";
+            _bigEyeRoad5.Properties.FieldName = "Row5";
+            _bigEyeRoad5.Properties.RowEdit = _bigEyeRoadCBEdit;
             // 
             // _beadPlateGridControl
             // 
@@ -226,12 +297,12 @@ namespace RoadMapUI
             // 
             _beadPlateRepoCBEdit.AutoHeight = false;
             _beadPlateRepoCBEdit.Buttons.AddRange( new EditorButton[ ] { new EditorButton( ButtonPredefines.Combo ) } );
+            _beadPlateRepoCBEdit.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center;
             _beadPlateRepoCBEdit.HtmlImages = _svgBeadPlate;
             _beadPlateRepoCBEdit.Items.AddRange( new ImageComboBoxItem[ ] { new ImageComboBoxItem( "", 0, 0 ), new ImageComboBoxItem( "", 1, 1 ), new ImageComboBoxItem( "", 2, 2 ), new ImageComboBoxItem( "", 3, 3 ), new ImageComboBoxItem( "", 4, 4 ), new ImageComboBoxItem( "", 5, 5 ), new ImageComboBoxItem( "", 6, 6 ), new ImageComboBoxItem( "", 7, 7 ), new ImageComboBoxItem( "", 8, 8 ), new ImageComboBoxItem( "", 9, 9 ), new ImageComboBoxItem( "", 10, 10 ), new ImageComboBoxItem( "", 11, 11 ), new ImageComboBoxItem( "", 12, 12 ), new ImageComboBoxItem( "", 13, 13 ), new ImageComboBoxItem( "", 14, 14 ) } );
             _beadPlateRepoCBEdit.LargeImages = _svgBeadPlate;
             _beadPlateRepoCBEdit.Name = "_beadPlateRepoCBEdit";
             _beadPlateRepoCBEdit.SmallImages = _svgBeadPlate;
-            _beadPlateRepoCBEdit.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center;
             // 
             // _svgBeadPlate
             // 
@@ -299,38 +370,67 @@ namespace RoadMapUI
             _smallRoadGrid.Location = new System.Drawing.Point( 559, 487 );
             _smallRoadGrid.Name = "_smallRoadGrid";
             _smallRoadGrid.OptionsView.FixRowHeaderPanelWidth = true;
-            _smallRoadGrid.OptionsView.MaxRowAutoHeight = 18;
-            _smallRoadGrid.OptionsView.MinRowAutoHeight = 18;
+            _smallRoadGrid.OptionsView.MaxRowAutoHeight = 30;
+            _smallRoadGrid.OptionsView.MinRowAutoHeight = 30;
             _smallRoadGrid.OptionsView.ShowRows = false;
-            _smallRoadGrid.RecordWidth = 18;
+            _smallRoadGrid.RecordWidth = 30;
+            _smallRoadGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _smallRoadImageCBEdit } );
             _smallRoadGrid.RowHeaderWidth = 15;
-            _smallRoadGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { row18, row19, row20, row21, row22, row23 } );
+            _smallRoadGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _smallRoadRow0, _smallRoadRow1, _smallRoadRow2, _smallRoadRow3, _smallRoadRow4, _smallRoadRow5 } );
             _smallRoadGrid.Size = new System.Drawing.Size( 1035, 162 );
             _smallRoadGrid.TabIndex = 6;
             // 
-            // row18
+            // _smallRoadImageCBEdit
             // 
-            row18.Name = "row18";
+            _smallRoadImageCBEdit.AutoHeight = false;
+            _smallRoadImageCBEdit.Buttons.AddRange( new EditorButton[ ] { new EditorButton( ButtonPredefines.Combo ) } );
+            _smallRoadImageCBEdit.HtmlImages = _svgSmallRoad;
+            _smallRoadImageCBEdit.Items.AddRange( new ImageComboBoxItem[ ] { new ImageComboBoxItem( "", 0, 0 ), new ImageComboBoxItem( "", 1, 1 ), new ImageComboBoxItem( "", 2, 2 ) } );
+            _smallRoadImageCBEdit.LargeImages = _svgSmallRoad;
+            _smallRoadImageCBEdit.Name = "_smallRoadImageCBEdit";
+            _smallRoadImageCBEdit.SmallImages = _svgSmallRoad;
             // 
-            // row19
+            // _svgSmallRoad
             // 
-            row19.Name = "row19";
+            _svgSmallRoad.Add( "transparent", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgSmallRoad.transparent" ) );
+            _svgSmallRoad.Add( "SmallRoadRed", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgSmallRoad.SmallRoadRed" ) );
+            _svgSmallRoad.Add( "SmallRoadBlue2", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgSmallRoad.SmallRoadBlue2" ) );
             // 
-            // row20
+            // _smallRoadRow0
             // 
-            row20.Name = "row20";
+            _smallRoadRow0.Name = "_smallRoadRow0";
+            _smallRoadRow0.Properties.FieldName = "Row0";
+            _smallRoadRow0.Properties.RowEdit = _smallRoadImageCBEdit;
             // 
-            // row21
+            // _smallRoadRow1
             // 
-            row21.Name = "row21";
+            _smallRoadRow1.Name = "_smallRoadRow1";
+            _smallRoadRow1.Properties.FieldName = "Row1";
+            _smallRoadRow1.Properties.RowEdit = _smallRoadImageCBEdit;
             // 
-            // row22
+            // _smallRoadRow2
             // 
-            row22.Name = "row22";
+            _smallRoadRow2.Name = "_smallRoadRow2";
+            _smallRoadRow2.Properties.FieldName = "Row2";
+            _smallRoadRow2.Properties.RowEdit = _smallRoadImageCBEdit;
             // 
-            // row23
+            // _smallRoadRow3
             // 
-            row23.Name = "row23";
+            _smallRoadRow3.Name = "_smallRoadRow3";
+            _smallRoadRow3.Properties.FieldName = "Row3";
+            _smallRoadRow3.Properties.RowEdit = _smallRoadImageCBEdit;
+            // 
+            // _smallRoadRow4
+            // 
+            _smallRoadRow4.Name = "_smallRoadRow4";
+            _smallRoadRow4.Properties.FieldName = "Row4";
+            _smallRoadRow4.Properties.RowEdit = _smallRoadImageCBEdit;
+            // 
+            // _smallRoadRow5
+            // 
+            _smallRoadRow5.Name = "_smallRoadRow5";
+            _smallRoadRow5.Properties.FieldName = "Row5";
+            _smallRoadRow5.Properties.RowEdit = _smallRoadImageCBEdit;
             // 
             // _bigRoadGrid
             // 
@@ -508,11 +608,17 @@ namespace RoadMapUI
             ((System.ComponentModel.ISupportInitialize)_uiLayoutControl).EndInit();
             _uiLayoutControl.ResumeLayout( false );
             ((System.ComponentModel.ISupportInitialize)_cockRoachGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)_cockRoachCBEdit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)_svgCockroach).EndInit();
             ((System.ComponentModel.ISupportInitialize)_bigEyeGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)_bigEyeRoadCBEdit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)_svgBigEyeRoad).EndInit();
             ((System.ComponentModel.ISupportInitialize)_beadPlateGridControl).EndInit();
             ((System.ComponentModel.ISupportInitialize)_beadPlateRepoCBEdit).EndInit();
             ((System.ComponentModel.ISupportInitialize)_svgBeadPlate).EndInit();
             ((System.ComponentModel.ISupportInitialize)_smallRoadGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)_smallRoadImageCBEdit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)_svgSmallRoad).EndInit();
             ((System.ComponentModel.ISupportInitialize)_bigRoadGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)_bigRoadImageCBEdit).EndInit();
             ((System.ComponentModel.ISupportInitialize)_svgBigRoad).EndInit();
@@ -565,39 +671,33 @@ namespace RoadMapUI
         private DevExpress.XtraVerticalGrid.Rows.EditorRow _beadPlateRow3;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow _beadPlateRow4;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow _beadPlateRow5;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _smallRoadRow0;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _smallRoadRow1;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _smallRoadRow2;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _smallRoadRow3;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _smallRoadRow4;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _smallRoadRow5;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow _cockRoachRow0;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow _cockRoachRow1;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow _cockRoachRow2;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow _cockRoachRow3;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow _cockRoachRow4;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow _cockRoachRow5;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigEyeRow0;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigEyeRow1;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigEyeRow2;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigEyeRow3;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigEyeRow4;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigEyeRow5;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row18;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row19;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row20;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row21;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row22;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row23;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row24;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row25;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row26;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row27;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row28;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row29;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row12;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row13;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row14;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row15;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row16;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row17;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigEyeRoad0;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigEyeRoad1;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigEyeRoad2;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigEyeRoad3;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigEyeRoad4;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow _bigEyeRoad5;
         
         private DevExpress.Utils.SvgImageCollection _svgBeadPlate;
         private RepositoryItemImageComboBox _beadPlateRepoCBEdit;
+        private DevExpress.Utils.SvgImageCollection _svgSmallRoad;
+        private RepositoryItemImageComboBox _smallRoadImageCBEdit;
+        private RepositoryItemImageComboBox _bigEyeRoadCBEdit;
+        private DevExpress.Utils.SvgImageCollection _svgBigEyeRoad;
+        private DevExpress.Utils.SvgImageCollection _svgCockroach;
+        private RepositoryItemImageComboBox _cockRoachCBEdit;
     }
 }
 

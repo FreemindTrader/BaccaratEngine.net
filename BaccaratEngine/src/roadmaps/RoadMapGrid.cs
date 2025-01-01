@@ -17,6 +17,8 @@ namespace BaccaratEngine
     {
         public MacauRoadPos() { }
 
+        public int LogicalColumn { get; set; }
+
         public MoRoad Road { get; set; }
     }
 

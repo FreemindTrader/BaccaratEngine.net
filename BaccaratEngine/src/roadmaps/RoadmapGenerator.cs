@@ -387,6 +387,8 @@ namespace BaccaratEngine
             return validItems;
         }
 
+        
+
 
         /// <summary>
         /// Big road column definitions
@@ -502,6 +504,8 @@ namespace BaccaratEngine
 
             return outcomes;
         }
+
+        
 
         /// <summary>
         /// the big eye road - derived road with a cycle of 1

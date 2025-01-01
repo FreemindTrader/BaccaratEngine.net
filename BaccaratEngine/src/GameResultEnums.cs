@@ -10,6 +10,7 @@ namespace BaccaratEngine
 
     public enum MoRoad
     {
+        None,
         Red, 
         Blue
     }
@@ -85,6 +86,13 @@ namespace BaccaratEngine
         T0, 
         T6,
         T
+    }
+
+    public enum DImageIndex
+    {
+        None = 0,
+        Red = 1,          // Banker win
+        Blue = 2,          // Player Win
     }
 
     public enum GImageIndex
