@@ -81,6 +81,7 @@ namespace BaccaratEngine
             int logicalColumnNumber = 0;
             int maximumColumnReached = 0;
             GameResult lastItem = null;
+            int takenRowIndex = 0;
 
             // Build the logical column definitions that doesn't represent
             // the actual "drawn" roadmap.
@@ -111,6 +112,7 @@ namespace BaccaratEngine
                                 if (lastItemInResults.Result.Outcome != result.Outcome)
                                 {
                                     logicalColumnNumber++;
+                                    takenRowIndex = 0;
                                 }
                             }
                         }
@@ -122,6 +124,7 @@ namespace BaccaratEngine
                             logicalColumnNumber++;
                             tieStack = new List<GameResult>();
                             lastTieItem = null;
+                            takenRowIndex = 0;
                         }
                         else
                         {
@@ -132,7 +135,7 @@ namespace BaccaratEngine
                     }
 
                     var probeColumn = logicalColumnNumber;
-                    int probeRow = 0;
+                    int probeRow = takenRowIndex;
                     bool done = false;
 
                     while (!done)
@@ -154,12 +157,15 @@ namespace BaccaratEngine
 
                             returnList.Add( newEntry );
 
+                            takenRowIndex = probeRow;
+
                             done = true;
                         }
                         else if (probeRow + 1 >= rows)
                         {
                             // The spot below would go beyond the table bounds.
                             probeColumn++;
+                            takenRowIndex = 0;
                         }
                         else if (!placementMap.ContainsKey( keySearchBelow ))
                         {
@@ -174,6 +180,7 @@ namespace BaccaratEngine
                         else
                         {
                             probeColumn++;
+                            takenRowIndex = 0;
                         }
                     }
 
@@ -222,6 +229,7 @@ namespace BaccaratEngine
             int logicalColumnNumber = 0;
             int maximumColumnReached = 0;
             GameResult lastItem = null;
+            int takenRowIndex = 0;
 
             // Build the logical column definitions that doesn't represent
             // the actual "drawn" roadmap.
@@ -250,6 +258,7 @@ namespace BaccaratEngine
                                 // the last game then we must place it in another column
                                 // lastItem is not tie so we can clear the tieStack
                                 logicalColumnNumber++;
+                                takenRowIndex = 0;
                             }
                         }
                         else
@@ -266,6 +275,7 @@ namespace BaccaratEngine
                                         // the last game then we must place it in another column
                                         // lastItem is not tie so we can clear the tieStack
                                         logicalColumnNumber++;
+                                        takenRowIndex = 0;
                                         break;
                                     }
                                     else
@@ -281,7 +291,7 @@ namespace BaccaratEngine
                 }
 
                 var probeColumn = logicalColumnNumber;
-                int probeRow = 0;
+                int probeRow = takenRowIndex;
                 bool done = false;
 
                 while (!done)
@@ -302,12 +312,15 @@ namespace BaccaratEngine
 
                         returnList.Add( newEntry );
 
+                        takenRowIndex = probeRow;
+
                         done = true;
                     }
                     else if (probeRow + 1 >= rows)
                     {
                         // The spot below would go beyond the table bounds.
-                        probeColumn++;                        
+                        probeColumn++;
+                        takenRowIndex = 0; 
                     }
                     else if (!placementMap.ContainsKey( keySearchBelow ))
                     {
@@ -327,6 +340,7 @@ namespace BaccaratEngine
                         else
                         {
                             probeColumn++;
+                            takenRowIndex = 0;
                         }
                         
                     }
@@ -338,6 +352,7 @@ namespace BaccaratEngine
                     else
                     {                        
                         probeColumn++;
+                        takenRowIndex = 0;
                     }
                 }
 
