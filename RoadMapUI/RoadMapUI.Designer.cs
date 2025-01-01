@@ -172,8 +172,8 @@ namespace RoadMapUI
             // _svgCockroach
             // 
             _svgCockroach.Add( "transparent", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCockroach.transparent" ) );
-            _svgCockroach.Add( "BackslashRed", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCockroach.BackslashRed" ) );
-            _svgCockroach.Add( "BackslashBlue", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCockroach.BackslashBlue" ) );
+            _svgCockroach.Add( "red", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCockroach.red" ) );
+            _svgCockroach.Add( "Blue", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCockroach.Blue" ) );
             // 
             // _cockRoachRow0
             // 
@@ -308,20 +308,20 @@ namespace RoadMapUI
             // 
             _svgBeadPlate.ImageSize = new System.Drawing.Size( 36, 36 );
             _svgBeadPlate.Add( "transparent", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.transparent" ) );
-            _svgBeadPlate.Add( "banker", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.banker" ) );
-            _svgBeadPlate.Add( "player", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.player" ) );
-            _svgBeadPlate.Add( "tie", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.tie" ) );
-            _svgBeadPlate.Add( "banker8", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.banker8" ) );
-            _svgBeadPlate.Add( "banker9", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.banker9" ) );
-            _svgBeadPlate.Add( "player8", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.player8" ) );
-            _svgBeadPlate.Add( "player9", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.player9" ) );
-            _svgBeadPlate.Add( "banker6", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.banker6" ) );
-            _svgBeadPlate.Add( "banker63", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.banker63" ) );
-            _svgBeadPlate.Add( "player7", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.player7" ) );
-            _svgBeadPlate.Add( "player76", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.player76" ) );
-            _svgBeadPlate.Add( "tigerTie", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.tigerTie" ) );
-            _svgBeadPlate.Add( "B76_3", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.B76_3" ) );
-            _svgBeadPlate.Add( "player83", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.player83" ) );
+            _svgBeadPlate.Add( "B", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.B" ) );
+            _svgBeadPlate.Add( "bedPlateBlue", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.bedPlateBlue" ) );
+            _svgBeadPlate.Add( "bedPlateTie", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.bedPlateTie" ) );
+            _svgBeadPlate.Add( "bedPlateB8", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.bedPlateB8" ) );
+            _svgBeadPlate.Add( "B9", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.B9" ) );
+            _svgBeadPlate.Add( "P8", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.P8" ) );
+            _svgBeadPlate.Add( "P9", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.P9" ) );
+            _svgBeadPlate.Add( "B6", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.B6" ) );
+            _svgBeadPlate.Add( "B63_2", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.B63_2" ) );
+            _svgBeadPlate.Add( "P7", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.P7" ) );
+            _svgBeadPlate.Add( "P76", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.P76" ) );
+            _svgBeadPlate.Add( "TT", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.TT" ) );
+            _svgBeadPlate.Add( "B76", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.B76" ) );
+            _svgBeadPlate.Add( "P83", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgBeadPlate.P83" ) );
             // 
             // _beadPlateRow0
             // 

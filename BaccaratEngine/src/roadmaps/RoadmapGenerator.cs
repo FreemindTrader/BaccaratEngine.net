@@ -268,6 +268,11 @@ namespace BaccaratEngine
                                         logicalColumnNumber++;
                                         break;
                                     }
+                                    else
+                                    {
+                                        // Since the new entry is the same whatever is before the tie.
+                                        break;
+                                    }
                                 }
                             }
                         }

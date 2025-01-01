@@ -46,7 +46,8 @@ namespace RoadMapUI
 
         private RoadmapGenerator _generator = new RoadmapGenerator();
         
-        private IList<bigRoadPos> _bigRoad = null;
+        private IList<bigRoadPos> _bigRoadShowTies = null;
+        private IList<bigRoadPos> _bigRoadNoTies = null;
         private IList<beadPlatePos> _beadPlate = null;
         private IList<MoRoad> _bigEyeRoad = null;
         private IList<MoRoad> _smallRoad = null;
@@ -222,14 +223,17 @@ namespace RoadMapUI
 
             var result = _generator.bigRoadShowTies( gameResults, 100, 6 );
             //var result = _generator.bigRoad( gameResults, 100, 6 );
-            _bigRoad = result.RoadList;
+            _bigRoadShowTies = result.RoadList;
+
+            var bigRoadNoTie = _generator.bigRoad( gameResults, 100, 6 );
+            _bigRoadNoTies = bigRoadNoTie.RoadList;
 
             _beadPlate = _generator.beadPlate( gameResults, 50, 6 );
-            _bigEyeRoad = _generator.bigEyeRoad( _bigRoad );
-            _smallRoad = _generator.smallRoad( _bigRoad );
-            _cockRoachRoad = _generator.cockroachPig( _bigRoad );
+            _bigEyeRoad = _generator.bigEyeRoad( _bigRoadNoTies );
+            _smallRoad = _generator.smallRoad( _bigRoadNoTies );
+            _cockRoachRoad = _generator.cockroachPig( _bigRoadNoTies );
 
-            _bigRoadBindingList = _bigRoad.UpdateBindingList( _bigRoadBindingList, result.MaxColumn );
+            _bigRoadBindingList = _bigRoadShowTies.UpdateBindingList( _bigRoadBindingList, result.MaxColumn );
             _beadPlateBindingList = _beadPlate.UpdateBindingList( _beadPlateBindingList, result.MaxColumn );
             _smallRoadBindingList = _smallRoad.UpdateBindingList( _smallRoadBindingList, result.MaxColumn, 6 );
             _bigEyeRoadBindingList = _bigEyeRoad.UpdateBindingList( _bigEyeRoadBindingList, result.MaxColumn, 6 );
