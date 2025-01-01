@@ -15,7 +15,7 @@ I am only releasing the engine and the demo UI to help out other C# engineers. Y
 
 If anyone is interested in a very HIGH probabilty of winning baccarat. Free feel to contact me.
 
-The UI I will be using for the frontend will be DevExpress WPF or Winforms components.
+The UI I am using for the frontend will be DevExpress XAF (planning). The demo is using DevExpress Winforms Controls.
 
 ![Current DevExpress UI](https://raw.githubusercontent.com/FreemindTrader/BaccaratEngine.net/refs/heads/master/RoadMapUI/DevExpressUI.png?raw=true)
 
