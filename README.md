@@ -14,3 +14,5 @@ Hope you enjoy it. It is not ready yet as I am still working on it.
 
 The UI I will be using for the frontend will be DevExpress WPF or Winforms components.
 
+![Current DevExpress UI](https://raw.githubusercontent.com/FreemindTrader/BaccaratEngine.net/refs/heads/master/RoadMapUI/DevExpressUI.png?raw=true)
+
