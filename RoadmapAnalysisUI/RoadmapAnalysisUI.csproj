@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BaccaratEngine\BaccaratEngine.net.csproj" />
-    <ProjectReference Include="..\RoadmapAnalysisUI\RoadmapAnalysisUI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,9 +19,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Update="UI\RoadmapAnalysisControl.cs">
-      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 

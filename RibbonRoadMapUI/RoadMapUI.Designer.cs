@@ -54,6 +54,14 @@ namespace RibbonRoadMapUI
             _tigerTie = new DevExpress.XtraBars.BarButtonItem();
             skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
+            barCheckItem2 = new DevExpress.XtraBars.BarCheckItem();
+            barCheckItem3 = new DevExpress.XtraBars.BarCheckItem();
+            barCheckItem4 = new DevExpress.XtraBars.BarCheckItem();
+            barCheckItem5 = new DevExpress.XtraBars.BarCheckItem();
             ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -61,8 +69,11 @@ namespace RibbonRoadMapUI
             ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             _uiLayoutControl = new LayoutControl();
-            pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
+            roadmapAnalysisControl1 = new RoadmapAnalysisUI.RoadmapAnalysisControl();
             _cockRoachGrid = new DevExpress.XtraVerticalGrid.VGridControl();
             _cockRoachCBEdit = new RepositoryItemImageComboBox();
             _cockRoachSvg = new DevExpress.Utils.SvgImageCollection( components );
@@ -118,7 +129,6 @@ namespace RibbonRoadMapUI
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_uiLayoutControl).BeginInit();
             _uiLayoutControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pivotGridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachCBEdit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachSvg).BeginInit();
@@ -147,13 +157,13 @@ namespace RibbonRoadMapUI
             // 
             ribbonControl1.EmptyAreaImageOptions.ImagePadding = new Padding( 50, 51, 50, 51 );
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange( new DevExpress.XtraBars.BarItem[ ] { ribbonControl1.ExpandCollapseItem, _newGame, _bankerWin, _playerWin, _gameTie, _banker8, _banker9, _player8, _player9, _lucky6, _lucky63Cards, _lucky7, _lucky76, _panda, _banker7Over6, _tigerTie, skinDropDownButtonItem1, skinPaletteDropDownButtonItem1 } );
+            ribbonControl1.Items.AddRange( new DevExpress.XtraBars.BarItem[ ] { ribbonControl1.ExpandCollapseItem, _newGame, _bankerWin, _playerWin, _gameTie, _banker8, _banker9, _player8, _player9, _lucky6, _lucky63Cards, _lucky7, _lucky76, _panda, _banker7Over6, _tigerTie, skinDropDownButtonItem1, skinPaletteDropDownButtonItem1, barButtonItem1, barButtonItem2, barButtonItem3, barCheckItem1, barCheckItem2, barCheckItem3, barCheckItem4, barCheckItem5 } );
             ribbonControl1.Location = new System.Drawing.Point( 0, 0 );
             ribbonControl1.Margin = new Padding( 5 );
-            ribbonControl1.MaxItemId = 20;
+            ribbonControl1.MaxItemId = 30;
             ribbonControl1.Name = "ribbonControl1";
             ribbonControl1.OptionsMenuMinWidth = 550;
-            ribbonControl1.Pages.AddRange( new DevExpress.XtraBars.Ribbon.RibbonPage[ ] { ribbonPage1, ribbonPage2 } );
+            ribbonControl1.Pages.AddRange( new DevExpress.XtraBars.Ribbon.RibbonPage[ ] { ribbonPage1, ribbonPage2, ribbonPage3 } );
             ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office365;
             ribbonControl1.Size = new System.Drawing.Size( 1993, 237 );
             // 
@@ -276,6 +286,62 @@ namespace RibbonRoadMapUI
             skinPaletteDropDownButtonItem1.Id = 19;
             skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
             // 
+            // barButtonItem1
+            // 
+            barButtonItem1.Caption = "Banker";
+            barButtonItem1.Id = 20;
+            barButtonItem1.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem1.ImageOptions.SvgImage" );
+            barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            barButtonItem2.Caption = "Player";
+            barButtonItem2.Id = 21;
+            barButtonItem2.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem2.ImageOptions.SvgImage" );
+            barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            barButtonItem3.Caption = "Tie";
+            barButtonItem3.Id = 22;
+            barButtonItem3.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem3.ImageOptions.SvgImage" );
+            barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barCheckItem1
+            // 
+            barCheckItem1.Caption = "100";
+            barCheckItem1.Id = 25;
+            barCheckItem1.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barCheckItem1.ImageOptions.SvgImage" );
+            barCheckItem1.Name = "barCheckItem1";
+            // 
+            // barCheckItem2
+            // 
+            barCheckItem2.Caption = "500";
+            barCheckItem2.Id = 26;
+            barCheckItem2.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barCheckItem2.ImageOptions.SvgImage" );
+            barCheckItem2.Name = "barCheckItem2";
+            // 
+            // barCheckItem3
+            // 
+            barCheckItem3.Caption = "1000";
+            barCheckItem3.Id = 27;
+            barCheckItem3.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barCheckItem3.ImageOptions.SvgImage" );
+            barCheckItem3.Name = "barCheckItem3";
+            // 
+            // barCheckItem4
+            // 
+            barCheckItem4.Caption = "5000";
+            barCheckItem4.Id = 28;
+            barCheckItem4.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barCheckItem4.ImageOptions.SvgImage" );
+            barCheckItem4.Name = "barCheckItem4";
+            // 
+            // barCheckItem5
+            // 
+            barCheckItem5.Caption = "50";
+            barCheckItem5.Id = 29;
+            barCheckItem5.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barCheckItem5.ImageOptions.SvgImage" );
+            barCheckItem5.Name = "barCheckItem5";
+            // 
             // ribbonPage1
             // 
             ribbonPage1.Groups.AddRange( new DevExpress.XtraBars.Ribbon.RibbonPageGroup[ ] { ribbonPageGroup1, ribbonPageGroup3, ribbonPageGroup4, ribbonPageGroup5 } );
@@ -330,9 +396,33 @@ namespace RibbonRoadMapUI
             ribbonPageGroup2.Name = "ribbonPageGroup2";
             ribbonPageGroup2.Text = "Skins";
             // 
+            // ribbonPage3
+            // 
+            ribbonPage3.Groups.AddRange( new DevExpress.XtraBars.Ribbon.RibbonPageGroup[ ] { ribbonPageGroup6, ribbonPageGroup7 } );
+            ribbonPage3.Name = "ribbonPage3";
+            ribbonPage3.Text = "Bet";
+            // 
+            // ribbonPageGroup6
+            // 
+            ribbonPageGroup6.ItemLinks.Add( barButtonItem1 );
+            ribbonPageGroup6.ItemLinks.Add( barButtonItem2 );
+            ribbonPageGroup6.ItemLinks.Add( barButtonItem3 );
+            ribbonPageGroup6.Name = "ribbonPageGroup6";
+            ribbonPageGroup6.Text = "Sides";
+            // 
+            // ribbonPageGroup7
+            // 
+            ribbonPageGroup7.ItemLinks.Add( barCheckItem5 );
+            ribbonPageGroup7.ItemLinks.Add( barCheckItem1 );
+            ribbonPageGroup7.ItemLinks.Add( barCheckItem2 );
+            ribbonPageGroup7.ItemLinks.Add( barCheckItem3 );
+            ribbonPageGroup7.ItemLinks.Add( barCheckItem4 );
+            ribbonPageGroup7.Name = "ribbonPageGroup7";
+            ribbonPageGroup7.Text = "Amount";
+            // 
             // _uiLayoutControl
             // 
-            _uiLayoutControl.Controls.Add( pivotGridControl1 );
+            _uiLayoutControl.Controls.Add( roadmapAnalysisControl1 );
             _uiLayoutControl.Controls.Add( _cockRoachGrid );
             _uiLayoutControl.Controls.Add( _bigEyeGrid );
             _uiLayoutControl.Controls.Add( _beadPlateRoadGrid );
@@ -347,18 +437,16 @@ namespace RibbonRoadMapUI
             _uiLayoutControl.TabIndex = 1;
             _uiLayoutControl.Text = "BigRoad";
             // 
-            // pivotGridControl1
+            // roadmapAnalysisControl1
             // 
-            pivotGridControl1.Location = new System.Drawing.Point( 1447, 12 );
-            pivotGridControl1.MenuManager = ribbonControl1;
-            pivotGridControl1.Name = "pivotGridControl1";
-            pivotGridControl1.OptionsData.DataProcessingEngine = DevExpress.XtraPivotGrid.PivotDataProcessingEngine.Optimized;
-            pivotGridControl1.Size = new System.Drawing.Size( 534, 696 );
-            pivotGridControl1.TabIndex = 10;
+            roadmapAnalysisControl1.Location = new System.Drawing.Point( 1265, 12 );
+            roadmapAnalysisControl1.Name = "roadmapAnalysisControl1";
+            roadmapAnalysisControl1.Size = new System.Drawing.Size( 716, 696 );
+            roadmapAnalysisControl1.TabIndex = 10;
             // 
             // _cockRoachGrid
             // 
-            _cockRoachGrid.Location = new System.Drawing.Point( 622, 560 );
+            _cockRoachGrid.Location = new System.Drawing.Point( 590, 560 );
             _cockRoachGrid.Name = "_cockRoachGrid";
             _cockRoachGrid.OptionsView.FixRowHeaderPanelWidth = true;
             _cockRoachGrid.OptionsView.MaxRowAutoHeight = 30;
@@ -368,7 +456,7 @@ namespace RibbonRoadMapUI
             _cockRoachGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _cockRoachCBEdit } );
             _cockRoachGrid.RowHeaderWidth = 15;
             _cockRoachGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _cockRoachRow0, _cockRoachRow1, _cockRoachRow2, _cockRoachRow3, _cockRoachRow4, _cockRoachRow5 } );
-            _cockRoachGrid.Size = new System.Drawing.Size( 821, 148 );
+            _cockRoachGrid.Size = new System.Drawing.Size( 671, 148 );
             _cockRoachGrid.TabIndex = 9;
             // 
             // _cockRoachCBEdit
@@ -426,7 +514,7 @@ namespace RibbonRoadMapUI
             // 
             // _bigEyeGrid
             // 
-            _bigEyeGrid.Location = new System.Drawing.Point( 622, 277 );
+            _bigEyeGrid.Location = new System.Drawing.Point( 590, 277 );
             _bigEyeGrid.Name = "_bigEyeGrid";
             _bigEyeGrid.OptionsView.FixRowHeaderPanelWidth = true;
             _bigEyeGrid.OptionsView.MaxRowAutoHeight = 30;
@@ -436,7 +524,7 @@ namespace RibbonRoadMapUI
             _bigEyeGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _bigEyeRoadCBEdit } );
             _bigEyeGrid.RowHeaderWidth = 15;
             _bigEyeGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _bigEyeRoad0, _bigEyeRoad1, _bigEyeRoad2, _bigEyeRoad3, _bigEyeRoad4, _bigEyeRoad5 } );
-            _bigEyeGrid.Size = new System.Drawing.Size( 821, 98 );
+            _bigEyeGrid.Size = new System.Drawing.Size( 671, 98 );
             _bigEyeGrid.TabIndex = 8;
             // 
             // _bigEyeRoadCBEdit
@@ -503,7 +591,7 @@ namespace RibbonRoadMapUI
             _beadPlateRoadGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _beadPlateRepoCBEdit } );
             _beadPlateRoadGrid.RowHeaderWidth = 15;
             _beadPlateRoadGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _beadPlateRow0, _beadPlateRow1, _beadPlateRow2, _beadPlateRow3, _beadPlateRow4, _beadPlateRow5 } );
-            _beadPlateRoadGrid.Size = new System.Drawing.Size( 606, 431 );
+            _beadPlateRoadGrid.Size = new System.Drawing.Size( 574, 431 );
             _beadPlateRoadGrid.TabIndex = 7;
             // 
             // _beadPlateRepoCBEdit
@@ -580,7 +668,7 @@ namespace RibbonRoadMapUI
             // 
             // _smallRoadGrid
             // 
-            _smallRoadGrid.Location = new System.Drawing.Point( 622, 404 );
+            _smallRoadGrid.Location = new System.Drawing.Point( 590, 404 );
             _smallRoadGrid.Name = "_smallRoadGrid";
             _smallRoadGrid.OptionsView.FixRowHeaderPanelWidth = true;
             _smallRoadGrid.OptionsView.MaxRowAutoHeight = 30;
@@ -590,7 +678,7 @@ namespace RibbonRoadMapUI
             _smallRoadGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _smallRoadImageCBEdit } );
             _smallRoadGrid.RowHeaderWidth = 15;
             _smallRoadGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _smallRoadRow0, _smallRoadRow1, _smallRoadRow2, _smallRoadRow3, _smallRoadRow4, _smallRoadRow5 } );
-            _smallRoadGrid.Size = new System.Drawing.Size( 821, 127 );
+            _smallRoadGrid.Size = new System.Drawing.Size( 671, 127 );
             _smallRoadGrid.TabIndex = 6;
             // 
             // _smallRoadImageCBEdit
@@ -658,7 +746,7 @@ namespace RibbonRoadMapUI
             _bigRoadGrid.RightToLeft = RightToLeft.No;
             _bigRoadGrid.RowHeaderWidth = 15;
             _bigRoadGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _bigRoadRow0, _bigRoadRow1, _bigRoadRow2, _bigRoadRow3, _bigRoadRow4, _bigRoadRow5 } );
-            _bigRoadGrid.Size = new System.Drawing.Size( 1431, 211 );
+            _bigRoadGrid.Size = new System.Drawing.Size( 1249, 211 );
             _bigRoadGrid.TabIndex = 5;
             // 
             // _bigRoadImageCBEdit
@@ -747,7 +835,7 @@ namespace RibbonRoadMapUI
             _bigRoadLayoutControlItem.Control = _bigRoadGrid;
             _bigRoadLayoutControlItem.Location = new System.Drawing.Point( 0, 0 );
             _bigRoadLayoutControlItem.Name = "layoutControlItem2";
-            _bigRoadLayoutControlItem.Size = new System.Drawing.Size( 1435, 240 );
+            _bigRoadLayoutControlItem.Size = new System.Drawing.Size( 1253, 240 );
             _bigRoadLayoutControlItem.Text = "Big Road";
             _bigRoadLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _bigRoadLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
@@ -755,9 +843,9 @@ namespace RibbonRoadMapUI
             // _smallRoadLayoutControlItem
             // 
             _smallRoadLayoutControlItem.Control = _smallRoadGrid;
-            _smallRoadLayoutControlItem.Location = new System.Drawing.Point( 610, 367 );
+            _smallRoadLayoutControlItem.Location = new System.Drawing.Point( 578, 367 );
             _smallRoadLayoutControlItem.Name = "layoutControlItem3";
-            _smallRoadLayoutControlItem.Size = new System.Drawing.Size( 825, 156 );
+            _smallRoadLayoutControlItem.Size = new System.Drawing.Size( 675, 156 );
             _smallRoadLayoutControlItem.Text = "Small Road";
             _smallRoadLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _smallRoadLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
@@ -767,7 +855,7 @@ namespace RibbonRoadMapUI
             _beadPlateLayoutControlItem.Control = _beadPlateRoadGrid;
             _beadPlateLayoutControlItem.Location = new System.Drawing.Point( 0, 240 );
             _beadPlateLayoutControlItem.Name = "layoutControlItem4";
-            _beadPlateLayoutControlItem.Size = new System.Drawing.Size( 610, 460 );
+            _beadPlateLayoutControlItem.Size = new System.Drawing.Size( 578, 460 );
             _beadPlateLayoutControlItem.Text = "Bead Plate";
             _beadPlateLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _beadPlateLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
@@ -775,9 +863,9 @@ namespace RibbonRoadMapUI
             // _bigEyeLayoutControlItem
             // 
             _bigEyeLayoutControlItem.Control = _bigEyeGrid;
-            _bigEyeLayoutControlItem.Location = new System.Drawing.Point( 610, 240 );
+            _bigEyeLayoutControlItem.Location = new System.Drawing.Point( 578, 240 );
             _bigEyeLayoutControlItem.Name = "layoutControlItem1";
-            _bigEyeLayoutControlItem.Size = new System.Drawing.Size( 825, 127 );
+            _bigEyeLayoutControlItem.Size = new System.Drawing.Size( 675, 127 );
             _bigEyeLayoutControlItem.Text = "Big Eye Road";
             _bigEyeLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _bigEyeLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
@@ -785,19 +873,19 @@ namespace RibbonRoadMapUI
             // _cockRoachLayoutControlItem
             // 
             _cockRoachLayoutControlItem.Control = _cockRoachGrid;
-            _cockRoachLayoutControlItem.Location = new System.Drawing.Point( 610, 523 );
+            _cockRoachLayoutControlItem.Location = new System.Drawing.Point( 578, 523 );
             _cockRoachLayoutControlItem.Name = "layoutControlItem5";
-            _cockRoachLayoutControlItem.Size = new System.Drawing.Size( 825, 177 );
+            _cockRoachLayoutControlItem.Size = new System.Drawing.Size( 675, 177 );
             _cockRoachLayoutControlItem.Text = "Cockroach Pig";
             _cockRoachLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _cockRoachLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
             // 
             // layoutControlItem1
             // 
-            layoutControlItem1.Control = pivotGridControl1;
-            layoutControlItem1.Location = new System.Drawing.Point( 1435, 0 );
+            layoutControlItem1.Control = roadmapAnalysisControl1;
+            layoutControlItem1.Location = new System.Drawing.Point( 1253, 0 );
             layoutControlItem1.Name = "layoutControlItem1";
-            layoutControlItem1.Size = new System.Drawing.Size( 538, 700 );
+            layoutControlItem1.Size = new System.Drawing.Size( 720, 700 );
             layoutControlItem1.TextSize = new System.Drawing.Size( 0, 0 );
             layoutControlItem1.TextVisible = false;
             // 
@@ -815,7 +903,6 @@ namespace RibbonRoadMapUI
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)_uiLayoutControl).EndInit();
             _uiLayoutControl.ResumeLayout( false );
-            ((System.ComponentModel.ISupportInitialize)pivotGridControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachCBEdit).EndInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachSvg).EndInit();
@@ -940,7 +1027,18 @@ namespace RibbonRoadMapUI
         private DevExpress.XtraBars.BarButtonItem _tigerTie;
         private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;
         private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
-        private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem1;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem2;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem4;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem5;
+        private RoadmapAnalysisUI.RoadmapAnalysisControl roadmapAnalysisControl1;
         private LayoutControlItem layoutControlItem1;
     }
 }

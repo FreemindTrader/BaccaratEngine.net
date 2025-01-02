@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadMapUI", "RoadMapUI\Road
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RibbonRoadMapUI", "RibbonRoadMapUI\RibbonRoadMapUI.csproj", "{31F4B587-8091-41CC-8C17-6F26CD5CAFF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadmapAnalysisUI", "RoadmapAnalysisUI\RoadmapAnalysisUI.csproj", "{B62AA282-6A91-4B9A-BE3A-F132B35DF721}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{31F4B587-8091-41CC-8C17-6F26CD5CAFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31F4B587-8091-41CC-8C17-6F26CD5CAFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31F4B587-8091-41CC-8C17-6F26CD5CAFF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B62AA282-6A91-4B9A-BE3A-F132B35DF721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B62AA282-6A91-4B9A-BE3A-F132B35DF721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B62AA282-6A91-4B9A-BE3A-F132B35DF721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B62AA282-6A91-4B9A-BE3A-F132B35DF721}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
