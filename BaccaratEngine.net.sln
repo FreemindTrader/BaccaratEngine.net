@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaccaratEngine.Tests", "Bac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadMapUI", "RoadMapUI\RoadMapUI.csproj", "{7A634F66-30ED-4252-AEB4-6B48F9618C44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RibbonRoadMapUI", "RibbonRoadMapUI\RibbonRoadMapUI.csproj", "{31F4B587-8091-41CC-8C17-6F26CD5CAFF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7A634F66-30ED-4252-AEB4-6B48F9618C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A634F66-30ED-4252-AEB4-6B48F9618C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A634F66-30ED-4252-AEB4-6B48F9618C44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F4B587-8091-41CC-8C17-6F26CD5CAFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F4B587-8091-41CC-8C17-6F26CD5CAFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F4B587-8091-41CC-8C17-6F26CD5CAFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F4B587-8091-41CC-8C17-6F26CD5CAFF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

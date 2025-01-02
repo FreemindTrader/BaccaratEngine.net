@@ -1,7 +1,4 @@
-﻿using BaccaratEngine;
-using DevExpress.CodeParser.Diagnostics;
-using DevExpress.Diagram.Core.Native;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,11 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using static DevExpress.Xpo.Helpers.AssociatedCollectionCriteriaHelper;
+using BaccaratEngine;
 
-namespace RoadMapUI
+namespace RibbonRoadMapUI
 {
-    public partial class RoadMapUI : DevExpress.XtraEditors.DirectXForm
+    public partial class RoadMapUI : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private BindingList<xColumn> _bigRoadBindingList = new BindingList<xColumn>();
         private BindingList<xColumn> _beadPlateBindingList = new BindingList<xColumn>();
@@ -21,16 +18,13 @@ namespace RoadMapUI
         private BindingList<xColumn> _smallRoadBindingList = new BindingList<xColumn>();
         private BindingList<xColumn> _cockroachBindingList = new BindingList<xColumn>();
 
-
         public RoadMapUI()
         {
-            InitializeComponent();                                   
+            InitializeComponent();
         }
 
-        
-
         protected override void OnLoad( EventArgs e )
-        {            
+        {
             PopulateData();
 
             _bigRoadGrid.DataSource = _bigRoadBindingList;
@@ -42,10 +36,8 @@ namespace RoadMapUI
             base.OnLoad( e );
         }
 
-        
-
         private RoadmapGenerator _generator = new RoadmapGenerator();
-        
+
         private IList<bigRoadPos> _bigRoadShowTies = null;
         private IList<bigRoadPos> _bigRoadNoTies = null;
         private IList<beadPlatePos> _beadPlate = null;
@@ -242,4 +234,6 @@ namespace RoadMapUI
 
         }
     }
+
+
 }
