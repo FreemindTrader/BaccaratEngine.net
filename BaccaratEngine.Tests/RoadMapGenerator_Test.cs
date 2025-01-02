@@ -88,7 +88,7 @@ public class RoadMapGenerator_Test
         input_result.Add( new GameResult( GResult.P ) );
         input_result.Add( new GameResult( GResult.B ) );
 
-        var result = _generator.bigRoad( input_result, 10, 6 ).RoadList;
+        var result = _generator.initBigRoad( input_result, 10, 6 ).RoadList;
 
         Assert.IsNotNull( result );
         Assert.AreEqual( result.Count, 5 );
@@ -136,7 +136,7 @@ public class RoadMapGenerator_Test
 
         List<GameResult> input_result = new List<GameResult>();
 
-        var result = _generator.bigRoad( input_result, 10, 6 ).RoadList;
+        var result = _generator.initBigRoad( input_result, 10, 6 ).RoadList;
 
         Assert.IsNotNull( result );
         Assert.AreEqual( result.Count, 0 );
@@ -152,7 +152,7 @@ public class RoadMapGenerator_Test
         input_result.Add( new GameResult( GResult.T ) );
         input_result.Add( new GameResult( GResult.T ) );
 
-        var result = _generator.bigRoad( input_result, 10, 6 ).RoadList;
+        var result = _generator.initBigRoad( input_result, 10, 6 ).RoadList;
 
         Assert.IsNotNull( result );
         Assert.AreEqual( result.Count, 1 );
@@ -176,7 +176,7 @@ public class RoadMapGenerator_Test
         input_result.Add( new GameResult( GResult.T ) );
         input_result.Add( new GameResult( GResult.T ) );
 
-        var result = _generator.bigRoad( input_result, 10, 6 ).RoadList;
+        var result = _generator.initBigRoad( input_result, 10, 6 ).RoadList;
 
         Assert.IsNotNull( result );
         Assert.AreEqual( result.Count, 1 );
@@ -470,7 +470,7 @@ public class RoadMapGenerator_Test
         input_result.Add( new GameResult( GResult.P ) );
         input_result.Add( new GameResult( GResult.P ) );
 
-        var result = _generator.bigRoad( input_result, 10, 6 ).RoadList;
+        var result = _generator.initBigRoad( input_result, 10, 6 ).RoadList;
 
         Assert.IsNotNull( result );
         Assert.AreEqual( result.Count, 19 );
@@ -604,7 +604,7 @@ public class RoadMapGenerator_Test
         input_result.Add( new GameResult( GResult.P ) );
         input_result.Add( new GameResult( GResult.B ) );
 
-        var result = _generator.bigRoad( input_result, 2, 6 ).RoadList;
+        var result = _generator.initBigRoad( input_result, 2, 6 ).RoadList;
 
         Assert.IsNotNull( result );
         Assert.AreEqual( result.Count, 3 );
@@ -820,8 +820,8 @@ public class RoadMapGenerator_Test
         gameResults.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'p )); //},
         gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'}];
 
-        var bigRoad = _generator.bigRoad( gameResults, 100, 6 ).RoadList;
-        var result = _generator.bigEyeRoad( bigRoad );
+        var initBigRoad = _generator.initBigRoad( gameResults, 100, 6 ).RoadList;
+        var result = _generator.bigEyeRoad( initBigRoad );
 
         //Assert.AreEqual( result.Count, expectedBigEye.Count );
 
@@ -1027,8 +1027,8 @@ public class RoadMapGenerator_Test
         gameResults.Add( new GameResult( GResult.P ) ); //, 'natural': 'none', 'pair': 'none'}, 
         gameResults.Add( new GameResult( GResult.B ) ); // 'natural': 'none', 'pair': 'none'}];
 
-        var bigRoad = _generator.bigRoad( gameResults, 100, 6 ).RoadList;
-        var result = _generator.bigEyeRoad( bigRoad );
+        var initBigRoad = _generator.initBigRoad( gameResults, 100, 6 ).RoadList;
+        var result = _generator.bigEyeRoad( initBigRoad );
 
         var tobeTested = Math.Min( result.Count, expectedBigEye.Count );
 
@@ -1040,7 +1040,7 @@ public class RoadMapGenerator_Test
 
 
 
-        var smallRoad = _generator.smallRoad( bigRoad );
+        var smallRoad = _generator.smallRoad( initBigRoad );
 
         IList<MoRoad> expectedSmallRoad = new BindingList<MoRoad>();
 
@@ -1097,7 +1097,7 @@ public class RoadMapGenerator_Test
         }
 
 
-        var cockroachPig = _generator.cockroachPig( bigRoad );
+        var cockroachPig = _generator.cockroachPig( initBigRoad );
 
         IList<MoRoad> expectedcockroachPig = new BindingList<MoRoad>();
 
@@ -1291,8 +1291,8 @@ public class RoadMapGenerator_Test
         gameResults.Add( new GameResult( GResult.P ) );//, 'natural': 'none', 'pair': 'none'}, 
         gameResults.Add( new GameResult( GResult.B ) );//, 'natural': 'none', 'pair': 'none'}];
 
-        var bigRoad = _generator.bigRoad( gameResults, 100, 6 ).RoadList;
-        var bigEyeRoad = _generator.bigEyeRoad( bigRoad );
+        var initBigRoad = _generator.initBigRoad( gameResults, 100, 6 ).RoadList;
+        var bigEyeRoad = _generator.bigEyeRoad( initBigRoad );
 
         IList<MoRoad> expectedBigEye = new BindingList<MoRoad>();
 
@@ -1397,7 +1397,7 @@ public class RoadMapGenerator_Test
         }
 
 
-        var smallRoad = _generator.smallRoad( bigRoad );
+        var smallRoad = _generator.smallRoad( initBigRoad );
 
         IList<MoRoad> expectedSmallRoad = new BindingList<MoRoad>();
 
@@ -1499,7 +1499,7 @@ public class RoadMapGenerator_Test
 
 
 
-        var cockroachPig = _generator.cockroachPig( bigRoad );
+        var cockroachPig = _generator.cockroachPig( initBigRoad );
 
         IList<MoRoad> expectedcockroachPig = new BindingList<MoRoad>();
 
@@ -1572,8 +1572,8 @@ public class RoadMapGenerator_Test
     {
         List<GameResult> gameResults = new List<GameResult>();
 
-        var bigRoad = _generator.bigRoad( gameResults, 100, 6 ).RoadList;
-        var bigEyeRoad = _generator.bigEyeRoad( bigRoad );
+        var initBigRoad = _generator.initBigRoad( gameResults, 100, 6 ).RoadList;
+        var bigEyeRoad = _generator.bigEyeRoad( initBigRoad );
 
         Assert.AreEqual( bigEyeRoad.Count, 0 );
     }
@@ -1584,8 +1584,8 @@ public class RoadMapGenerator_Test
         List<GameResult> gameResults = new List<GameResult>();
         gameResults.Add( new GameResult( GResult.P ) ); 
 
-        var bigRoad = _generator.bigRoad( gameResults, 100, 6 ).RoadList;
-        var bigEyeRoad = _generator.bigEyeRoad( bigRoad );
+        var initBigRoad = _generator.initBigRoad( gameResults, 100, 6 ).RoadList;
+        var bigEyeRoad = _generator.bigEyeRoad( initBigRoad );
 
         Assert.AreEqual( bigEyeRoad.Count, 0 );
     }
@@ -1601,8 +1601,8 @@ public class RoadMapGenerator_Test
         gameResults.Add( new GameResult( GResult.P ) );//, 'natural': 'none', 'pair': 'none'}, 
         gameResults.Add( new GameResult( GResult.B ) );//, 'natural': 'banker9', 'pair': 'none'}, 
         
-        var bigRoad = _generator.bigRoad( gameResults, 100, 6 );
-        var bigEyeRoad = _generator.bigEyeRoad( bigRoad.RoadList );
+        var initBigRoad = _generator.initBigRoad( gameResults, 100, 6 );
+        var bigEyeRoad = _generator.bigEyeRoad( initBigRoad.RoadList );
 
         IList<MoRoad> expectedBigEye = new BindingList<MoRoad>();
 
@@ -1632,8 +1632,8 @@ public class RoadMapGenerator_Test
         gameResults.Add( new GameResult( GResult.P ) );//, 'natural': 'none', 'pair': 'none'}, 
         gameResults.Add( new GameResult( GResult.B ) );//, 'natural': 'banker9', 'pair': 'none'}, 
 
-        var bigRoad = _generator.bigRoad( gameResults, 100, 6 ).RoadList;
-        var bigEyeRoad = _generator.bigEyeRoad( bigRoad );
+        var initBigRoad = _generator.initBigRoad( gameResults, 100, 6 ).RoadList;
+        var bigEyeRoad = _generator.bigEyeRoad( initBigRoad );
 
         IList<MoRoad> expectedBigEye = new BindingList<MoRoad>();
 

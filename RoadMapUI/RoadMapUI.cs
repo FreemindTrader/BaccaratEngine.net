@@ -222,10 +222,10 @@ namespace RoadMapUI
 
 
             var result = _generator.bigRoadShowTies( gameResults, 100, 6 );
-            //var result = _generator.bigRoad( gameResults, 100, 6 );
+            //var result = _generator.initBigRoad( gameResults, 100, 6 );
             _bigRoadShowTies = result.RoadList;
 
-            var bigRoadNoTie = _generator.bigRoad( gameResults, 100, 6 );
+            var bigRoadNoTie = _generator.initBigRoad( gameResults, 100, 6 );
             _bigRoadNoTies = bigRoadNoTie.RoadList;
 
             _beadPlate = _generator.beadPlate( gameResults, 50, 6 );

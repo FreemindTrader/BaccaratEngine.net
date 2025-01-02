@@ -16,6 +16,7 @@ namespace BaccaratEngine
         {
             _lastHand = hand;
         }  
+
         
         public GameResult( GResult outcome )
         {

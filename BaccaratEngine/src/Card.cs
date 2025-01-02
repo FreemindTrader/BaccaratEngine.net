@@ -20,6 +20,12 @@ namespace BaccaratEngine
             _value = CardValue.CA;
         }
 
+        public Card( int cValue )
+        {
+            _suit = CardSuit.None;
+            _value = (CardValue)(cValue);
+        }
+
         public CardSuit Suit
         {
             get { return _suit; }
@@ -38,10 +44,11 @@ namespace BaccaratEngine
 
         public enum CardSuit
         {
-            Club = 0, 
-            Diamond = 1,
-            Heart = 2,
-            Spade = 3
+            None = 0,
+            Club = 1, 
+            Diamond = 2,
+            Heart = 3,
+            Spade = 4
         }
 
         public int valueForCard( )
@@ -54,6 +61,7 @@ namespace BaccaratEngine
 
         public enum CardValue
         {
+            CMonkey = 0,
             CA = 1,
             C2 = 2,
             C3,

@@ -70,7 +70,7 @@ namespace BaccaratEngine
         }
 
 
-        public ( IList<bigRoadPos> RoadList, int MaxColumn ) bigRoad( List<GameResult> results, int columns = 6, int rows = 6, bool scroll = true )
+        public ( IList<bigRoadPos> RoadList, int MaxColumn ) initBigRoad( List<GameResult> results, int columns = 6, int rows = 6, bool scroll = true )
         {
             IList<bigRoadPos> returnList = new List<bigRoadPos>();
 
@@ -413,13 +413,13 @@ namespace BaccaratEngine
         /// <summary>
         /// Big road column definitions
         /// </summary>
-        /// <param name="bigRoad">The big road data</param>
+        /// <param name="initBigRoad">The big road data</param>
         /// <returns>Dictionary< int, ColumnDefinitions > Map of columns</returns>
-        private Dictionary<int, ColumnDefinitions> bigRoadColumnDefinitions( IList<bigRoadPos> bigRoad )
+        private Dictionary<int, ColumnDefinitions> bigRoadColumnDefinitions( IList<bigRoadPos> initBigRoad )
         {
             var columnDictionary = new Dictionary<int, ColumnDefinitions>();
 
-            foreach (bigRoadPos item in bigRoad)
+            foreach (bigRoadPos item in initBigRoad)
             {
                 if (!columnDictionary.ContainsKey( item.LogicalColumn ))
                 {
@@ -437,12 +437,12 @@ namespace BaccaratEngine
         /// <summary>
         /// Derived Road using the given cycle
         /// </summary>
-        /// <param name="bigRoad">bigRoad The big road data</param>
+        /// <param name="initBigRoad">initBigRoad The big road data</param>
         /// <param name="cycleLength">Cycle used to calculate the derived road</param>
         /// <returns>A new list of derived road items (i.e., list of red/blue)</returns>
-        public IList<MoRoad> derivedRoad( IList<bigRoadPos> bigRoad, int cycleLength )
+        public IList<MoRoad> derivedRoad( IList<bigRoadPos> initBigRoad, int cycleLength )
         {
-            var columnDefinitionsDictionary = this.bigRoadColumnDefinitions( bigRoad );
+            var columnDefinitionsDictionary = this.bigRoadColumnDefinitions( initBigRoad );
             /*
                 1.    Let k be the Cycle of the roadmap.  k = 1 for big eye road.
                 2.    Assume that the last icon added to the 大路 (Big Road) is on row m of column n.
@@ -530,31 +530,31 @@ namespace BaccaratEngine
         /// <summary>
         /// the big eye road - derived road with a cycle of 1
         /// </summary>
-        /// <param name="bigRoad">The big road data</param>
+        /// <param name="initBigRoad">The big road data</param>
         /// <returns>A new list of derived road items</returns>
-        public IList<MoRoad> bigEyeRoad( IList<bigRoadPos> bigRoad )
+        public IList<MoRoad> bigEyeRoad( IList<bigRoadPos> initBigRoad )
         {
-            return derivedRoad( bigRoad, 1 );
+            return derivedRoad( initBigRoad, 1 );
         }
 
         /// <summary>
         /// the big eye road - derived road with a cycle of 2
         /// </summary>
-        /// <param name="bigRoad">The big road data</param>
+        /// <param name="initBigRoad">The big road data</param>
         /// <returns>A new list of derived road items</returns>
-        public IList<MoRoad> smallRoad( IList<bigRoadPos> bigRoad )
+        public IList<MoRoad> smallRoad( IList<bigRoadPos> initBigRoad )
         {
-            return derivedRoad( bigRoad, 2 );
+            return derivedRoad( initBigRoad, 2 );
         }
 
         /// <summary>
         /// the cockroach pig - derived road with a cycle of 3
         /// </summary>
-        /// <param name="bigRoad">The big road data</param>
+        /// <param name="initBigRoad">The big road data</param>
         /// <returns>A new list of derived road items</returns>
-        public IList<MoRoad> cockroachPig( IList<bigRoadPos> bigRoad )
+        public IList<MoRoad> cockroachPig( IList<bigRoadPos> initBigRoad )
         {
-            return derivedRoad( bigRoad, 3 );
+            return derivedRoad( initBigRoad, 3 );
         }
     } 
 }
