@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BaccaratEngine;
+using DevExpress.LookAndFeel;
 
 namespace RibbonRoadMapUI
 {
@@ -20,6 +21,7 @@ namespace RibbonRoadMapUI
 
         public RoadMapUI()
         {
+            //UserLookAndFeel.Default.SetSkinStyle( SkinStyle.WXI );
             InitializeComponent();
         }
 

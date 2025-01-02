@@ -37,20 +37,21 @@ namespace RibbonRoadMapUI
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager( typeof( RoadMapUI ) );
             ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            _newGame = new DevExpress.XtraBars.BarButtonItem();
+            _bankerWin = new DevExpress.XtraBars.BarButtonItem();
+            _playerWin = new DevExpress.XtraBars.BarButtonItem();
+            _gameTie = new DevExpress.XtraBars.BarButtonItem();
+            _banker8 = new DevExpress.XtraBars.BarButtonItem();
+            _banker9 = new DevExpress.XtraBars.BarButtonItem();
+            _player8 = new DevExpress.XtraBars.BarButtonItem();
+            _player9 = new DevExpress.XtraBars.BarButtonItem();
+            _lucky6 = new DevExpress.XtraBars.BarButtonItem();
+            _lucky63Cards = new DevExpress.XtraBars.BarButtonItem();
+            _lucky7 = new DevExpress.XtraBars.BarButtonItem();
+            _lucky76 = new DevExpress.XtraBars.BarButtonItem();
+            _panda = new DevExpress.XtraBars.BarButtonItem();
+            _banker7Over6 = new DevExpress.XtraBars.BarButtonItem();
+            _tigerTie = new DevExpress.XtraBars.BarButtonItem();
             ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -110,7 +111,8 @@ namespace RibbonRoadMapUI
             _beadPlateLayoutControlItem = new LayoutControlItem();
             _bigEyeLayoutControlItem = new LayoutControlItem();
             _cockRoachLayoutControlItem = new LayoutControlItem();
-            barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_uiLayoutControl).BeginInit();
             _uiLayoutControl.SuspendLayout();
@@ -141,113 +143,120 @@ namespace RibbonRoadMapUI
             // 
             ribbonControl1.EmptyAreaImageOptions.ImagePadding = new Padding( 50, 51, 50, 51 );
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange( new DevExpress.XtraBars.BarItem[ ] { ribbonControl1.ExpandCollapseItem, barButtonItem1, barButtonItem4, barButtonItem2, barButtonItem3, barButtonItem5, barButtonItem6, barButtonItem7, barButtonItem8, barButtonItem9, barButtonItem10, barButtonItem11, barButtonItem12, barButtonItem13, barButtonItem14, barButtonItem15 } );
+            ribbonControl1.Items.AddRange( new DevExpress.XtraBars.BarItem[ ] { ribbonControl1.ExpandCollapseItem, _newGame, _bankerWin, _playerWin, _gameTie, _banker8, _banker9, _player8, _player9, _lucky6, _lucky63Cards, _lucky7, _lucky76, _panda, _banker7Over6, _tigerTie, skinDropDownButtonItem1, skinPaletteDropDownButtonItem1 } );
             ribbonControl1.Location = new System.Drawing.Point( 0, 0 );
             ribbonControl1.Margin = new Padding( 5 );
-            ribbonControl1.MaxItemId = 18;
+            ribbonControl1.MaxItemId = 20;
             ribbonControl1.Name = "ribbonControl1";
             ribbonControl1.OptionsMenuMinWidth = 550;
             ribbonControl1.Pages.AddRange( new DevExpress.XtraBars.Ribbon.RibbonPage[ ] { ribbonPage1, ribbonPage2 } );
-            ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            ribbonControl1.Size = new System.Drawing.Size( 1993, 134 );
+            ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office365;
+            ribbonControl1.Size = new System.Drawing.Size( 1993, 237 );
             // 
-            // barButtonItem1
+            // _newGame
             // 
-            barButtonItem1.Caption = "New";
-            barButtonItem1.Id = 1;
-            barButtonItem1.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem1.ImageOptions.SvgImage" );
-            barButtonItem1.Name = "barButtonItem1";
+            _newGame.Caption = "New";
+            _newGame.Id = 1;
+            _newGame.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_newGame.ImageOptions.SvgImage" );
+            _newGame.Name = "_newGame";
             // 
-            // barButtonItem4
+            // _bankerWin
             // 
-            barButtonItem4.Caption = "Banker";
-            barButtonItem4.Id = 4;
-            barButtonItem4.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem4.ImageOptions.SvgImage" );
-            barButtonItem4.Name = "barButtonItem4";
+            _bankerWin.Caption = "Banker";
+            _bankerWin.Id = 4;
+            _bankerWin.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_bankerWin.ImageOptions.SvgImage" );
+            _bankerWin.Name = "_bankerWin";
             // 
-            // barButtonItem2
+            // _playerWin
             // 
-            barButtonItem2.Caption = "Player";
-            barButtonItem2.Id = 5;
-            barButtonItem2.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem2.ImageOptions.SvgImage" );
-            barButtonItem2.Name = "barButtonItem2";
+            _playerWin.Caption = "Player";
+            _playerWin.Id = 5;
+            _playerWin.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_playerWin.ImageOptions.SvgImage" );
+            _playerWin.Name = "_playerWin";
             // 
-            // barButtonItem3
+            // _gameTie
             // 
-            barButtonItem3.Caption = "Tie";
-            barButtonItem3.Id = 6;
-            barButtonItem3.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem3.ImageOptions.SvgImage" );
-            barButtonItem3.Name = "barButtonItem3";
+            _gameTie.Caption = "Tie";
+            _gameTie.Id = 6;
+            _gameTie.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_gameTie.ImageOptions.SvgImage" );
+            _gameTie.Name = "_gameTie";
             // 
-            // barButtonItem5
+            // _banker8
             // 
-            barButtonItem5.Caption = "N8";
-            barButtonItem5.Id = 7;
-            barButtonItem5.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem5.ImageOptions.SvgImage" );
-            barButtonItem5.Name = "barButtonItem5";
+            _banker8.Caption = "N8";
+            _banker8.Id = 7;
+            _banker8.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_banker8.ImageOptions.SvgImage" );
+            _banker8.Name = "_banker8";
             // 
-            // barButtonItem6
+            // _banker9
             // 
-            barButtonItem6.Caption = "N9";
-            barButtonItem6.Id = 8;
-            barButtonItem6.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem6.ImageOptions.SvgImage" );
-            barButtonItem6.Name = "barButtonItem6";
+            _banker9.Caption = "N9";
+            _banker9.Id = 8;
+            _banker9.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_banker9.ImageOptions.SvgImage" );
+            _banker9.Name = "_banker9";
             // 
-            // barButtonItem7
+            // _player8
             // 
-            barButtonItem7.Caption = "N8";
-            barButtonItem7.Id = 9;
-            barButtonItem7.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem7.ImageOptions.SvgImage" );
-            barButtonItem7.Name = "barButtonItem7";
+            _player8.Caption = "N8";
+            _player8.Id = 9;
+            _player8.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_player8.ImageOptions.SvgImage" );
+            _player8.Name = "_player8";
             // 
-            // barButtonItem8
+            // _player9
             // 
-            barButtonItem8.Caption = "N9";
-            barButtonItem8.Id = 10;
-            barButtonItem8.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem8.ImageOptions.SvgImage" );
-            barButtonItem8.Name = "barButtonItem8";
+            _player9.Caption = "N9";
+            _player9.Id = 10;
+            _player9.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_player9.ImageOptions.SvgImage" );
+            _player9.Name = "_player9";
             // 
-            // barButtonItem9
+            // _lucky6
             // 
-            barButtonItem9.Caption = "Lucky6";
-            barButtonItem9.Id = 11;
-            barButtonItem9.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem9.ImageOptions.SvgImage" );
-            barButtonItem9.Name = "barButtonItem9";
+            _lucky6.Caption = "Lucky6";
+            _lucky6.Id = 11;
+            _lucky6.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_lucky6.ImageOptions.SvgImage" );
+            _lucky6.Name = "_lucky6";
             // 
-            // barButtonItem10
+            // _lucky63Cards
             // 
-            barButtonItem10.Caption = "Lucky6(3)";
-            barButtonItem10.Id = 12;
-            barButtonItem10.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem10.ImageOptions.SvgImage" );
-            barButtonItem10.Name = "barButtonItem10";
+            _lucky63Cards.Caption = "Lucky6(3)";
+            _lucky63Cards.Id = 12;
+            _lucky63Cards.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_lucky63Cards.ImageOptions.SvgImage" );
+            _lucky63Cards.Name = "_lucky63Cards";
             // 
-            // barButtonItem11
+            // _lucky7
             // 
-            barButtonItem11.Caption = "Lucky7";
-            barButtonItem11.Id = 13;
-            barButtonItem11.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem11.ImageOptions.SvgImage" );
-            barButtonItem11.Name = "barButtonItem11";
+            _lucky7.Caption = "Lucky7";
+            _lucky7.Id = 13;
+            _lucky7.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_lucky7.ImageOptions.SvgImage" );
+            _lucky7.Name = "_lucky7";
             // 
-            // barButtonItem12
+            // _lucky76
             // 
-            barButtonItem12.Caption = "Lucky76";
-            barButtonItem12.Id = 14;
-            barButtonItem12.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem12.ImageOptions.SvgImage" );
-            barButtonItem12.Name = "barButtonItem12";
+            _lucky76.Caption = "Lucky76";
+            _lucky76.Id = 14;
+            _lucky76.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_lucky76.ImageOptions.SvgImage" );
+            _lucky76.Name = "_lucky76";
             // 
-            // barButtonItem13
+            // _panda
             // 
-            barButtonItem13.Caption = "Panda";
-            barButtonItem13.Id = 15;
-            barButtonItem13.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem13.ImageOptions.SvgImage" );
-            barButtonItem13.Name = "barButtonItem13";
+            _panda.Caption = "Panda";
+            _panda.Id = 15;
+            _panda.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_panda.ImageOptions.SvgImage" );
+            _panda.Name = "_panda";
             // 
-            // barButtonItem14
+            // _banker7Over6
             // 
-            barButtonItem14.Caption = "B76";
-            barButtonItem14.Id = 16;
-            barButtonItem14.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem14.ImageOptions.SvgImage" );
-            barButtonItem14.Name = "barButtonItem14";
+            _banker7Over6.Caption = "B76";
+            _banker7Over6.Id = 16;
+            _banker7Over6.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_banker7Over6.ImageOptions.SvgImage" );
+            _banker7Over6.Name = "_banker7Over6";
+            // 
+            // _tigerTie
+            // 
+            _tigerTie.Caption = "Tiger Tie";
+            _tigerTie.Id = 17;
+            _tigerTie.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_tigerTie.ImageOptions.SvgImage" );
+            _tigerTie.Name = "_tigerTie";
             // 
             // ribbonPage1
             // 
@@ -257,49 +266,51 @@ namespace RibbonRoadMapUI
             // 
             // ribbonPageGroup1
             // 
-            ribbonPageGroup1.ItemLinks.Add( barButtonItem1 );
+            ribbonPageGroup1.ItemLinks.Add( _newGame );
             ribbonPageGroup1.Name = "ribbonPageGroup1";
-            ribbonPageGroup1.Text = "ribbonPageGroup1";
+            ribbonPageGroup1.Text = "Game";
             // 
             // ribbonPageGroup3
             // 
-            ribbonPageGroup3.ItemLinks.Add( barButtonItem4 );
-            ribbonPageGroup3.ItemLinks.Add( barButtonItem2 );
-            ribbonPageGroup3.ItemLinks.Add( barButtonItem3 );
+            ribbonPageGroup3.ItemLinks.Add( _bankerWin );
+            ribbonPageGroup3.ItemLinks.Add( _playerWin );
+            ribbonPageGroup3.ItemLinks.Add( _gameTie );
             ribbonPageGroup3.Name = "ribbonPageGroup3";
             ribbonPageGroup3.Text = "Game Result";
             // 
             // ribbonPageGroup4
             // 
-            ribbonPageGroup4.ItemLinks.Add( barButtonItem5 );
-            ribbonPageGroup4.ItemLinks.Add( barButtonItem6 );
-            ribbonPageGroup4.ItemLinks.Add( barButtonItem7 );
-            ribbonPageGroup4.ItemLinks.Add( barButtonItem8 );
+            ribbonPageGroup4.ItemLinks.Add( _banker8 );
+            ribbonPageGroup4.ItemLinks.Add( _banker9 );
+            ribbonPageGroup4.ItemLinks.Add( _player8 );
+            ribbonPageGroup4.ItemLinks.Add( _player9 );
             ribbonPageGroup4.Name = "ribbonPageGroup4";
-            ribbonPageGroup4.Text = "ribbonPageGroup4";
+            ribbonPageGroup4.Text = "Natural";
             // 
             // ribbonPageGroup5
             // 
-            ribbonPageGroup5.ItemLinks.Add( barButtonItem9 );
-            ribbonPageGroup5.ItemLinks.Add( barButtonItem10 );
-            ribbonPageGroup5.ItemLinks.Add( barButtonItem14 );
-            ribbonPageGroup5.ItemLinks.Add( barButtonItem11 );
-            ribbonPageGroup5.ItemLinks.Add( barButtonItem12 );
-            ribbonPageGroup5.ItemLinks.Add( barButtonItem13 );
-            ribbonPageGroup5.ItemLinks.Add( barButtonItem15 );
+            ribbonPageGroup5.ItemLinks.Add( _lucky6 );
+            ribbonPageGroup5.ItemLinks.Add( _lucky63Cards );
+            ribbonPageGroup5.ItemLinks.Add( _banker7Over6 );
+            ribbonPageGroup5.ItemLinks.Add( _lucky7 );
+            ribbonPageGroup5.ItemLinks.Add( _lucky76 );
+            ribbonPageGroup5.ItemLinks.Add( _panda );
+            ribbonPageGroup5.ItemLinks.Add( _tigerTie );
             ribbonPageGroup5.Name = "ribbonPageGroup5";
-            ribbonPageGroup5.Text = "ribbonPageGroup5";
+            ribbonPageGroup5.Text = "Monsters";
             // 
             // ribbonPage2
             // 
             ribbonPage2.Groups.AddRange( new DevExpress.XtraBars.Ribbon.RibbonPageGroup[ ] { ribbonPageGroup2 } );
             ribbonPage2.Name = "ribbonPage2";
-            ribbonPage2.Text = "Insert";
+            ribbonPage2.Text = "View";
             // 
             // ribbonPageGroup2
             // 
+            ribbonPageGroup2.ItemLinks.Add( skinDropDownButtonItem1 );
+            ribbonPageGroup2.ItemLinks.Add( skinPaletteDropDownButtonItem1 );
             ribbonPageGroup2.Name = "ribbonPageGroup2";
-            ribbonPageGroup2.Text = "ribbonPageGroup2";
+            ribbonPageGroup2.Text = "Skins";
             // 
             // _uiLayoutControl
             // 
@@ -309,17 +320,17 @@ namespace RibbonRoadMapUI
             _uiLayoutControl.Controls.Add( _smallRoadGrid );
             _uiLayoutControl.Controls.Add( _bigRoadGrid );
             _uiLayoutControl.Dock = DockStyle.Fill;
-            _uiLayoutControl.Location = new System.Drawing.Point( 0, 134 );
+            _uiLayoutControl.Location = new System.Drawing.Point( 0, 237 );
             _uiLayoutControl.Name = "_uiLayoutControl";
             _uiLayoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle( 2471, 535, 975, 600 );
             _uiLayoutControl.Root = _mainFormLayoutControlGroup;
-            _uiLayoutControl.Size = new System.Drawing.Size( 1993, 823 );
+            _uiLayoutControl.Size = new System.Drawing.Size( 1993, 720 );
             _uiLayoutControl.TabIndex = 1;
             _uiLayoutControl.Text = "BigRoad";
             // 
             // _cockRoachGrid
             // 
-            _cockRoachGrid.Location = new System.Drawing.Point( 692, 637 );
+            _cockRoachGrid.Location = new System.Drawing.Point( 692, 560 );
             _cockRoachGrid.Name = "_cockRoachGrid";
             _cockRoachGrid.OptionsView.FixRowHeaderPanelWidth = true;
             _cockRoachGrid.OptionsView.MaxRowAutoHeight = 30;
@@ -329,7 +340,7 @@ namespace RibbonRoadMapUI
             _cockRoachGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _cockRoachCBEdit } );
             _cockRoachGrid.RowHeaderWidth = 15;
             _cockRoachGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _cockRoachRow0, _cockRoachRow1, _cockRoachRow2, _cockRoachRow3, _cockRoachRow4, _cockRoachRow5 } );
-            _cockRoachGrid.Size = new System.Drawing.Size( 1289, 174 );
+            _cockRoachGrid.Size = new System.Drawing.Size( 1289, 148 );
             _cockRoachGrid.TabIndex = 9;
             // 
             // _cockRoachCBEdit
@@ -387,7 +398,7 @@ namespace RibbonRoadMapUI
             // 
             // _bigEyeGrid
             // 
-            _bigEyeGrid.Location = new System.Drawing.Point( 692, 312 );
+            _bigEyeGrid.Location = new System.Drawing.Point( 692, 277 );
             _bigEyeGrid.Name = "_bigEyeGrid";
             _bigEyeGrid.OptionsView.FixRowHeaderPanelWidth = true;
             _bigEyeGrid.OptionsView.MaxRowAutoHeight = 30;
@@ -397,7 +408,7 @@ namespace RibbonRoadMapUI
             _bigEyeGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _bigEyeRoadCBEdit } );
             _bigEyeGrid.RowHeaderWidth = 15;
             _bigEyeGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _bigEyeRoad0, _bigEyeRoad1, _bigEyeRoad2, _bigEyeRoad3, _bigEyeRoad4, _bigEyeRoad5 } );
-            _bigEyeGrid.Size = new System.Drawing.Size( 1289, 117 );
+            _bigEyeGrid.Size = new System.Drawing.Size( 1289, 98 );
             _bigEyeGrid.TabIndex = 8;
             // 
             // _bigEyeRoadCBEdit
@@ -454,7 +465,7 @@ namespace RibbonRoadMapUI
             // 
             // _beadPlateRoadGrid
             // 
-            _beadPlateRoadGrid.Location = new System.Drawing.Point( 12, 312 );
+            _beadPlateRoadGrid.Location = new System.Drawing.Point( 12, 277 );
             _beadPlateRoadGrid.Name = "_beadPlateRoadGrid";
             _beadPlateRoadGrid.OptionsView.FixRowHeaderPanelWidth = true;
             _beadPlateRoadGrid.OptionsView.MaxRowAutoHeight = 64;
@@ -464,7 +475,7 @@ namespace RibbonRoadMapUI
             _beadPlateRoadGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _beadPlateRepoCBEdit } );
             _beadPlateRoadGrid.RowHeaderWidth = 15;
             _beadPlateRoadGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _beadPlateRow0, _beadPlateRow1, _beadPlateRow2, _beadPlateRow3, _beadPlateRow4, _beadPlateRow5 } );
-            _beadPlateRoadGrid.Size = new System.Drawing.Size( 676, 499 );
+            _beadPlateRoadGrid.Size = new System.Drawing.Size( 676, 431 );
             _beadPlateRoadGrid.TabIndex = 7;
             // 
             // _beadPlateRepoCBEdit
@@ -541,7 +552,7 @@ namespace RibbonRoadMapUI
             // 
             // _smallRoadGrid
             // 
-            _smallRoadGrid.Location = new System.Drawing.Point( 692, 458 );
+            _smallRoadGrid.Location = new System.Drawing.Point( 692, 404 );
             _smallRoadGrid.Name = "_smallRoadGrid";
             _smallRoadGrid.OptionsView.FixRowHeaderPanelWidth = true;
             _smallRoadGrid.OptionsView.MaxRowAutoHeight = 30;
@@ -551,7 +562,7 @@ namespace RibbonRoadMapUI
             _smallRoadGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _smallRoadImageCBEdit } );
             _smallRoadGrid.RowHeaderWidth = 15;
             _smallRoadGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _smallRoadRow0, _smallRoadRow1, _smallRoadRow2, _smallRoadRow3, _smallRoadRow4, _smallRoadRow5 } );
-            _smallRoadGrid.Size = new System.Drawing.Size( 1289, 150 );
+            _smallRoadGrid.Size = new System.Drawing.Size( 1289, 127 );
             _smallRoadGrid.TabIndex = 6;
             // 
             // _smallRoadImageCBEdit
@@ -619,7 +630,7 @@ namespace RibbonRoadMapUI
             _bigRoadGrid.RightToLeft = RightToLeft.No;
             _bigRoadGrid.RowHeaderWidth = 15;
             _bigRoadGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _bigRoadRow0, _bigRoadRow1, _bigRoadRow2, _bigRoadRow3, _bigRoadRow4, _bigRoadRow5 } );
-            _bigRoadGrid.Size = new System.Drawing.Size( 1969, 246 );
+            _bigRoadGrid.Size = new System.Drawing.Size( 1969, 211 );
             _bigRoadGrid.TabIndex = 5;
             // 
             // _bigRoadImageCBEdit
@@ -700,7 +711,7 @@ namespace RibbonRoadMapUI
             _mainFormLayoutControlGroup.GroupBordersVisible = false;
             _mainFormLayoutControlGroup.Items.AddRange( new BaseLayoutItem[ ] { _bigRoadLayoutControlItem, _smallRoadLayoutControlItem, _beadPlateLayoutControlItem, _bigEyeLayoutControlItem, _cockRoachLayoutControlItem } );
             _mainFormLayoutControlGroup.Name = "Root";
-            _mainFormLayoutControlGroup.Size = new System.Drawing.Size( 1993, 823 );
+            _mainFormLayoutControlGroup.Size = new System.Drawing.Size( 1993, 720 );
             _mainFormLayoutControlGroup.TextVisible = false;
             // 
             // _bigRoadLayoutControlItem
@@ -708,7 +719,7 @@ namespace RibbonRoadMapUI
             _bigRoadLayoutControlItem.Control = _bigRoadGrid;
             _bigRoadLayoutControlItem.Location = new System.Drawing.Point( 0, 0 );
             _bigRoadLayoutControlItem.Name = "layoutControlItem2";
-            _bigRoadLayoutControlItem.Size = new System.Drawing.Size( 1973, 275 );
+            _bigRoadLayoutControlItem.Size = new System.Drawing.Size( 1973, 240 );
             _bigRoadLayoutControlItem.Text = "Big Road";
             _bigRoadLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _bigRoadLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
@@ -716,9 +727,9 @@ namespace RibbonRoadMapUI
             // _smallRoadLayoutControlItem
             // 
             _smallRoadLayoutControlItem.Control = _smallRoadGrid;
-            _smallRoadLayoutControlItem.Location = new System.Drawing.Point( 680, 421 );
+            _smallRoadLayoutControlItem.Location = new System.Drawing.Point( 680, 367 );
             _smallRoadLayoutControlItem.Name = "layoutControlItem3";
-            _smallRoadLayoutControlItem.Size = new System.Drawing.Size( 1293, 179 );
+            _smallRoadLayoutControlItem.Size = new System.Drawing.Size( 1293, 156 );
             _smallRoadLayoutControlItem.Text = "Small Road";
             _smallRoadLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _smallRoadLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
@@ -726,9 +737,9 @@ namespace RibbonRoadMapUI
             // _beadPlateLayoutControlItem
             // 
             _beadPlateLayoutControlItem.Control = _beadPlateRoadGrid;
-            _beadPlateLayoutControlItem.Location = new System.Drawing.Point( 0, 275 );
+            _beadPlateLayoutControlItem.Location = new System.Drawing.Point( 0, 240 );
             _beadPlateLayoutControlItem.Name = "layoutControlItem4";
-            _beadPlateLayoutControlItem.Size = new System.Drawing.Size( 680, 528 );
+            _beadPlateLayoutControlItem.Size = new System.Drawing.Size( 680, 460 );
             _beadPlateLayoutControlItem.Text = "Bead Plate";
             _beadPlateLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _beadPlateLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
@@ -736,9 +747,9 @@ namespace RibbonRoadMapUI
             // _bigEyeLayoutControlItem
             // 
             _bigEyeLayoutControlItem.Control = _bigEyeGrid;
-            _bigEyeLayoutControlItem.Location = new System.Drawing.Point( 680, 275 );
+            _bigEyeLayoutControlItem.Location = new System.Drawing.Point( 680, 240 );
             _bigEyeLayoutControlItem.Name = "layoutControlItem1";
-            _bigEyeLayoutControlItem.Size = new System.Drawing.Size( 1293, 146 );
+            _bigEyeLayoutControlItem.Size = new System.Drawing.Size( 1293, 127 );
             _bigEyeLayoutControlItem.Text = "Big Eye Road";
             _bigEyeLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _bigEyeLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
@@ -746,19 +757,26 @@ namespace RibbonRoadMapUI
             // _cockRoachLayoutControlItem
             // 
             _cockRoachLayoutControlItem.Control = _cockRoachGrid;
-            _cockRoachLayoutControlItem.Location = new System.Drawing.Point( 680, 600 );
+            _cockRoachLayoutControlItem.Location = new System.Drawing.Point( 680, 523 );
             _cockRoachLayoutControlItem.Name = "layoutControlItem5";
-            _cockRoachLayoutControlItem.Size = new System.Drawing.Size( 1293, 203 );
+            _cockRoachLayoutControlItem.Size = new System.Drawing.Size( 1293, 177 );
             _cockRoachLayoutControlItem.Text = "Cockroach Pig";
             _cockRoachLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _cockRoachLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
             // 
-            // barButtonItem15
+            // skinDropDownButtonItem1
             // 
-            barButtonItem15.Caption = "Tiger Tie";
-            barButtonItem15.Id = 17;
-            barButtonItem15.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem15.ImageOptions.SvgImage" );
-            barButtonItem15.Name = "barButtonItem15";
+            skinDropDownButtonItem1.ActAsDropDown = true;
+            skinDropDownButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            skinDropDownButtonItem1.Id = 18;
+            skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
+            // 
+            // skinPaletteDropDownButtonItem1
+            // 
+            skinPaletteDropDownButtonItem1.ActAsDropDown = true;
+            skinPaletteDropDownButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            skinPaletteDropDownButtonItem1.Id = 19;
+            skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
             // 
             // RoadMapUI
             // 
@@ -872,29 +890,31 @@ namespace RibbonRoadMapUI
         private DevExpress.Utils.SvgImageCollection _smallRoadSvg;
         private DevExpress.Utils.SvgImageCollection _bigEyeRoadSvg;
         private DevExpress.Utils.SvgImageCollection _bigRoadSvg;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem _newGame;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private RepositoryItemImageComboBox _beadPlateRepoCBEdit;
         private RepositoryItemImageComboBox _smallRoadImageCBEdit;
         private RepositoryItemImageComboBox _bigRoadImageCBEdit;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem _bankerWin;
+        private DevExpress.XtraBars.BarButtonItem _playerWin;
+        private DevExpress.XtraBars.BarButtonItem _gameTie;
+        private DevExpress.XtraBars.BarButtonItem _banker8;
+        private DevExpress.XtraBars.BarButtonItem _banker9;
+        private DevExpress.XtraBars.BarButtonItem _player8;
+        private DevExpress.XtraBars.BarButtonItem _player9;
+        private DevExpress.XtraBars.BarButtonItem _lucky6;
+        private DevExpress.XtraBars.BarButtonItem _lucky63Cards;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarButtonItem _lucky7;
+        private DevExpress.XtraBars.BarButtonItem _lucky76;
+        private DevExpress.XtraBars.BarButtonItem _panda;
+        private DevExpress.XtraBars.BarButtonItem _banker7Over6;
+        private DevExpress.XtraBars.BarButtonItem _tigerTie;
+        private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
     }
 }
 
