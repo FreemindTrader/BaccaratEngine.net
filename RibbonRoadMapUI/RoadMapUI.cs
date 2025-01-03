@@ -19,6 +19,11 @@ namespace RibbonRoadMapUI
         private BindingList<xColumn> _smallRoadBindingList = new BindingList<xColumn>();
         private BindingList<xColumn> _cockroachBindingList = new BindingList<xColumn>();
 
+        int _bigRoadInitColumn = 110;
+        int _beadPlateInitColumns = 50;
+        int _bigEyeInitColumns = 70;
+        int _smallRoadInitColumns = 70;
+        int _cockRoachInitColumns = 70;
         public RoadMapUI()
         {
             //UserLookAndFeel.Default.SetSkinStyle( SkinStyle.WXI );
@@ -68,11 +73,7 @@ namespace RibbonRoadMapUI
 
         public void PopulateData()
         {
-            _bigRoadBindingList = _generator.initBindingList( 110 );
-            _beadPlateBindingList = _generator.initBindingList( 50 );
-            _bigEyeRoadBindingList = _generator.initBindingList( 70 ); ;
-            _smallRoadBindingList = _generator.initBindingList( 70 ); ;
-            _cockroachBindingList = _generator.initBindingList( 70 ); ;
+           
 
             List<GameResult> gameResults = new List<GameResult>();
 
@@ -213,7 +214,13 @@ namespace RibbonRoadMapUI
             gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
             gameResults.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'p )); //},
             gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'}];
+            
 
+            _bigRoadBindingList = _generator.initBindingList( _bigRoadInitColumn );
+            _beadPlateBindingList = _generator.initBindingList( _beadPlateInitColumns );
+            _bigEyeRoadBindingList = _generator.initBindingList( _bigEyeInitColumns ); ;
+            _smallRoadBindingList = _generator.initBindingList( _smallRoadInitColumns ); ;
+            _cockroachBindingList = _generator.initBindingList( _cockRoachInitColumns ); ;
 
             var result = _generator.bigRoadShowTies( gameResults, 100, 6 );
             //var result = _generator.initBigRoad( gameResults, 100, 6 );
@@ -233,7 +240,19 @@ namespace RibbonRoadMapUI
             _bigEyeRoadBindingList = _bigEyeRoad.UpdateBindingList( _bigEyeRoadBindingList, result.MaxColumn, 6 );
             _cockroachBindingList = _cockRoachRoad.UpdateBindingList( _cockroachBindingList, result.MaxColumn, 6 );
 
+            
+            
+        }
 
+        protected override void OnShown( EventArgs e )
+        {            
+            _bigRoadGrid.LeftVisibleRecord = Math.Max( 0, _bigRoadBindingList.Count - _bigRoadInitColumn/2 );
+            _beadPlateRoadGrid.LeftVisibleRecord = Math.Max( 0, _beadPlate.Count/2 );
+            _smallRoadGrid.LeftVisibleRecord = Math.Max( 0, _smallRoadBindingList.Count - _bigEyeInitColumns/2 );
+            _bigEyeGrid.LeftVisibleRecord = Math.Max( 0, _bigEyeRoadBindingList.Count - _smallRoadInitColumns/2 );
+            _cockRoachGrid.LeftVisibleRecord = Math.Max( 0, _cockroachBindingList.Count - _cockRoachInitColumns/2 );
+
+            base.OnShown( e );
         }
     }
 
