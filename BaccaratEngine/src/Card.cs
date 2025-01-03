@@ -43,7 +43,7 @@ namespace BaccaratEngine
         }
 
         public enum CardSuit
-        {
+        {          
             None = 0,
             Club = 1, 
             Diamond = 2,

@@ -62,6 +62,12 @@ namespace RibbonRoadMapUI
             barCheckItem3 = new DevExpress.XtraBars.BarCheckItem();
             barCheckItem4 = new DevExpress.XtraBars.BarCheckItem();
             barCheckItem5 = new DevExpress.XtraBars.BarCheckItem();
+            _newLiveGame = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -69,10 +75,20 @@ namespace RibbonRoadMapUI
             ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             _uiLayoutControl = new LayoutControl();
+            _cardsDealtGrid = new DevExpress.XtraGrid.GridControl();
+            _cardDealtGridView = new DevExpress.XtraGrid.Views.Layout.LayoutView();
+            _card1 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            _cardImageCBEdit = new RepositoryItemImageComboBox();
+            _svgCards = new DevExpress.Utils.SvgImageCollection( components );
+            layoutViewField__playerCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            _card2 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            layoutViewField_layoutViewColumn1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            _card3 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            layoutViewField_layoutViewColumn1_1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
+            emptySpaceItem1 = new EmptySpaceItem();
+            Item1 = new EmptySpaceItem();
             roadmapAnalysisControl1 = new RoadmapAnalysisUI.RoadmapAnalysisControl();
             _cockRoachGrid = new DevExpress.XtraVerticalGrid.VGridControl();
             _cockRoachCBEdit = new RepositoryItemImageComboBox();
@@ -126,9 +142,20 @@ namespace RibbonRoadMapUI
             _bigEyeLayoutControlItem = new LayoutControlItem();
             _cockRoachLayoutControlItem = new LayoutControlItem();
             layoutControlItem1 = new LayoutControlItem();
+            layoutControlItem2 = new LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_uiLayoutControl).BeginInit();
             _uiLayoutControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)_cardsDealtGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)_cardDealtGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)_cardImageCBEdit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)_svgCards).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutViewField__playerCard1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutViewField_layoutViewColumn1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutViewField_layoutViewColumn1_1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutViewCard1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)emptySpaceItem1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Item1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachCBEdit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachSvg).BeginInit();
@@ -151,19 +178,20 @@ namespace RibbonRoadMapUI
             ((System.ComponentModel.ISupportInitialize)_bigEyeLayoutControlItem).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachLayoutControlItem).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem2).BeginInit();
             SuspendLayout();
             // 
             // ribbonControl1
             // 
             ribbonControl1.EmptyAreaImageOptions.ImagePadding = new Padding( 50, 51, 50, 51 );
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange( new DevExpress.XtraBars.BarItem[ ] { ribbonControl1.ExpandCollapseItem, _newGame, _bankerWin, _playerWin, _gameTie, _banker8, _banker9, _player8, _player9, _lucky6, _lucky63Cards, _lucky7, _lucky76, _panda, _banker7Over6, _tigerTie, skinDropDownButtonItem1, skinPaletteDropDownButtonItem1, barButtonItem1, barButtonItem2, barButtonItem3, barCheckItem1, barCheckItem2, barCheckItem3, barCheckItem4, barCheckItem5 } );
+            ribbonControl1.Items.AddRange( new DevExpress.XtraBars.BarItem[ ] { ribbonControl1.ExpandCollapseItem, _newGame, _bankerWin, _playerWin, _gameTie, _banker8, _banker9, _player8, _player9, _lucky6, _lucky63Cards, _lucky7, _lucky76, _panda, _banker7Over6, _tigerTie, skinDropDownButtonItem1, skinPaletteDropDownButtonItem1, barButtonItem1, barButtonItem2, barButtonItem3, barCheckItem1, barCheckItem2, barCheckItem3, barCheckItem4, barCheckItem5, _newLiveGame, barButtonItem5 } );
             ribbonControl1.Location = new System.Drawing.Point( 0, 0 );
             ribbonControl1.Margin = new Padding( 5 );
-            ribbonControl1.MaxItemId = 30;
+            ribbonControl1.MaxItemId = 32;
             ribbonControl1.Name = "ribbonControl1";
             ribbonControl1.OptionsMenuMinWidth = 550;
-            ribbonControl1.Pages.AddRange( new DevExpress.XtraBars.Ribbon.RibbonPage[ ] { ribbonPage1, ribbonPage2, ribbonPage3 } );
+            ribbonControl1.Pages.AddRange( new DevExpress.XtraBars.Ribbon.RibbonPage[ ] { ribbonPage3, ribbonPage1, ribbonPage2 } );
             ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office365;
             ribbonControl1.Size = new System.Drawing.Size( 1993, 237 );
             // 
@@ -342,17 +370,64 @@ namespace RibbonRoadMapUI
             barCheckItem5.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barCheckItem5.ImageOptions.SvgImage" );
             barCheckItem5.Name = "barCheckItem5";
             // 
+            // _newLiveGame
+            // 
+            _newLiveGame.Caption = "New Game";
+            _newLiveGame.Id = 30;
+            _newLiveGame.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_newLiveGame.ImageOptions.SvgImage" );
+            _newLiveGame.ItemShortcut = new DevExpress.XtraBars.BarShortcut( Keys.Control | Keys.N );
+            _newLiveGame.Name = "_newLiveGame";
+            _newLiveGame.ItemClick += _newLiveGame_ItemClick;
+            // 
+            // barButtonItem5
+            // 
+            barButtonItem5.Caption = "Deal";
+            barButtonItem5.Id = 31;
+            barButtonItem5.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "barButtonItem5.ImageOptions.SvgImage" );
+            barButtonItem5.Name = "barButtonItem5";
+            // 
+            // ribbonPage3
+            // 
+            ribbonPage3.Groups.AddRange( new DevExpress.XtraBars.Ribbon.RibbonPageGroup[ ] { ribbonPageGroup8, ribbonPageGroup6, ribbonPageGroup7 } );
+            ribbonPage3.Name = "ribbonPage3";
+            ribbonPage3.Text = "Live";
+            // 
+            // ribbonPageGroup8
+            // 
+            ribbonPageGroup8.ItemLinks.Add( _newLiveGame );
+            ribbonPageGroup8.ItemLinks.Add( barButtonItem5 );
+            ribbonPageGroup8.Name = "ribbonPageGroup8";
+            ribbonPageGroup8.Text = "New Game";
+            // 
+            // ribbonPageGroup6
+            // 
+            ribbonPageGroup6.ItemLinks.Add( barButtonItem1 );
+            ribbonPageGroup6.ItemLinks.Add( barButtonItem2 );
+            ribbonPageGroup6.ItemLinks.Add( barButtonItem3 );
+            ribbonPageGroup6.Name = "ribbonPageGroup6";
+            ribbonPageGroup6.Text = "Sides";
+            // 
+            // ribbonPageGroup7
+            // 
+            ribbonPageGroup7.ItemLinks.Add( barCheckItem5 );
+            ribbonPageGroup7.ItemLinks.Add( barCheckItem1 );
+            ribbonPageGroup7.ItemLinks.Add( barCheckItem2 );
+            ribbonPageGroup7.ItemLinks.Add( barCheckItem3 );
+            ribbonPageGroup7.ItemLinks.Add( barCheckItem4 );
+            ribbonPageGroup7.Name = "ribbonPageGroup7";
+            ribbonPageGroup7.Text = "Amount";
+            // 
             // ribbonPage1
             // 
             ribbonPage1.Groups.AddRange( new DevExpress.XtraBars.Ribbon.RibbonPageGroup[ ] { ribbonPageGroup1, ribbonPageGroup3, ribbonPageGroup4, ribbonPageGroup5 } );
             ribbonPage1.Name = "ribbonPage1";
-            ribbonPage1.Text = "Home";
+            ribbonPage1.Text = "Road Map";
             // 
             // ribbonPageGroup1
             // 
             ribbonPageGroup1.ItemLinks.Add( _newGame );
             ribbonPageGroup1.Name = "ribbonPageGroup1";
-            ribbonPageGroup1.Text = "Game";
+            ribbonPageGroup1.Text = "RoadMap";
             // 
             // ribbonPageGroup3
             // 
@@ -396,32 +471,9 @@ namespace RibbonRoadMapUI
             ribbonPageGroup2.Name = "ribbonPageGroup2";
             ribbonPageGroup2.Text = "Skins";
             // 
-            // ribbonPage3
-            // 
-            ribbonPage3.Groups.AddRange( new DevExpress.XtraBars.Ribbon.RibbonPageGroup[ ] { ribbonPageGroup6, ribbonPageGroup7 } );
-            ribbonPage3.Name = "ribbonPage3";
-            ribbonPage3.Text = "Bet";
-            // 
-            // ribbonPageGroup6
-            // 
-            ribbonPageGroup6.ItemLinks.Add( barButtonItem1 );
-            ribbonPageGroup6.ItemLinks.Add( barButtonItem2 );
-            ribbonPageGroup6.ItemLinks.Add( barButtonItem3 );
-            ribbonPageGroup6.Name = "ribbonPageGroup6";
-            ribbonPageGroup6.Text = "Sides";
-            // 
-            // ribbonPageGroup7
-            // 
-            ribbonPageGroup7.ItemLinks.Add( barCheckItem5 );
-            ribbonPageGroup7.ItemLinks.Add( barCheckItem1 );
-            ribbonPageGroup7.ItemLinks.Add( barCheckItem2 );
-            ribbonPageGroup7.ItemLinks.Add( barCheckItem3 );
-            ribbonPageGroup7.ItemLinks.Add( barCheckItem4 );
-            ribbonPageGroup7.Name = "ribbonPageGroup7";
-            ribbonPageGroup7.Text = "Amount";
-            // 
             // _uiLayoutControl
             // 
+            _uiLayoutControl.Controls.Add( _cardsDealtGrid );
             _uiLayoutControl.Controls.Add( roadmapAnalysisControl1 );
             _uiLayoutControl.Controls.Add( _cockRoachGrid );
             _uiLayoutControl.Controls.Add( _bigEyeGrid );
@@ -437,16 +489,224 @@ namespace RibbonRoadMapUI
             _uiLayoutControl.TabIndex = 1;
             _uiLayoutControl.Text = "BigRoad";
             // 
+            // _cardsDealtGrid
+            // 
+            _cardsDealtGrid.Location = new System.Drawing.Point( 677, 12 );
+            _cardsDealtGrid.MainView = _cardDealtGridView;
+            _cardsDealtGrid.MaximumSize = new System.Drawing.Size( 800, 0 );
+            _cardsDealtGrid.MenuManager = ribbonControl1;
+            _cardsDealtGrid.Name = "_cardsDealtGrid";
+            _cardsDealtGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _cardImageCBEdit } );
+            _cardsDealtGrid.ShowOnlyPredefinedDetails = true;
+            _cardsDealtGrid.Size = new System.Drawing.Size( 446, 236 );
+            _cardsDealtGrid.TabIndex = 11;
+            _cardsDealtGrid.ViewCollection.AddRange( new DevExpress.XtraGrid.Views.Base.BaseView[ ] { _cardDealtGridView } );
+            // 
+            // _cardDealtGridView
+            // 
+            _cardDealtGridView.CardMinSize = new System.Drawing.Size( 223, 370 );
+            _cardDealtGridView.Columns.AddRange( new DevExpress.XtraGrid.Columns.LayoutViewColumn[ ] { _card1, _card2, _card3 } );
+            _cardDealtGridView.GridControl = _cardsDealtGrid;
+            _cardDealtGridView.Images = _svgCards;
+            _cardDealtGridView.Name = "_cardDealtGridView";
+            _cardDealtGridView.OptionsBehavior.ScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
+            _cardDealtGridView.OptionsView.CardArrangeRule = DevExpress.XtraGrid.Views.Layout.LayoutCardArrangeRule.AllowPartialCards;
+            _cardDealtGridView.OptionsView.ShowCardBorderIfCaptionHidden = false;
+            _cardDealtGridView.OptionsView.ShowCardCaption = false;
+            _cardDealtGridView.OptionsView.ShowCardExpandButton = false;
+            _cardDealtGridView.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            _cardDealtGridView.OptionsView.ShowHeaderPanel = false;
+            _cardDealtGridView.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.Row;
+            _cardDealtGridView.TemplateCard = layoutViewCard1;
+            // 
+            // _card1
+            // 
+            _card1.ColumnEdit = _cardImageCBEdit;
+            _card1.FieldName = "Card1";
+            _card1.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
+            _card1.LayoutViewField = layoutViewField__playerCard1;
+            _card1.MinWidth = 30;
+            _card1.Name = "_card1";
+            _card1.Width = 112;
+            // 
+            // _cardImageCBEdit
+            // 
+            _cardImageCBEdit.AutoHeight = false;
+            _cardImageCBEdit.Buttons.AddRange( new EditorButton[ ] { new EditorButton( ButtonPredefines.Combo ) } );
+            _cardImageCBEdit.HtmlImages = _svgCards;
+            _cardImageCBEdit.Items.AddRange( new ImageComboBoxItem[ ] { new ImageComboBoxItem( "", 0, 0 ), new ImageComboBoxItem( "", 1, 1 ), new ImageComboBoxItem( "", 2, 2 ), new ImageComboBoxItem( "", 3, 3 ), new ImageComboBoxItem( "", 4, 4 ), new ImageComboBoxItem( "", 5, 5 ), new ImageComboBoxItem( "", 6, 6 ), new ImageComboBoxItem( "", 7, 7 ), new ImageComboBoxItem( "", 8, 8 ), new ImageComboBoxItem( "", 9, 9 ), new ImageComboBoxItem( "", 10, 10 ), new ImageComboBoxItem( "", 11, 11 ), new ImageComboBoxItem( "", 12, 12 ), new ImageComboBoxItem( "", 13, 13 ), new ImageComboBoxItem( "", 14, 14 ), new ImageComboBoxItem( "", 15, 15 ), new ImageComboBoxItem( "", 16, 16 ), new ImageComboBoxItem( "", 17, 17 ), new ImageComboBoxItem( "", 18, 18 ), new ImageComboBoxItem( "", 19, 19 ), new ImageComboBoxItem( "", 20, 20 ), new ImageComboBoxItem( "", 21, 21 ), new ImageComboBoxItem( "", 22, 22 ), new ImageComboBoxItem( "", 23, 23 ), new ImageComboBoxItem( "", 24, 24 ), new ImageComboBoxItem( "", 25, 25 ), new ImageComboBoxItem( "", 26, 26 ), new ImageComboBoxItem( "", 27, 27 ), new ImageComboBoxItem( "", 28, 28 ), new ImageComboBoxItem( "", 29, 29 ), new ImageComboBoxItem( "", 30, 30 ), new ImageComboBoxItem( "", 31, 31 ), new ImageComboBoxItem( "", 32, 32 ), new ImageComboBoxItem( "", 33, 33 ), new ImageComboBoxItem( "", 34, 34 ), new ImageComboBoxItem( "", 35, 35 ), new ImageComboBoxItem( "", 36, 36 ), new ImageComboBoxItem( "", 37, 37 ), new ImageComboBoxItem( "", 38, 38 ), new ImageComboBoxItem( "", 39, 39 ), new ImageComboBoxItem( "", 40, 40 ), new ImageComboBoxItem( "", 41, 41 ), new ImageComboBoxItem( "", 42, 42 ), 
+                new ImageComboBoxItem( "", 43, 43 ),
+            new ImageComboBoxItem( "", 44, 44 ),
+            new ImageComboBoxItem( "", 45, 45 ),
+            new ImageComboBoxItem( "", 46, 46 ),
+            new ImageComboBoxItem( "", 47, 47 ),
+            new ImageComboBoxItem( "", 48, 48 ),
+            new ImageComboBoxItem( "", 49, 49 ),
+            new ImageComboBoxItem( "", 50, 50 ),
+
+            new ImageComboBoxItem( "", 51, 51 ),
+            new ImageComboBoxItem( "", 52, 52 ),
+
+            } );
+            _cardImageCBEdit.LargeImages = _svgCards;
+            _cardImageCBEdit.Name = "_cardImageCBEdit";
+            _cardImageCBEdit.SmallImages = _svgCards;
+            // 
+            // _svgCards
+            // 
+            _svgCards.ImageSize = new System.Drawing.Size( 50, 70 );
+            _svgCards.Add( "transparent", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.transparent" ) );
+            _svgCards.Add( "clubs_ace", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_ace" ) );
+            _svgCards.Add( "clubs_2", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_2" ) );
+            _svgCards.Add( "clubs_3", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_3" ) );
+            _svgCards.Add( "clubs_4", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_4" ) );
+            _svgCards.Add( "clubs_5", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_5" ) );
+            _svgCards.Add( "clubs_6", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_6" ) );
+            _svgCards.Add( "clubs_7", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_7" ) );
+            _svgCards.Add( "clubs_8", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_8" ) );
+            _svgCards.Add( "clubs_9", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_9" ) );
+            _svgCards.Add( "clubs_10", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_10" ) );
+            _svgCards.Add( "clubs_jack", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_jack" ) );
+            _svgCards.Add( "clubs_queen", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_queen" ) );
+            _svgCards.Add( "clubs_king", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.clubs_king" ) );
+            _svgCards.Add( "diamonds_ace", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_ace" ) );
+            _svgCards.Add( "diamonds_2", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_2" ) );
+            _svgCards.Add( "diamonds_3", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_3" ) );
+            _svgCards.Add( "diamonds_4", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_4" ) );
+            _svgCards.Add( "diamonds_5", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_5" ) );
+            _svgCards.Add( "diamonds_6", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_6" ) );
+            _svgCards.Add( "diamonds_7", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_7" ) );
+            _svgCards.Add( "diamonds_8", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_8" ) );
+            _svgCards.Add( "diamonds_9", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_9" ) );
+            _svgCards.Add( "diamonds_10", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_10" ) );
+            _svgCards.Add( "diamonds_jack", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_jack" ) );
+            _svgCards.Add( "diamonds_queen", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_queen" ) );
+            _svgCards.Add( "diamonds_king", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.diamonds_king" ) );
+            _svgCards.Add( "hearts_ace", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_ace" ) );
+            _svgCards.Add( "hearts_2", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_2" ) );
+            _svgCards.Add( "hearts_3", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_3" ) );
+            _svgCards.Add( "hearts_4", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_4" ) );
+            _svgCards.Add( "hearts_5", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_5" ) );
+            _svgCards.Add( "hearts_6", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_6" ) );
+            _svgCards.Add( "hearts_7", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_7" ) );
+            _svgCards.Add( "hearts_8", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_8" ) );
+            _svgCards.Add( "hearts_9", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_9" ) );
+            _svgCards.Add( "hearts_10", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_10" ) );
+            _svgCards.Add( "hearts_jack", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_jack" ) );
+            _svgCards.Add( "hearts_queen", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_queen" ) );
+            _svgCards.Add( "hearts_king", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.hearts_king" ) );
+            _svgCards.Add( "spades_ace", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_ace" ) );
+            _svgCards.Add( "spades_2", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_2" ) );
+            _svgCards.Add( "spades_3", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_3" ) );
+            _svgCards.Add( "spades_4", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_4" ) );
+            _svgCards.Add( "spades_5", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_5" ) );
+            _svgCards.Add( "spades_6", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_6" ) );
+            _svgCards.Add( "spades_7", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_7" ) );
+            _svgCards.Add( "spades_8", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_8" ) );
+            _svgCards.Add( "spades_9", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_9" ) );
+            _svgCards.Add( "spades_10", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_10" ) );
+            _svgCards.Add( "spades_jack", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_jack" ) );
+            _svgCards.Add( "spades_queen", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_queen" ) );
+            _svgCards.Add( "spades_king", (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_svgCards.spades_king" ) );
+            // 
+            // layoutViewField__playerCard1
+            // 
+            layoutViewField__playerCard1.EditorPreferredWidth = 94;
+            layoutViewField__playerCard1.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleCenter;
+            layoutViewField__playerCard1.Location = new System.Drawing.Point( 0, 0 );
+            layoutViewField__playerCard1.MaxSize = new System.Drawing.Size( 100, 158 );
+            layoutViewField__playerCard1.MinSize = new System.Drawing.Size( 100, 158 );
+            layoutViewField__playerCard1.Name = "layoutViewField__playerCard1";
+            layoutViewField__playerCard1.Size = new System.Drawing.Size( 100, 158 );
+            layoutViewField__playerCard1.SizeConstraintsType = SizeConstraintsType.Custom;
+            layoutViewField__playerCard1.Spacing = new DevExpress.XtraLayout.Utils.Padding( 1, 1, 1, 1 );
+            layoutViewField__playerCard1.TextSize = new System.Drawing.Size( 0, 0 );
+            layoutViewField__playerCard1.TextVisible = false;
+            // 
+            // _card2
+            // 
+            _card2.ColumnEdit = _cardImageCBEdit;
+            _card2.FieldName = "Card2";
+            _card2.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
+            _card2.LayoutViewField = layoutViewField_layoutViewColumn1;
+            _card2.MinWidth = 30;
+            _card2.Name = "_card2";
+            _card2.Width = 112;
+            // 
+            // layoutViewField_layoutViewColumn1
+            // 
+            layoutViewField_layoutViewColumn1.EditorPreferredWidth = 99;
+            layoutViewField_layoutViewColumn1.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleCenter;
+            layoutViewField_layoutViewColumn1.Location = new System.Drawing.Point( 100, 0 );
+            layoutViewField_layoutViewColumn1.MaxSize = new System.Drawing.Size( 100, 158 );
+            layoutViewField_layoutViewColumn1.MinSize = new System.Drawing.Size( 100, 158 );
+            layoutViewField_layoutViewColumn1.Name = "layoutViewField_layoutViewColumn1";
+            layoutViewField_layoutViewColumn1.Size = new System.Drawing.Size( 103, 158 );
+            layoutViewField_layoutViewColumn1.SizeConstraintsType = SizeConstraintsType.Custom;
+            layoutViewField_layoutViewColumn1.TextSize = new System.Drawing.Size( 0, 0 );
+            layoutViewField_layoutViewColumn1.TextVisible = false;
+            // 
+            // _card3
+            // 
+            _card3.ColumnEdit = _cardImageCBEdit;
+            _card3.FieldName = "Card3";
+            _card3.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
+            _card3.LayoutViewField = layoutViewField_layoutViewColumn1_1;
+            _card3.MinWidth = 30;
+            _card3.Name = "_card3";
+            _card3.Width = 112;
+            // 
+            // layoutViewField_layoutViewColumn1_1
+            // 
+            layoutViewField_layoutViewColumn1_1.EditorPreferredWidth = 96;
+            layoutViewField_layoutViewColumn1_1.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleCenter;
+            layoutViewField_layoutViewColumn1_1.Location = new System.Drawing.Point( 50, 158 );
+            layoutViewField_layoutViewColumn1_1.MaxSize = new System.Drawing.Size( 100, 158 );
+            layoutViewField_layoutViewColumn1_1.MinSize = new System.Drawing.Size( 100, 158 );
+            layoutViewField_layoutViewColumn1_1.Name = "layoutViewField_layoutViewColumn1_1";
+            layoutViewField_layoutViewColumn1_1.Size = new System.Drawing.Size( 100, 192 );
+            layoutViewField_layoutViewColumn1_1.SizeConstraintsType = SizeConstraintsType.Custom;
+            layoutViewField_layoutViewColumn1_1.TextSize = new System.Drawing.Size( 0, 0 );
+            layoutViewField_layoutViewColumn1_1.TextVisible = false;
+            // 
+            // layoutViewCard1
+            // 
+            layoutViewCard1.CustomizationFormText = "TemplateCard";
+            layoutViewCard1.GroupBordersVisible = false;
+            layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+            layoutViewCard1.Items.AddRange( new BaseLayoutItem[ ] { layoutViewField__playerCard1, layoutViewField_layoutViewColumn1_1, layoutViewField_layoutViewColumn1, emptySpaceItem1, Item1 } );
+            layoutViewCard1.Name = "layoutViewCard1";
+            layoutViewCard1.OptionsItemText.TextToControlDistance = 5;
+            layoutViewCard1.Text = "TemplateCard";
+            // 
+            // emptySpaceItem1
+            // 
+            emptySpaceItem1.AllowHotTrack = false;
+            emptySpaceItem1.CustomizationFormText = "Empty Space Item";
+            emptySpaceItem1.Location = new System.Drawing.Point( 150, 158 );
+            emptySpaceItem1.Name = "emptySpaceItem1";
+            emptySpaceItem1.Size = new System.Drawing.Size( 53, 192 );
+            emptySpaceItem1.TextSize = new System.Drawing.Size( 0, 0 );
+            // 
+            // Item1
+            // 
+            Item1.AllowHotTrack = false;
+            Item1.CustomizationFormText = "Item1";
+            Item1.Location = new System.Drawing.Point( 0, 158 );
+            Item1.Name = "Item1";
+            Item1.Size = new System.Drawing.Size( 50, 192 );
+            Item1.TextSize = new System.Drawing.Size( 0, 0 );
+            // 
             // roadmapAnalysisControl1
             // 
-            roadmapAnalysisControl1.Location = new System.Drawing.Point( 1265, 12 );
+            roadmapAnalysisControl1.Location = new System.Drawing.Point( 1127, 12 );
             roadmapAnalysisControl1.Name = "roadmapAnalysisControl1";
-            roadmapAnalysisControl1.Size = new System.Drawing.Size( 716, 696 );
+            roadmapAnalysisControl1.Size = new System.Drawing.Size( 854, 696 );
             roadmapAnalysisControl1.TabIndex = 10;
             // 
             // _cockRoachGrid
             // 
-            _cockRoachGrid.Location = new System.Drawing.Point( 590, 560 );
+            _cockRoachGrid.Location = new System.Drawing.Point( 590, 577 );
             _cockRoachGrid.Name = "_cockRoachGrid";
             _cockRoachGrid.OptionsView.FixRowHeaderPanelWidth = true;
             _cockRoachGrid.OptionsView.MaxRowAutoHeight = 30;
@@ -456,7 +716,7 @@ namespace RibbonRoadMapUI
             _cockRoachGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _cockRoachCBEdit } );
             _cockRoachGrid.RowHeaderWidth = 15;
             _cockRoachGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _cockRoachRow0, _cockRoachRow1, _cockRoachRow2, _cockRoachRow3, _cockRoachRow4, _cockRoachRow5 } );
-            _cockRoachGrid.Size = new System.Drawing.Size( 671, 148 );
+            _cockRoachGrid.Size = new System.Drawing.Size( 533, 131 );
             _cockRoachGrid.TabIndex = 9;
             // 
             // _cockRoachCBEdit
@@ -524,7 +784,7 @@ namespace RibbonRoadMapUI
             _bigEyeGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _bigEyeRoadCBEdit } );
             _bigEyeGrid.RowHeaderWidth = 15;
             _bigEyeGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _bigEyeRoad0, _bigEyeRoad1, _bigEyeRoad2, _bigEyeRoad3, _bigEyeRoad4, _bigEyeRoad5 } );
-            _bigEyeGrid.Size = new System.Drawing.Size( 671, 98 );
+            _bigEyeGrid.Size = new System.Drawing.Size( 533, 121 );
             _bigEyeGrid.TabIndex = 8;
             // 
             // _bigEyeRoadCBEdit
@@ -668,7 +928,7 @@ namespace RibbonRoadMapUI
             // 
             // _smallRoadGrid
             // 
-            _smallRoadGrid.Location = new System.Drawing.Point( 590, 404 );
+            _smallRoadGrid.Location = new System.Drawing.Point( 590, 427 );
             _smallRoadGrid.Name = "_smallRoadGrid";
             _smallRoadGrid.OptionsView.FixRowHeaderPanelWidth = true;
             _smallRoadGrid.OptionsView.MaxRowAutoHeight = 30;
@@ -678,7 +938,7 @@ namespace RibbonRoadMapUI
             _smallRoadGrid.RepositoryItems.AddRange( new RepositoryItem[ ] { _smallRoadImageCBEdit } );
             _smallRoadGrid.RowHeaderWidth = 15;
             _smallRoadGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _smallRoadRow0, _smallRoadRow1, _smallRoadRow2, _smallRoadRow3, _smallRoadRow4, _smallRoadRow5 } );
-            _smallRoadGrid.Size = new System.Drawing.Size( 671, 127 );
+            _smallRoadGrid.Size = new System.Drawing.Size( 533, 121 );
             _smallRoadGrid.TabIndex = 6;
             // 
             // _smallRoadImageCBEdit
@@ -746,7 +1006,7 @@ namespace RibbonRoadMapUI
             _bigRoadGrid.RightToLeft = RightToLeft.No;
             _bigRoadGrid.RowHeaderWidth = 15;
             _bigRoadGrid.Rows.AddRange( new DevExpress.XtraVerticalGrid.Rows.BaseRow[ ] { _bigRoadRow0, _bigRoadRow1, _bigRoadRow2, _bigRoadRow3, _bigRoadRow4, _bigRoadRow5 } );
-            _bigRoadGrid.Size = new System.Drawing.Size( 1249, 211 );
+            _bigRoadGrid.Size = new System.Drawing.Size( 661, 211 );
             _bigRoadGrid.TabIndex = 5;
             // 
             // _bigRoadImageCBEdit
@@ -825,7 +1085,7 @@ namespace RibbonRoadMapUI
             // 
             _mainFormLayoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             _mainFormLayoutControlGroup.GroupBordersVisible = false;
-            _mainFormLayoutControlGroup.Items.AddRange( new BaseLayoutItem[ ] { _bigRoadLayoutControlItem, _smallRoadLayoutControlItem, _beadPlateLayoutControlItem, _bigEyeLayoutControlItem, _cockRoachLayoutControlItem, layoutControlItem1 } );
+            _mainFormLayoutControlGroup.Items.AddRange( new BaseLayoutItem[ ] { _bigRoadLayoutControlItem, _smallRoadLayoutControlItem, _beadPlateLayoutControlItem, _bigEyeLayoutControlItem, _cockRoachLayoutControlItem, layoutControlItem1, layoutControlItem2 } );
             _mainFormLayoutControlGroup.Name = "Root";
             _mainFormLayoutControlGroup.Size = new System.Drawing.Size( 1993, 720 );
             _mainFormLayoutControlGroup.TextVisible = false;
@@ -835,7 +1095,7 @@ namespace RibbonRoadMapUI
             _bigRoadLayoutControlItem.Control = _bigRoadGrid;
             _bigRoadLayoutControlItem.Location = new System.Drawing.Point( 0, 0 );
             _bigRoadLayoutControlItem.Name = "layoutControlItem2";
-            _bigRoadLayoutControlItem.Size = new System.Drawing.Size( 1253, 240 );
+            _bigRoadLayoutControlItem.Size = new System.Drawing.Size( 665, 240 );
             _bigRoadLayoutControlItem.Text = "Big Road";
             _bigRoadLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _bigRoadLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
@@ -843,9 +1103,9 @@ namespace RibbonRoadMapUI
             // _smallRoadLayoutControlItem
             // 
             _smallRoadLayoutControlItem.Control = _smallRoadGrid;
-            _smallRoadLayoutControlItem.Location = new System.Drawing.Point( 578, 367 );
+            _smallRoadLayoutControlItem.Location = new System.Drawing.Point( 578, 390 );
             _smallRoadLayoutControlItem.Name = "layoutControlItem3";
-            _smallRoadLayoutControlItem.Size = new System.Drawing.Size( 675, 156 );
+            _smallRoadLayoutControlItem.Size = new System.Drawing.Size( 537, 150 );
             _smallRoadLayoutControlItem.Text = "Small Road";
             _smallRoadLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _smallRoadLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
@@ -865,7 +1125,7 @@ namespace RibbonRoadMapUI
             _bigEyeLayoutControlItem.Control = _bigEyeGrid;
             _bigEyeLayoutControlItem.Location = new System.Drawing.Point( 578, 240 );
             _bigEyeLayoutControlItem.Name = "layoutControlItem1";
-            _bigEyeLayoutControlItem.Size = new System.Drawing.Size( 675, 127 );
+            _bigEyeLayoutControlItem.Size = new System.Drawing.Size( 537, 150 );
             _bigEyeLayoutControlItem.Text = "Big Eye Road";
             _bigEyeLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _bigEyeLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
@@ -873,9 +1133,9 @@ namespace RibbonRoadMapUI
             // _cockRoachLayoutControlItem
             // 
             _cockRoachLayoutControlItem.Control = _cockRoachGrid;
-            _cockRoachLayoutControlItem.Location = new System.Drawing.Point( 578, 523 );
+            _cockRoachLayoutControlItem.Location = new System.Drawing.Point( 578, 540 );
             _cockRoachLayoutControlItem.Name = "layoutControlItem5";
-            _cockRoachLayoutControlItem.Size = new System.Drawing.Size( 675, 177 );
+            _cockRoachLayoutControlItem.Size = new System.Drawing.Size( 537, 160 );
             _cockRoachLayoutControlItem.Text = "Cockroach Pig";
             _cockRoachLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             _cockRoachLayoutControlItem.TextSize = new System.Drawing.Size( 111, 22 );
@@ -883,11 +1143,24 @@ namespace RibbonRoadMapUI
             // layoutControlItem1
             // 
             layoutControlItem1.Control = roadmapAnalysisControl1;
-            layoutControlItem1.Location = new System.Drawing.Point( 1253, 0 );
-            layoutControlItem1.Name = "layoutControlItem1";
-            layoutControlItem1.Size = new System.Drawing.Size( 720, 700 );
+            layoutControlItem1.Location = new System.Drawing.Point( 1115, 0 );
+            layoutControlItem1.Name = "item0";
+            layoutControlItem1.Size = new System.Drawing.Size( 858, 700 );
             layoutControlItem1.TextSize = new System.Drawing.Size( 0, 0 );
             layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            layoutControlItem2.Control = _cardsDealtGrid;
+            layoutControlItem2.CustomizationFormText = "Hand Dealt";
+            layoutControlItem2.Location = new System.Drawing.Point( 665, 0 );
+            layoutControlItem2.MaxSize = new System.Drawing.Size( 450, 0 );
+            layoutControlItem2.MinSize = new System.Drawing.Size( 450, 1 );
+            layoutControlItem2.Name = "item1";
+            layoutControlItem2.Size = new System.Drawing.Size( 450, 240 );
+            layoutControlItem2.SizeConstraintsType = SizeConstraintsType.Custom;
+            layoutControlItem2.TextSize = new System.Drawing.Size( 0, 0 );
+            layoutControlItem2.TextVisible = false;
             // 
             // RoadMapUI
             // 
@@ -904,6 +1177,16 @@ namespace RibbonRoadMapUI
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)_uiLayoutControl).EndInit();
             _uiLayoutControl.ResumeLayout( false );
+            ((System.ComponentModel.ISupportInitialize)_cardsDealtGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)_cardDealtGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)_cardImageCBEdit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)_svgCards).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutViewField__playerCard1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutViewField_layoutViewColumn1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutViewField_layoutViewColumn1_1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutViewCard1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)emptySpaceItem1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Item1).EndInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachCBEdit).EndInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachSvg).EndInit();
@@ -926,6 +1209,7 @@ namespace RibbonRoadMapUI
             ((System.ComponentModel.ISupportInitialize)_bigEyeLayoutControlItem).EndInit();
             ((System.ComponentModel.ISupportInitialize)_cockRoachLayoutControlItem).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem2).EndInit();
             ResumeLayout( false );
             PerformLayout();
         }
@@ -1041,6 +1325,23 @@ namespace RibbonRoadMapUI
         private DevExpress.XtraBars.BarCheckItem barCheckItem5;
         private RoadmapAnalysisUI.RoadmapAnalysisControl roadmapAnalysisControl1;
         private LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarButtonItem _newLiveGame;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraGrid.GridControl _cardsDealtGrid;
+        private LayoutControlItem layoutControlItem2;
+        private DevExpress.Utils.SvgImageCollection _svgCards;
+        private DevExpress.XtraGrid.Views.Layout.LayoutView _cardDealtGridView;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn _card1;
+        private RepositoryItemImageComboBox _cardImageCBEdit;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn _card2;
+        private DevExpress.XtraGrid.Columns.LayoutViewColumn _card3;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField__playerCard1;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn1_1;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
+        private EmptySpaceItem emptySpaceItem1;
+        private EmptySpaceItem Item1;
     }
 }
 

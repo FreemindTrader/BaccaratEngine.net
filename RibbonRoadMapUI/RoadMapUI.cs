@@ -8,6 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using BaccaratEngine;
 using DevExpress.LookAndFeel;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Layout;
+using static DevExpress.Xpo.Helpers.AssociatedCollectionCriteriaHelper;
 
 namespace RibbonRoadMapUI
 {
@@ -19,6 +22,11 @@ namespace RibbonRoadMapUI
         private BindingList<xColumn> _smallRoadBindingList = new BindingList<xColumn>();
         private BindingList<xColumn> _cockroachBindingList = new BindingList<xColumn>();
 
+        private BindingList<xCards> _cardsDealtBindingList = new BindingList<xCards>();
+
+        private BaccaratGameEngine _gameEngine;
+        private BaccaratResultsEngine _gameResult;
+
         int _bigRoadInitColumn = 110;
         int _beadPlateInitColumns = 50;
         int _bigEyeInitColumns = 70;
@@ -28,6 +36,20 @@ namespace RibbonRoadMapUI
         {
             //UserLookAndFeel.Default.SetSkinStyle( SkinStyle.WXI );
             InitializeComponent();
+            //_cardDealtGridView.ShownEditor += _cardDealtGridView_ShownEditor;
+            _cardDealtGridView.CustomDrawCardBackground += _cardDealtGridView_CustomDrawCardBackground;
+        }
+
+        private void _cardDealtGridView_CustomDrawCardBackground( object sender, DevExpress.XtraGrid.Views.Layout.Events.LayoutViewCustomDrawCardBackgroundEventArgs e )
+        {
+            if (!e.IsFocused) return;
+            // Perform default drawing
+            e.DefaultDraw();
+            using (var highlight = new SolidBrush( Color.FromArgb( 50, Color.LightSeaGreen ) ))
+            {
+                // Fill card with semi-transparent color
+                e.Cache.FillRectangle( highlight, Rectangle.Inflate( e.Bounds, -1, -1 ) );
+            }
         }
 
         protected override void OnLoad( EventArgs e )
@@ -39,6 +61,7 @@ namespace RibbonRoadMapUI
             _bigEyeGrid.DataSource = _bigEyeRoadBindingList;
             _smallRoadGrid.DataSource = _smallRoadBindingList;
             _cockRoachGrid.DataSource = _cockroachBindingList;
+            _cardsDealtGrid.DataSource = _cardsDealtBindingList;
 
             base.OnLoad( e );
         }
@@ -73,7 +96,7 @@ namespace RibbonRoadMapUI
 
         public void PopulateData()
         {
-           
+
 
             List<GameResult> gameResults = new List<GameResult>();
 
@@ -214,7 +237,7 @@ namespace RibbonRoadMapUI
             gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'},
             gameResults.Add( new GameResult( GResult.B ) );           //  {'outcome': 'b )); // 'natural': 'banker8', 'pair': 'p )); //},
             gameResults.Add( new GameResult( GResult.P ) );           //  {'outcome': 'p )); //, 'natural': 'none', 'pair': 'none'}];
-            
+
 
             _bigRoadBindingList = _generator.initBindingList( _bigRoadInitColumn );
             _beadPlateBindingList = _generator.initBindingList( _beadPlateInitColumns );
@@ -240,19 +263,65 @@ namespace RibbonRoadMapUI
             _bigEyeRoadBindingList = _bigEyeRoad.UpdateBindingList( _bigEyeRoadBindingList, result.MaxColumn, 6 );
             _cockroachBindingList = _cockRoachRoad.UpdateBindingList( _cockroachBindingList, result.MaxColumn, 6 );
 
+            var playerCard = new xCards();
+            playerCard.SetCard1( Card.CardSuit.Club, Card.CardValue.CA );
+            playerCard.SetCard2( Card.CardSuit.Diamond, Card.CardValue.C3 );
+            playerCard.SetCard3( Card.CardSuit.Spade, Card.CardValue.CK );
+
             
-            
+
+
+            var bankerCard = new xCards();
+            bankerCard.SetCard1( Card.CardSuit.Heart, Card.CardValue.CA );
+            bankerCard.SetCard2( Card.CardSuit.Spade, Card.CardValue.C2 );
+            bankerCard.SetCard3( Card.CardSuit.Diamond, Card.CardValue.CK );
+
+            var card1 = bankerCard.Card1;
+            var card2 = bankerCard.Card2;
+            var card3 = bankerCard.Card3;
+
+            _cardsDealtBindingList.Add( playerCard );
+            _cardsDealtBindingList.Add( bankerCard );
+
         }
 
         protected override void OnShown( EventArgs e )
-        {            
-            _bigRoadGrid.LeftVisibleRecord = Math.Max( 0, _bigRoadBindingList.Count - _bigRoadInitColumn/2 );
-            _beadPlateRoadGrid.LeftVisibleRecord = Math.Max( 0, _beadPlate.Count/2 );
-            _smallRoadGrid.LeftVisibleRecord = Math.Max( 0, _smallRoadBindingList.Count - _bigEyeInitColumns/2 );
-            _bigEyeGrid.LeftVisibleRecord = Math.Max( 0, _bigEyeRoadBindingList.Count - _smallRoadInitColumns/2 );
-            _cockRoachGrid.LeftVisibleRecord = Math.Max( 0, _cockroachBindingList.Count - _cockRoachInitColumns/2 );
+        {
+            _bigRoadGrid.LeftVisibleRecord = Math.Max( 0, _bigRoadBindingList.Count - _bigRoadInitColumn / 2 );
+            _beadPlateRoadGrid.LeftVisibleRecord = Math.Max( 0, _beadPlate.Count / 2 );
+            _smallRoadGrid.LeftVisibleRecord = Math.Max( 0, _smallRoadBindingList.Count - _bigEyeInitColumns / 2 );
+            _bigEyeGrid.LeftVisibleRecord = Math.Max( 0, _bigEyeRoadBindingList.Count - _smallRoadInitColumns / 2 );
+            _cockRoachGrid.LeftVisibleRecord = Math.Max( 0, _cockroachBindingList.Count - _cockRoachInitColumns / 2 );
 
             base.OnShown( e );
+        }
+
+        private void _newLiveGame_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
+        {
+            _bigRoadBindingList.Clear(); 
+            _beadPlateBindingList.Clear();
+            _smallRoadBindingList.Clear();
+            _bigEyeRoadBindingList.Clear();
+            _cockroachBindingList.Clear();
+
+            _bigRoadBindingList = _generator.initBindingList( _bigRoadInitColumn );
+            _beadPlateBindingList = _generator.initBindingList( _beadPlateInitColumns );
+            _bigEyeRoadBindingList = _generator.initBindingList( _bigEyeInitColumns ); ;
+            _smallRoadBindingList = _generator.initBindingList( _smallRoadInitColumns ); ;
+            _cockroachBindingList = _generator.initBindingList( _cockRoachInitColumns ); ;
+
+            
+
+            _bigRoadGrid.DataSource = _bigRoadBindingList;
+            _beadPlateRoadGrid.DataSource = _beadPlateBindingList;
+            _bigEyeGrid.DataSource = _bigEyeRoadBindingList;
+            _smallRoadGrid.DataSource = _smallRoadBindingList;
+            _cockRoachGrid.DataSource = _cockroachBindingList;
+
+            _gameEngine = new BaccaratGameEngine();
+            _gameResult = new BaccaratResultsEngine();
+            _gameEngine.Shoe.createDecks();
+            _gameEngine.Shoe.shuffle();
         }
     }
 
