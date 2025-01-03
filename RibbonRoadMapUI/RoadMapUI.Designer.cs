@@ -896,6 +896,7 @@ namespace RibbonRoadMapUI
             ClientSize = new System.Drawing.Size( 1993, 957 );
             Controls.Add( _uiLayoutControl );
             Controls.Add( ribbonControl1 );
+            IconOptions.Icon = (System.Drawing.Icon)resources.GetObject( "RoadMapUI.IconOptions.Icon" );
             Margin = new Padding( 5 );
             Name = "RoadMapUI";
             Ribbon = ribbonControl1;

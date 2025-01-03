@@ -482,7 +482,7 @@
             // _bigEyeRoadMajority
             // 
             _bigEyeRoadMajority.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
-            _bigEyeRoadMajority.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "bandedGridColumn1.ImageOptions.SvgImage" );
+            _bigEyeRoadMajority.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_bigEyeRoadMajority.ImageOptions.SvgImage" );
             _bigEyeRoadMajority.ImageOptions.SvgImageSize = new System.Drawing.Size( 22, 22 );
             _bigEyeRoadMajority.MinWidth = 30;
             _bigEyeRoadMajority.Name = "_bigEyeRoadMajority";
@@ -492,7 +492,7 @@
             // _bigEyeRoadPattern
             // 
             _bigEyeRoadPattern.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
-            _bigEyeRoadPattern.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "bandedGridColumn8.ImageOptions.SvgImage" );
+            _bigEyeRoadPattern.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_bigEyeRoadPattern.ImageOptions.SvgImage" );
             _bigEyeRoadPattern.ImageOptions.SvgImageSize = new System.Drawing.Size( 22, 22 );
             _bigEyeRoadPattern.MinWidth = 30;
             _bigEyeRoadPattern.Name = "_bigEyeRoadPattern";
@@ -502,7 +502,7 @@
             // _bigEyeRoadBroken
             // 
             _bigEyeRoadBroken.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
-            _bigEyeRoadBroken.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "bandedGridColumn2.ImageOptions.SvgImage" );
+            _bigEyeRoadBroken.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "_bigEyeRoadBroken.ImageOptions.SvgImage" );
             _bigEyeRoadBroken.ImageOptions.SvgImageSize = new System.Drawing.Size( 22, 22 );
             _bigEyeRoadBroken.MinWidth = 30;
             _bigEyeRoadBroken.Name = "_bigEyeRoadBroken";
