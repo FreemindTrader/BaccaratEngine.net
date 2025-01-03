@@ -31,6 +31,11 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager( typeof( RoadmapAnalysisControl ) );
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
             svgImageCollection1 = new DevExpress.Utils.SvgImageCollection( components );
             _svgBettingSuggestion = new DevExpress.Utils.SvgImageCollection( components );
             layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -73,8 +78,8 @@
             bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             _svgRoadmapAnalysis = new DevExpress.Utils.SvgImageCollection( components );
             Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)svgImageCollection1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_svgBettingSuggestion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControl1).BeginInit();
@@ -85,8 +90,8 @@
             ((System.ComponentModel.ISupportInitialize)advBandedGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)_svgRoadmapAnalysis).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Root).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)layoutControlItem2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem2).BeginInit();
             SuspendLayout();
             // 
             // svgImageCollection1
@@ -121,7 +126,7 @@
             layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             layoutControl1.Location = new System.Drawing.Point( 0, 0 );
             layoutControl1.Name = "layoutControl1";
-            layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle( 1387, 665, 975, 600 );
+            layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle( 2476, 593, 975, 600 );
             layoutControl1.Root = Root;
             layoutControl1.Size = new System.Drawing.Size( 2011, 1053 );
             layoutControl1.TabIndex = 0;
@@ -129,17 +134,17 @@
             // 
             // tablePanel1
             // 
-            tablePanel1.Columns.AddRange( new DevExpress.Utils.Layout.TablePanelColumn[ ] { new DevExpress.Utils.Layout.TablePanelColumn( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F ), new DevExpress.Utils.Layout.TablePanelColumn( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F ), new DevExpress.Utils.Layout.TablePanelColumn( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F ), new DevExpress.Utils.Layout.TablePanelColumn( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F ) } );
+            tablePanel1.Columns.AddRange( new DevExpress.Utils.Layout.TablePanelColumn[ ] { new DevExpress.Utils.Layout.TablePanelColumn( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F ), new DevExpress.Utils.Layout.TablePanelColumn( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F ), new DevExpress.Utils.Layout.TablePanelColumn( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F ), new DevExpress.Utils.Layout.TablePanelColumn( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F ), new DevExpress.Utils.Layout.TablePanelColumn( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F ), new DevExpress.Utils.Layout.TablePanelColumn( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F ) } );
             tablePanel1.Controls.Add( simpleButton5 );
             tablePanel1.Controls.Add( simpleButton4 );
             tablePanel1.Controls.Add( simpleButton3 );
             tablePanel1.Controls.Add( simpleButton2 );
             tablePanel1.Controls.Add( simpleButton1 );
             tablePanel1.Controls.Add( _simpleButtonBanker );
-            tablePanel1.Location = new System.Drawing.Point( 12, 12 );
+            tablePanel1.Location = new System.Drawing.Point( 12, 786 );
             tablePanel1.Name = "tablePanel1";
-            tablePanel1.Rows.AddRange( new DevExpress.Utils.Layout.TablePanelRow[ ] { new DevExpress.Utils.Layout.TablePanelRow( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 48F ), new DevExpress.Utils.Layout.TablePanelRow( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 48F ), new DevExpress.Utils.Layout.TablePanelRow( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 48F ) } );
-            tablePanel1.Size = new System.Drawing.Size( 1987, 316 );
+            tablePanel1.Rows.AddRange( new DevExpress.Utils.Layout.TablePanelRow[ ] { new DevExpress.Utils.Layout.TablePanelRow( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F ), new DevExpress.Utils.Layout.TablePanelRow( DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F ) } );
+            tablePanel1.Size = new System.Drawing.Size( 1987, 255 );
             tablePanel1.TabIndex = 6;
             tablePanel1.UseSkinIndents = true;
             // 
@@ -150,66 +155,69 @@
             simpleButton5.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             simpleButton5.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "simpleButton5.ImageOptions.SvgImage" );
             simpleButton5.ImageOptions.SvgImageSize = new System.Drawing.Size( 48, 48 );
-            simpleButton5.Location = new System.Drawing.Point( 997, 208 );
+            simpleButton5.Location = new System.Drawing.Point( 671, 130 );
             simpleButton5.Name = "simpleButton5";
-            tablePanel1.SetRow( simpleButton5, 2 );
-            simpleButton5.Size = new System.Drawing.Size( 483, 89 );
+            tablePanel1.SetRow( simpleButton5, 1 );
+            simpleButton5.Size = new System.Drawing.Size( 320, 106 );
             simpleButton5.TabIndex = 5;
             // 
             // simpleButton4
             // 
-            tablePanel1.SetColumn( simpleButton4, 2 );
+            tablePanel1.SetColumn( simpleButton4, 0 );
             simpleButton4.Dock = System.Windows.Forms.DockStyle.Fill;
             simpleButton4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             simpleButton4.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "simpleButton4.ImageOptions.SvgImage" );
             simpleButton4.ImageOptions.SvgImageSize = new System.Drawing.Size( 48, 48 );
-            simpleButton4.Location = new System.Drawing.Point( 997, 113 );
+            simpleButton4.Location = new System.Drawing.Point( 19, 130 );
             simpleButton4.Name = "simpleButton4";
             tablePanel1.SetRow( simpleButton4, 1 );
-            simpleButton4.Size = new System.Drawing.Size( 483, 89 );
+            simpleButton4.Size = new System.Drawing.Size( 320, 106 );
             simpleButton4.TabIndex = 4;
             // 
             // simpleButton3
             // 
-            tablePanel1.SetColumn( simpleButton3, 2 );
+            simpleButton3.AutoSize = true;
+            tablePanel1.SetColumn( simpleButton3, 1 );
             simpleButton3.Dock = System.Windows.Forms.DockStyle.Fill;
             simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             simpleButton3.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "simpleButton3.ImageOptions.SvgImage" );
             simpleButton3.ImageOptions.SvgImageSize = new System.Drawing.Size( 48, 48 );
-            simpleButton3.Location = new System.Drawing.Point( 997, 18 );
+            simpleButton3.Location = new System.Drawing.Point( 345, 18 );
             simpleButton3.Name = "simpleButton3";
             tablePanel1.SetRow( simpleButton3, 0 );
-            simpleButton3.Size = new System.Drawing.Size( 483, 89 );
+            simpleButton3.Size = new System.Drawing.Size( 320, 106 );
             simpleButton3.TabIndex = 3;
             // 
             // simpleButton2
             // 
-            tablePanel1.SetColumn( simpleButton2, 0 );
+            tablePanel1.SetColumn( simpleButton2, 2 );
             simpleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             simpleButton2.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "simpleButton2.ImageOptions.SvgImage" );
             simpleButton2.ImageOptions.SvgImageSize = new System.Drawing.Size( 48, 48 );
-            simpleButton2.Location = new System.Drawing.Point( 19, 208 );
+            simpleButton2.Location = new System.Drawing.Point( 671, 18 );
             simpleButton2.Name = "simpleButton2";
-            tablePanel1.SetRow( simpleButton2, 2 );
-            simpleButton2.Size = new System.Drawing.Size( 483, 89 );
+            tablePanel1.SetRow( simpleButton2, 0 );
+            simpleButton2.Size = new System.Drawing.Size( 320, 106 );
             simpleButton2.TabIndex = 2;
             // 
             // simpleButton1
             // 
-            tablePanel1.SetColumn( simpleButton1, 0 );
+            tablePanel1.SetColumn( simpleButton1, 1 );
             simpleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            simpleButton1.Enabled = false;
             simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             simpleButton1.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject( "simpleButton1.ImageOptions.SvgImage" );
             simpleButton1.ImageOptions.SvgImageSize = new System.Drawing.Size( 48, 48 );
-            simpleButton1.Location = new System.Drawing.Point( 19, 113 );
+            simpleButton1.Location = new System.Drawing.Point( 345, 130 );
             simpleButton1.Name = "simpleButton1";
             tablePanel1.SetRow( simpleButton1, 1 );
-            simpleButton1.Size = new System.Drawing.Size( 483, 89 );
+            simpleButton1.Size = new System.Drawing.Size( 320, 106 );
             simpleButton1.TabIndex = 1;
             // 
             // _simpleButtonBanker
             // 
+            _simpleButtonBanker.AutoSize = true;
             tablePanel1.SetColumn( _simpleButtonBanker, 0 );
             _simpleButtonBanker.Dock = System.Windows.Forms.DockStyle.Fill;
             _simpleButtonBanker.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
@@ -218,17 +226,17 @@
             _simpleButtonBanker.Location = new System.Drawing.Point( 19, 18 );
             _simpleButtonBanker.Name = "_simpleButtonBanker";
             tablePanel1.SetRow( _simpleButtonBanker, 0 );
-            _simpleButtonBanker.Size = new System.Drawing.Size( 483, 89 );
+            _simpleButtonBanker.Size = new System.Drawing.Size( 320, 106 );
             _simpleButtonBanker.TabIndex = 0;
             // 
             // gridControl1
             // 
             gridLevelNode1.RelationName = "Level1";
             gridControl1.LevelTree.Nodes.AddRange( new DevExpress.XtraGrid.GridLevelNode[ ] { gridLevelNode1 } );
-            gridControl1.Location = new System.Drawing.Point( 12, 332 );
+            gridControl1.Location = new System.Drawing.Point( 12, 12 );
             gridControl1.MainView = advBandedGridView1;
             gridControl1.Name = "gridControl1";
-            gridControl1.Size = new System.Drawing.Size( 1987, 709 );
+            gridControl1.Size = new System.Drawing.Size( 1987, 770 );
             gridControl1.TabIndex = 5;
             gridControl1.ViewCollection.AddRange( new DevExpress.XtraGrid.Views.Base.BaseView[ ] { advBandedGridView1 } );
             // 
@@ -543,28 +551,45 @@
             // 
             Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             Root.GroupBordersVisible = false;
-            Root.Items.AddRange( new DevExpress.XtraLayout.BaseLayoutItem[ ] { layoutControlItem2, layoutControlItem1 } );
+            Root.Items.AddRange( new DevExpress.XtraLayout.BaseLayoutItem[ ] { layoutControlItem1, layoutControlItem2 } );
+            Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             Root.Name = "Root";
+            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition1.Width = 100D;
+            Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange( new DevExpress.XtraLayout.ColumnDefinition[ ] { columnDefinition1 } );
+            rowDefinition1.Height = 25D;
+            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition2.Height = 25D;
+            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition3.Height = 25D;
+            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition4.Height = 25D;
+            rowDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
+            Root.OptionsTableLayoutGroup.RowDefinitions.AddRange( new DevExpress.XtraLayout.RowDefinition[ ] { rowDefinition1, rowDefinition2, rowDefinition3, rowDefinition4 } );
             Root.Size = new System.Drawing.Size( 2011, 1053 );
             Root.TextVisible = false;
-            // 
-            // layoutControlItem2
-            // 
-            layoutControlItem2.Control = gridControl1;
-            layoutControlItem2.Location = new System.Drawing.Point( 0, 320 );
-            layoutControlItem2.Name = "layoutControlItem2";
-            layoutControlItem2.Size = new System.Drawing.Size( 1991, 713 );
-            layoutControlItem2.TextSize = new System.Drawing.Size( 0, 0 );
-            layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             layoutControlItem1.Control = tablePanel1;
-            layoutControlItem1.Location = new System.Drawing.Point( 0, 0 );
+            layoutControlItem1.CustomizationFormText = "_monsterLayout";
+            layoutControlItem1.Location = new System.Drawing.Point( 0, 774 );
             layoutControlItem1.Name = "layoutControlItem1";
-            layoutControlItem1.Size = new System.Drawing.Size( 1991, 320 );
+            layoutControlItem1.OptionsTableLayoutItem.RowIndex = 3;
+            layoutControlItem1.Size = new System.Drawing.Size( 1991, 259 );
             layoutControlItem1.TextSize = new System.Drawing.Size( 0, 0 );
             layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            layoutControlItem2.Control = gridControl1;
+            layoutControlItem2.CustomizationFormText = "_roadmapAnalysisLayout";
+            layoutControlItem2.Location = new System.Drawing.Point( 0, 0 );
+            layoutControlItem2.Name = "layoutControlItem2";
+            layoutControlItem2.OptionsTableLayoutItem.RowSpan = 3;
+            layoutControlItem2.Size = new System.Drawing.Size( 1991, 774 );
+            layoutControlItem2.TextSize = new System.Drawing.Size( 0, 0 );
+            layoutControlItem2.TextVisible = false;
             // 
             // RoadmapAnalysisControl
             // 
@@ -579,12 +604,13 @@
             layoutControl1.ResumeLayout( false );
             ((System.ComponentModel.ISupportInitialize)tablePanel1).EndInit();
             tablePanel1.ResumeLayout( false );
+            tablePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)advBandedGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)_svgRoadmapAnalysis).EndInit();
             ((System.ComponentModel.ISupportInitialize)Root).EndInit();
-            ((System.ComponentModel.ISupportInitialize)layoutControlItem2).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem2).EndInit();
             ResumeLayout( false );
         }
 
